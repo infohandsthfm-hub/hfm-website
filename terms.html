@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="terms-content.js"></script>
 <style>
 :root{--red:#D91E36;--red-2:#B01629;--f-display:'Fraunces',Georgia,serif;--f-ui:'Syne',sans-serif;--f-body:'Crimson Pro',Georgia,serif;--ease:cubic-bezier(.22,1,.36,1);}
 :root,[data-theme="dark"]{--bg:#080A0F;--bg-nav:rgba(8,10,15,.96);--bg-card:#0D1E42;--c:#fff;--c2:rgba(255,255,255,.65);--c3:rgba(255,255,255,.4);--c4:rgba(255,255,255,.22);--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);}
@@ -74,7 +75,7 @@ footer{background:#07122B;padding:32px 0;margin-top:0;}
     <div class="nav-inner">
       <a href="htfm.html" class="nav-logo">
         <img src="logo.png" alt="HFM" class="logo-mark" onerror="this.style.display='none'"/>
-        <div class="logo-words"><span class="l1">Hands to the Fatherless</span><span class="l2">Ministries — HFM Uganda</span></div>
+        <div class="logo-words"><span class="l1" id="navName">Hands to the Fatherless</span><span class="l2" id="navTagline">Ministries — HFM Uganda</span></div>
       </a>
       <div style="display:flex;align-items:center;gap:9px;">
         <a href="htfm.html" class="nav-back"><i class="fa-solid fa-arrow-left fa-sm"></i> Home</a>
@@ -88,18 +89,18 @@ footer{background:#07122B;padding:32px 0;margin-top:0;}
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-wm">TERMS</div>
+  <div class="page-hero-wm" id="heroWm">TERMS</div>
   <div class="container" style="position:relative;z-index:2;">
-    <div class="eyebrow">Legal Document</div>
-    <h1>Terms <em>of Use.</em></h1>
-    <p>The rules and guidelines that govern your use of our website — written clearly and fairly.</p>
+    <div class="eyebrow" id="heroEyebrow">Legal Document</div>
+    <h1><span id="heroTitle">Terms</span> <em id="heroTitleEm">of Use.</em></h1>
+    <p id="heroBody">The rules and guidelines that govern your use of our website — written clearly and fairly.</p>
   </div>
 </div>
 
 <div class="page-content">
   <div class="container">
 
-    <div class="updated-badge"><i class="fa-solid fa-calendar-check"></i> Last updated: January 2025</div>
+    <div class="updated-badge"><i class="fa-solid fa-calendar-check"></i> Last updated: <span id="lastUpdated">January 2025</span></div>
 
     <div class="highlight-box">
       <p><strong>Plain English summary:</strong> Use this website honestly and respectfully. Don't copy our content without permission. Donations are gifts and generally non-refundable. We are not liable for things outside our control. Ugandan law applies.</p>
@@ -186,14 +187,14 @@ footer{background:#07122B;padding:32px 0;margin-top:0;}
 <footer>
   <div class="container">
     <div class="foot-inner">
-      <span class="foot-org">Hands to the Fatherless Ministries</span>
+      <span class="foot-org" id="footerOrg">Hands to the Fatherless Ministries</span>
       <div class="foot-links">
         <a href="htfm.html">Home</a>
         <a href="donate.html">Donate</a>
         <a href="know-more.html">Know More</a>
         <a href="privacy.html">Privacy Policy</a>
       </div>
-      <p class="foot-copy">© 2025 HFM Uganda. Registered NGO — Uganda NGO Bureau. All rights reserved.</p>
+      <p class="foot-copy" id="footerCopy">© 2025 HFM Uganda. Registered NGO — Uganda NGO Bureau. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -201,6 +202,100 @@ footer{background:#07122B;padding:32px 0;margin-top:0;}
 <script>
 (function(){const s=localStorage.getItem('hfm-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();
 function toggleTheme(){const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('hfm-theme',n);}
+(function(){
+  if(typeof TERMS_CONTENT === 'undefined') return;
+  const C = TERMS_CONTENT;
+  const set = (id, val, asHtml=false) => {
+    const el = document.getElementById(id);
+    if(el && val !== undefined){ if(asHtml) el.innerHTML=val; else el.textContent=val; }
+  };
+  if(C.pageTitle) document.title = C.pageTitle;
+  set('navName',    C.orgName);
+  set('navTagline', C.orgTagline);
+  set('heroEyebrow',C.heroEyebrow);
+  set('heroTitle',  C.heroTitle);
+  set('heroTitleEm',C.heroTitleEm);
+  set('heroBody',   C.heroBody);
+  set('heroWm',     (C.heroTitle||'TERMS').toUpperCase().split(' ')[0]);
+  set('lastUpdated',C.lastUpdated);
+
+  // Summary
+  const sumBox = document.querySelector('.highlight-box p');
+  if(sumBox) sumBox.innerHTML = '<strong>'+(C.summaryTitle||'')+'</strong> '+(C.summaryText||'');
+
+  // Sections — apply body paragraphs by position within each section
+  const sections = [
+    { key:'s1', listKey:null },
+    { key:'s2', listKey:null },
+    { key:'s3', sub:['s3aSub','s3aBody','s3bSub','s3bIntro'], listKey:'s3bList' },
+    { key:'s4', subs:['s4aSub','s4aBody','s4bSub','s4bBody','s4cSub','s4cBody','s4dSub','s4dBody'] },
+    { key:'s5', listKey:null },
+    { key:'s6', listKey:null },
+    { key:'s7', listKey:null },
+    { key:'s8', listKey:null },
+    { key:'s9', listKey:null },
+    { key:'s10',listKey:null },
+    { key:'s11',listKey:null },
+    { key:'s12',listKey:null },
+  ];
+
+  // Apply all h2 section titles
+  document.querySelectorAll('.num-section h2').forEach((h2, i) => {
+    const s = sections[i];
+    if(!s) return;
+    const key = s.key + 'Title';
+    const txt = C[key];
+    if(txt) {
+      // preserve the ::before counter — just set the text node
+      // h2 may have no children, or may have text node
+      h2.childNodes.forEach(n => { if(n.nodeType===3) n.textContent = txt; });
+      if(!h2.childNodes.length) h2.textContent = txt;
+    }
+  });
+
+  // Apply all paragraph groups by data-section + data-para
+  document.querySelectorAll('[data-para]').forEach(el => {
+    const key = el.getAttribute('data-para');
+    if(C[key] !== undefined) el.innerHTML = C[key];
+  });
+
+  // Apply all list groups by data-list
+  document.querySelectorAll('[data-list]').forEach(ul => {
+    const key = ul.getAttribute('data-list');
+    const items = C[key];
+    if(Array.isArray(items)) ul.innerHTML = items.map(i=>'<li>'+i+'</li>').join('');
+  });
+
+  // Apply sub-headings by data-sub
+  document.querySelectorAll('[data-sub]').forEach(el => {
+    const key = el.getAttribute('data-sub');
+    if(C[key]) el.textContent = C[key];
+  });
+
+  // Contact details
+  const contactRows = document.querySelectorAll('[data-contact-row]');
+  if(C.s12Details) {
+    contactRows.forEach((row, i) => {
+      const d = C.s12Details[i];
+      if(!d) return;
+      const ico = row.querySelector('i');
+      if(ico && d.icon) ico.className = 'fa-solid ' + d.icon + ' fa-fw';
+      const p = row.querySelector('p');
+      if(p && d.value) p.innerHTML = d.value;
+    });
+  }
+
+  set('footerOrg',  C.footerOrg);
+  set('footerCopy', C.footerCopy);
+
+  if(C.orgEmail){
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a=>{
+      if(a.textContent.includes('@')) a.textContent=C.orgEmail;
+      if(!a.href.includes('?')) a.href='mailto:'+C.orgEmail;
+    });
+  }
+})();
+
 </script>
 </body>
 </html>
