@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <!-- ✏️ EDIT YOUR TEXT HERE → content.js -->
 <!-- 🖼️ EDIT YOUR IMAGES HERE → images.js -->
-<script src="content.js"></script>
-<script src="images.js"></script>
 <style>
 /* =============================================================
    HFM — COMPLETE WEBSITE CSS
@@ -2647,8 +2645,7 @@ function toggleTheme(){
   localStorage.setItem('hfm-theme', next);
   // Brief "flash" animation on toggle button
   const btn = document.getElementById('themeToggle');
-  btn.style.transform = 'scale(0.85) rotate(20deg)';
-  setTimeout(() => btn.style.transform = '', 300);
+  if(btn){ btn.style.transform = 'scale(0.85) rotate(20deg)'; setTimeout(() => btn.style.transform = '', 300); }
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -2901,17 +2898,17 @@ function applyContent(){
   if(wm && CONFIG.orgShort) wm.textContent = CONFIG.orgShort;
 }
 
-applyContent();
-applyImages();
+try { applyContent(); } catch(e) { console.warn("HFM content.js:", e); }
+try { applyImages();  } catch(e) { console.warn("HFM images.js:",  e); }
 
 
 // ── NAV ──────────────────────────────────────────────────────
 function toggleNav(){
-  document.getElementById('mobNav').classList.toggle('open');
+  const mn=document.getElementById('mobNav'); if(mn) mn.classList.toggle('open');
 }
 window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
-  document.getElementById('btt').classList.toggle('show', scrollY > 500);
+  const navEl=document.getElementById('nav'); if(navEl) navEl.classList.toggle('scrolled', scrollY > 20);
+  const bttEl=document.getElementById('btt'); if(bttEl) bttEl.classList.toggle('show', scrollY > 500);
 });
 
 // ── DONATE FILTER ────────────────────────────────────────────
