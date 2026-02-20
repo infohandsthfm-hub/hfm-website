@@ -670,7 +670,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 /* ── ABOUT ─────────────────────────────────────────────────────── */
 #about {
   background: var(--bg-alt);
-  color: var(--ink);
+  color: var(--c-text);
   padding: 140px 0;
   position: relative;
   overflow: hidden;
@@ -734,7 +734,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 .about-corner .txt { font-family: var(--f-ui); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #fff; }
 .about-corner .txt small { display: block; font-weight: 400; opacity: .5; font-size: .65rem; }
 .about-text { padding: 20px 0; }
-.about-text .eyebrow { margin-bottom: 24px; }
+.about-text .eyebrow { margin-bottom: 24px; color: var(--red); }
 .about-text .display { font-size: clamp(2.4rem, 4vw, 3.5rem); color: var(--c-heading); margin-bottom: 28px; }
 .about-text p { color: var(--c-text-2); font-size: 1.1rem; line-height: 1.9; margin-bottom: 20px; font-weight: 300; }
 .values-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 36px 0; }
@@ -866,7 +866,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   font-family: var(--f-display);
   font-size: 4rem;
   font-weight: 900;
-  color: rgba(255,255,255,.04);
+  color: var(--c-text-4);
   position: absolute;
   top: 8px; right: 16px;
   line-height: 1;
@@ -1142,7 +1142,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 /* ── GALLERY ─────────────────────────────────────────────────── */
 #gallery {
   background: var(--bg-alt);
-  color: var(--ink);
+  color: var(--c-text);
   padding: 140px 0;
 }
 .gallery-head { margin-bottom: 64px; }
@@ -1196,7 +1196,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 
 /* ── NEWSLETTER ────────────────────────────────────────────────── */
 #newsletter {
-  background: var(--bg-alt);
+  background: #07122B;
   padding: 140px 0;
   position: relative;
   overflow: hidden;
@@ -1229,6 +1229,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   color: var(--c-text-2);
 }
 .nl-perk i { color: var(--red); font-size: .9rem; flex-shrink: 0; width: 16px; }
+.nl-perk { color: rgba(255,255,255,.65) !important; }
 .nl-form-wrap {
   background: var(--bg-form);
   border: 1px solid var(--border);
@@ -1278,12 +1279,12 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   padding: 14px 18px;
   font-family: var(--f-body);
   font-size: 1rem;
-  color: #fff;
+  color: var(--c-text);
   outline: none;
   transition: border-color .25s, background .25s;
 }
 .f-group input:focus { border-color: var(--red); background: var(--bg-input); }
-.f-group input::placeholder { color: rgba(255,255,255,.2); }
+.f-group input::placeholder { color: var(--c-text-4); }
 .f-submit .btn { width: 100%; justify-content: center; margin-top: 6px; }
 .f-panel { display: none; }
 .f-panel.active { display: block; }
@@ -1381,7 +1382,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   transition: border-color .25s, background .25s;
 }
 .cf-group input:focus, .cf-group textarea:focus, .cf-group select:focus { border-color: var(--red); background: var(--bg-input); }
-.cf-group input::placeholder, .cf-group textarea::placeholder { color: rgba(255,255,255,.2); }
+.cf-group input::placeholder, .cf-group textarea::placeholder { color: var(--c-text-4); }
 .cf-group textarea { height: 140px; resize: vertical; }
 .cf-group select option { background: var(--bg-surface); color: var(--c-text); }
 .cf-submit .btn { width: 100%; justify-content: center; }
@@ -1431,7 +1432,7 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
   color: #fff;
   outline: none;
 }
-.ft-nl-row input::placeholder { color: rgba(255,255,255,.2); }
+.ft-nl-row input::placeholder { color: var(--c-text-4); }
 .ft-nl-row button {
   background: var(--red);
   border: none;
@@ -1501,77 +1502,128 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
 /* Hero always dark */
 #hero { background: var(--navy); }
 
-/* Uganda section always dark navy — strong contrast anchor */
+/* Uganda section always dark navy */
 #uganda { background: #07122B; }
+#uganda .uganda-text-col p { color: rgba(255,255,255,.65); }
+#uganda .ug-stat .l { color: rgba(255,255,255,.45); }
 
-/* Donate "why" panel always dark — quote, scripture */
+/* Donate "why" panel always dark */
 .donate-why { background: #080A0F; }
 
 /* Newsletter always dark navy */
 #newsletter { background: #07122B; }
+/* Newsletter text always white (dark section) */
+#newsletter .nl-text .display,
+#newsletter .nl-text p,
+#newsletter .nl-perk,
+#newsletter .nl-perk i,
+#newsletter .f-group label { color: rgba(255,255,255,.75); }
+#newsletter .nl-perk i { color: var(--red); }
+#newsletter .nl-text .display { color: #fff; }
+#newsletter .eyebrow { color: rgba(255,255,255,.5); }
+#newsletter .eyebrow::before { background: rgba(255,255,255,.3); }
+#newsletter .f-group input,
+#newsletter .f-group select { color: #fff; }
+#newsletter .f-group input::placeholder { color: rgba(255,255,255,.25); }
+#newsletter .fsw-btn { color: rgba(255,255,255,.5); }
+#newsletter .fsw-btn.active { background: var(--red); color: #fff; }
+#newsletter .form-switcher { background: rgba(255,255,255,.06); }
+#newsletter .nl-form-wrap { background: rgba(255,255,255,.04); border-color: rgba(255,255,255,.1); }
+#newsletter .f-group input { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
+#newsletter .f-group input:focus { background: rgba(255,255,255,.1); border-color: var(--red); }
+#newsletter .f-group label { color: rgba(255,255,255,.4); }
+#newsletter .f-switcher-note { color: rgba(255,255,255,.35); }
+#newsletter .f-switcher-note a { color: rgba(255,255,255,.65); }
 
-/* In light mode, prog-card-body needs card bg */
+/* ── LIGHT MODE — sections that flip ────────────────────────── */
 [data-theme="light"] .prog-card { background: var(--bg-surface); border: 1px solid var(--border); }
 [data-theme="light"] .prog-card:hover { background: var(--bg-surface-2); }
+[data-theme="light"] .prog-card-body { background: var(--bg-surface); }
+[data-theme="light"] .prog-card:hover .prog-card-body { background: var(--bg-surface-2); }
 
-/* Light mode: about section floating cards stay dark for contrast */
+/* Light mode: prog number watermark — visible against white */
+[data-theme="light"] .prog-num { color: rgba(8,10,15,.04); }
+
+/* Light mode: about section */
 [data-theme="light"] .about-floater { box-shadow: 0 24px 80px rgba(217,30,54,.3); }
+[data-theme="light"] .about-text .eyebrow { color: var(--red); }
+[data-theme="light"] .about-text .eyebrow::before { background: var(--red); }
 
-/* Light mode: hero stat bar */
+/* Light mode: hero stat bar always dark */
 [data-theme="light"] .hero-stats { background: rgba(7,18,43,.95); }
 [data-theme="light"] .hero-stat .l { color: rgba(255,255,255,.4); }
+[data-theme="light"] .hero-stat .n { color: #fff; }
 
-/* Light mode: gallery item bg */
+/* Light mode: gallery */
+[data-theme="light"] .gallery-head .eyebrow { color: var(--red); }
+[data-theme="light"] .gallery-head .eyebrow::before { background: var(--red); }
 [data-theme="light"] .g-item { border: 1px solid var(--border); }
+[data-theme="light"] .gallery-note { color: var(--c-text-3); }
+[data-theme="light"] .gallery-note code { background: rgba(8,10,15,.06); color: var(--c-text-2); }
 
-/* Light mode: donate card top keeps gradient (already dark gradient) */
+/* Light mode: donate section */
+[data-theme="light"] .donate-cats-head .eyebrow { color: var(--red); }
+[data-theme="light"] .donate-cats-head .eyebrow::before { background: var(--red); }
 [data-theme="light"] .d-card { box-shadow: 0 2px 20px rgba(8,10,15,.06); }
-
-/* Light mode: impact pills */
+[data-theme="light"] .amount-chips button { color: rgba(8,10,15,.55); border-color: rgba(8,10,15,.15); }
+[data-theme="light"] .amount-chips button:hover { background: var(--red); color: #fff; border-color: var(--red); }
+[data-theme="light"] .dtab { color: rgba(8,10,15,.5); border-color: rgba(8,10,15,.15); }
+[data-theme="light"] .dtab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
 [data-theme="light"] .impact-pill { background: rgba(8,10,15,.8); border-color: rgba(255,255,255,.15); }
 
-/* Light mode: fsw-btn inactive */
-[data-theme="light"] .fsw-btn { color: rgba(255,255,255,.45); }
-[data-theme="light"] .fsw-btn.active { background: var(--red); color: #fff; }
+/* Light mode: team section */
+[data-theme="light"] .team-head .eyebrow { color: var(--red); }
+[data-theme="light"] .team-head .eyebrow::before { background: var(--red); }
+[data-theme="light"] .tm-card { border: 1px solid var(--border); }
 
-/* Light mode: nl-form f-group inputs get correct text color */
-[data-theme="light"] .f-group input { color: var(--c-text); }
-[data-theme="light"] .f-group input::placeholder { color: rgba(8,10,15,.3); }
+/* Light mode: contact section */
+[data-theme="light"] .contact-left .eyebrow { color: var(--red); }
+[data-theme="light"] .contact-left .eyebrow::before { background: var(--red); }
+[data-theme="light"] .cf-group input,
+[data-theme="light"] .cf-group textarea,
+[data-theme="light"] .cf-group select { color: var(--c-text); }
+[data-theme="light"] .cf-group input::placeholder,
+[data-theme="light"] .cf-group textarea::placeholder { color: rgba(8,10,15,.3); }
+[data-theme="light"] .cf-group select option { background: #fff; color: #080A0F; }
+[data-theme="light"] .contact-form-wrap h3 { color: var(--c-text); }
 
-/* Light mode: contact icon bg */
-[data-theme="light"] .c-icon { background: rgba(217,30,54,.08); border-color: rgba(217,30,54,.15); }
+/* Light mode: footer always dark */
+[data-theme="light"] footer { background: #0D1020; }
+[data-theme="light"] footer .l1,
+[data-theme="light"] footer .l2,
+[data-theme="light"] footer .ft-brand p,
+[data-theme="light"] footer .ft-col h5,
+[data-theme="light"] footer .ft-col ul a,
+[data-theme="light"] footer .ft-nl h5 { color: rgba(255,255,255,.5); }
+[data-theme="light"] footer .ft-col ul a:hover { color: #fff; }
+[data-theme="light"] footer .ft-nl-row input { color: #fff; background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
+[data-theme="light"] footer .ft-nl-row input::placeholder { color: rgba(255,255,255,.25); }
+[data-theme="light"] footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); }
+[data-theme="light"] footer .footer-bottom p,
+[data-theme="light"] footer .footer-bottom-links a { color: rgba(255,255,255,.25); }
+[data-theme="light"] footer .footer-bottom-links a:hover { color: rgba(255,255,255,.6); }
+
+/* Light mode: program eyebrow */
+[data-theme="light"] .programs-head .eyebrow { color: var(--red); }
+[data-theme="light"] .programs-head .eyebrow::before { background: var(--red); }
+
+/* Light mode: back to top shadow */
+[data-theme="light"] .btt { box-shadow: 0 8px 32px rgba(217,30,54,.3); }
 
 /* Light mode: topbar always red */
 .topbar { background: var(--red); }
 
-/* Light mode: val-item border bottom */
-[data-theme="light"] .val-item { border-bottom-color: var(--red); box-shadow: 0 2px 12px rgba(8,10,15,.04); }
+/* Light mode: announcement bar link */
+.topbar a { color: rgba(255,255,255,.85); font-weight: 700; }
+.topbar a:hover { color: #fff; }
 
-/* Light mode: prog-icon in light stays red tint */
-[data-theme="light"] .prog-icon { background: rgba(217,30,54,.08); }
-[data-theme="light"] .prog-card:hover .prog-icon { background: var(--red); color: #fff; }
-
-/* Light mode: section eyebrow on light bg sections */
-[data-theme="light"] #about .eyebrow,
-[data-theme="light"] #donate .eyebrow,
-[data-theme="light"] #gallery .eyebrow { color: var(--red); }
-[data-theme="light"] #about .eyebrow::before,
-[data-theme="light"] #donate .eyebrow::before,
-[data-theme="light"] #gallery .eyebrow::before { background: var(--red); }
-
-/* Light mode: footer */
-[data-theme="light"] footer { background: #1a1a24; }
-[data-theme="light"] .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); }
-
-/* Light mode: back to top */
-[data-theme="light"] .btt { box-shadow: 0 8px 32px rgba(217,30,54,.3); }
-
-/* Smooth all theme transitions */
-nav, body, section, .val-item, .d-card, .prog-card, .prog-card-body,
-.tm-card, .contact-form-wrap, .nl-form-wrap, footer, .about-corner,
+/* Smooth theme transitions on all key elements */
+#about, #programs, #donate, .donate-cats, #team, #gallery, #contact,
+nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
+.tm-card, .contact-form-wrap, .nl-form-wrap,
 .cf-group input, .cf-group textarea, .cf-group select,
-.f-group input, .ft-nl-row input {
-  transition: var(--theme-transition);
+.f-group input, .ft-nl-row input, body {
+  transition: background .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────── */
