@@ -1,0 +1,2921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hands to the Fatherless Ministries | Uganda</title>
+<meta name="description" content="HFM — A faith-driven ministry transforming the lives of orphaned and vulnerable children across Uganda through education, healthcare, and community empowerment."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- ✏️ EDIT YOUR TEXT HERE → content.js -->
+<!-- 🖼️ EDIT YOUR IMAGES HERE → images.js -->
+<script src="content.js"></script>
+<script src="images.js"></script>
+<style>
+/* =============================================================
+   HFM — COMPLETE WEBSITE CSS
+   Aesthetic: Luxe Editorial Humanitarian
+   Fonts: Fraunces (display) · Syne (UI) · Crimson Pro (body)
+
+   ── HOW TO EDIT ────────────────────────────────────────────
+   Colors   → :root at top — change --red, --navy, etc.
+   Fonts    → :root --f-display, --f-ui, --f-body
+   Content  → Sections labeled with === SECTION NAME ===
+   Images   → Search "ADD_IMAGE" for every placeholder
+   Social   → Search "SOCIAL_LINK" to add your URLs
+   ───────────────────────────────────────────────────────────
+============================================================= */
+
+/* ── BRAND CONSTANTS (never change with theme) ─────────── */
+:root {
+  --red:       #D91E36;
+  --red-2:     #B01629;
+  --red-light: #ff4d63;
+  --red-glow:  rgba(217,30,54,.35);
+
+  --f-display: 'Fraunces', Georgia, serif;
+  --f-ui:      'Syne', sans-serif;
+  --f-body:    'Crimson Pro', Georgia, serif;
+  --ease:      cubic-bezier(.22,1,.36,1);
+}
+
+/* ── DARK THEME (default) ──────────────────────────────── */
+:root, [data-theme="dark"] {
+  --navy:            #07122B;
+  --navy-2:          #0D1E42;
+  --navy-3:          #152656;
+  --ink:             #080A0F;
+
+  /* Semantic tokens — dark */
+  --bg-page:         #080A0F;
+  --bg-alt:          #07122B;
+  --bg-alt2:         #0D1E42;
+  --bg-deep:         #050709;
+  --bg-nav:          rgba(8,10,15,.96);
+  --bg-nav-mob:      #0D1E42;
+  --bg-surface:      #0D1E42;
+  --bg-surface-2:    #152656;
+  --bg-card:         #0D1E42;
+  --bg-input:        rgba(255,255,255,.06);
+  --bg-tag:          rgba(217,30,54,.15);
+  --bg-form:         rgba(255,255,255,.04);
+  --bg-form-input:   rgba(255,255,255,.06);
+  --bg-switcher:     rgba(255,255,255,.06);
+  --bg-stat:         rgba(255,255,255,.04);
+  --bg-about-card:   #07122B;
+
+  --c-text:          #FFFFFF;
+  --c-text-2:        rgba(255,255,255,.65);
+  --c-text-3:        rgba(255,255,255,.45);
+  --c-text-4:        rgba(255,255,255,.25);
+  --c-text-dark:     rgba(255,255,255,.6);
+  --c-heading:       #FFFFFF;
+  --c-heading-alt:   #FFFFFF;
+  --c-muted:         rgba(255,255,255,.4);
+  --c-footer:        rgba(255,255,255,.4);
+  --c-footer-link:   rgba(255,255,255,.45);
+
+  --border:          rgba(255,255,255,.08);
+  --border-2:        rgba(255,255,255,.12);
+  --border-focus:    var(--red);
+  --border-input:    rgba(255,255,255,.15);
+
+  --shadow-card:     0 8px 40px rgba(0,0,0,.3);
+  --shadow-nav:      0 8px 60px rgba(0,0,0,.6);
+
+  --val-bg:          #FFFFFF;   /* value cards — stay white in dark */
+  --val-text:        #080A0F;
+  --val-subtext:     #8A8A8A;
+
+  --donate-why-bg:   #080A0F;
+  --donate-chip-border: rgba(8,10,15,.15);
+  --donate-chip-text:   rgba(8,10,15,.5);
+
+  --ribbon-text:     rgba(255,255,255,.85);
+  --topbar-text:     rgba(255,255,255,.9);
+
+  --toggle-bg:       rgba(255,255,255,.1);
+  --toggle-icon:     rgba(255,255,255,.8);
+
+  --scrollbar-thumb: rgba(255,255,255,.15);
+
+  --theme-transition: background .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+
+/* ── LIGHT THEME ───────────────────────────────────────── */
+[data-theme="light"] {
+  --navy:            #07122B;
+  --navy-2:          #0D1E42;
+  --navy-3:          #152656;
+  --ink:             #080A0F;
+
+  --bg-page:         #FAFAF8;
+  --bg-alt:          #F0EDE8;
+  --bg-alt2:         #E8E3DC;
+  --bg-deep:         #F5F2EE;
+  --bg-nav:          rgba(250,250,248,.97);
+  --bg-nav-mob:      #FFFFFF;
+  --bg-surface:      #FFFFFF;
+  --bg-surface-2:    #F5F2EE;
+  --bg-card:         #FFFFFF;
+  --bg-input:        rgba(8,10,15,.04);
+  --bg-tag:          rgba(217,30,54,.08);
+  --bg-form:         rgba(8,10,15,.03);
+  --bg-form-input:   rgba(8,10,15,.04);
+  --bg-switcher:     rgba(8,10,15,.06);
+  --bg-stat:         rgba(8,10,15,.04);
+  --bg-about-card:   #080A0F;
+
+  --c-text:          #080A0F;
+  --c-text-2:        rgba(8,10,15,.65);
+  --c-text-3:        rgba(8,10,15,.45);
+  --c-text-4:        rgba(8,10,15,.25);
+  --c-text-dark:     rgba(8,10,15,.6);
+  --c-heading:       #080A0F;
+  --c-heading-alt:   #07122B;
+  --c-muted:         rgba(8,10,15,.4);
+  --c-footer:        rgba(8,10,15,.45);
+  --c-footer-link:   rgba(8,10,15,.5);
+
+  --border:          rgba(8,10,15,.1);
+  --border-2:        rgba(8,10,15,.14);
+  --border-focus:    var(--red);
+  --border-input:    rgba(8,10,15,.15);
+
+  --shadow-card:     0 8px 40px rgba(8,10,15,.1);
+  --shadow-nav:      0 4px 40px rgba(8,10,15,.12);
+
+  --val-bg:          #FFFFFF;
+  --val-text:        #080A0F;
+  --val-subtext:     #8A8A8A;
+
+  --donate-why-bg:   #080A0F; /* always dark — intentional contrast */
+  --donate-chip-border: rgba(8,10,15,.15);
+  --donate-chip-text:   rgba(8,10,15,.5);
+
+  --ribbon-text:     rgba(255,255,255,.9);
+  --topbar-text:     rgba(255,255,255,.95);
+
+  --toggle-bg:       rgba(8,10,15,.08);
+  --toggle-icon:     rgba(8,10,15,.7);
+
+  --scrollbar-thumb: rgba(8,10,15,.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-body);
+  font-size: 18px;
+  line-height: 1.7;
+  background: var(--bg-page);
+  color: var(--c-text);
+  overflow-x: hidden;
+  transition: var(--theme-transition);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: .02;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+@media(max-width:768px){ .container { padding: 0 20px; } }
+
+/* ── UTILITY ─────────────────────────────────────────────── */
+.eyebrow {
+  font-family: var(--f-ui);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--red);
+}
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+.eyebrow.light { color: rgba(255,255,255,.5); }
+.eyebrow.light::before { background: rgba(255,255,255,.3); }
+
+.display {
+  font-family: var(--f-display);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -.03em;
+}
+.display em { font-style: italic; color: var(--red); }
+
+.lead {
+  font-family: var(--f-body);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--c-text-2);
+  font-weight: 300;
+}
+.lead.dark { color: var(--c-text-dark); }
+
+/* Buttons */
+.btn {
+  font-family: var(--f-ui);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all .3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background .3s;
+}
+.btn:hover::after { background: rgba(255,255,255,.08); }
+.btn-red   { background: var(--red); color: #fff; }
+.btn-red:hover   { background: var(--red-2); transform: translateY(-2px); box-shadow: 0 16px 48px var(--red-glow); }
+.btn-ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.3); }
+.btn-ghost:hover { border-color: #fff; transform: translateY(-2px); }
+.btn-dark  { background: var(--ink); color: #fff; }
+.btn-dark:hover  { background: var(--navy); transform: translateY(-2px); }
+.btn-outline-red { background: transparent; color: var(--red); border: 1.5px solid var(--red); }
+.btn-outline-red:hover { background: var(--red); color: #fff; }
+
+/* Image placeholder system */
+.img-placeholder {
+  background: var(--navy-2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  /* Dashed border to signal editable */
+  outline: 2px dashed rgba(217,30,54,.35);
+  outline-offset: -8px;
+}
+.img-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13,30,66,.9) 0%, rgba(7,18,43,.6) 100%);
+}
+.img-placeholder .ph-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 2.4rem;
+  color: rgba(255,255,255,.15);
+}
+.img-placeholder .ph-label {
+  position: relative;
+  z-index: 1;
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.2);
+  text-align: center;
+  padding: 0 20px;
+}
+.img-placeholder .ph-tag {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--f-ui);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+/* ── ANNOUNCEMENT BAR ──────────────────────────────────────── */
+.topbar {
+  background: var(--red);
+  padding: 11px 0;
+  text-align: center;
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.topbar a { text-decoration: underline; opacity: .9; }
+.topbar span { opacity: .75; margin: 0 12px; }
+
+/* ── NAVIGATION ─────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-nav);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow .3s, background .4s var(--ease);
+}
+nav.scrolled { box-shadow: var(--shadow-nav); }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* Logo mark */
+.logo-mark {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+}
+.logo-words { display: flex; flex-direction: column; }
+.logo-words .l1 {
+  font-family: var(--f-display);
+  font-size: .95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.01em;
+  color: var(--c-text);
+}
+.logo-words .l2 {
+  font-family: var(--f-ui);
+  font-size: .6rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-top: 1px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+}
+.nav-links li a {
+  font-family: var(--f-ui);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--c-text-3);
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: color .2s, background .2s;
+}
+.nav-links li a:hover { color: var(--c-text); background: var(--bg-input); }
+.nav-links .donate-link a {
+  background: var(--red);
+  color: #fff;
+  padding: 9px 22px;
+  border-radius: 4px;
+}
+.nav-links .donate-link a:hover { background: var(--red-2); color: #fff; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--c-text); border-radius: 1px; transition: .3s; }
+.mob-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--bg-nav-mob);
+  padding: 20px 24px 28px;
+  border-top: 1px solid var(--border);
+}
+.mob-nav.open { display: flex; }
+.mob-nav a {
+  font-family: var(--f-ui);
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--c-text-2);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color .2s;
+}
+.mob-nav a:hover { color: var(--c-text); }
+.mob-nav a.red { color: var(--red); font-weight: 700; }
+
+/* ── THEME TOGGLE ────────────────────────────────────────────── */
+.theme-toggle {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--toggle-bg);
+  border: 1px solid var(--border);
+  color: var(--toggle-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: background .3s, color .3s, border-color .3s, transform .2s;
+  flex-shrink: 0;
+  margin-left: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.theme-toggle:hover { background: var(--red); color: #fff; border-color: var(--red); transform: scale(1.08); }
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  position: absolute;
+  transition: transform .4s var(--ease), opacity .3s;
+}
+.theme-toggle .icon-sun  { transform: translateY(0); opacity: 1; }
+.theme-toggle .icon-moon { transform: translateY(24px); opacity: 0; }
+[data-theme="light"] .theme-toggle .icon-sun  { transform: translateY(-24px); opacity: 0; }
+[data-theme="light"] .theme-toggle .icon-moon { transform: translateY(0); opacity: 1; }
+
+/* ── HERO ────────────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+  background: var(--ink);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+}
+/* ADD_IMAGE: Replace background-image URL with your hero photo */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  /* 
+    ══════════════════════════════════
+    ADD YOUR HERO IMAGE:
+    Replace the gradient below with:
+    background-image: url('your-hero-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    ══════════════════════════════════
+  */
+  background: linear-gradient(160deg, #0d1e42 0%, #07122b 45%, #1a0610 100%);
+  opacity: .9;
+}
+.hero-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(8,10,15,1) 0%,
+    rgba(8,10,15,.85) 45%,
+    rgba(8,10,15,.3) 100%
+  );
+}
+/* Red diagonal accent */
+.hero-accent {
+  position: absolute;
+  top: 0; right: 0;
+  width: 420px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--red) 0%, transparent 60%);
+  opacity: .06;
+  clip-path: polygon(100% 0, 100% 100%, 30% 100%, 0 0);
+}
+/* Big watermark text */
+.hero-watermark {
+  position: absolute;
+  bottom: -40px;
+  right: -20px;
+  font-family: var(--f-display);
+  font-size: clamp(120px, 18vw, 280px);
+  font-weight: 900;
+  letter-spacing: -.05em;
+  color: rgba(255,255,255,.025);
+  user-select: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 60px;
+}
+.hero-inner { max-width: 760px; }
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(217,30,54,.15);
+  border: 1px solid rgba(217,30,54,.3);
+  padding: 8px 20px;
+  border-radius: 2px;
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #ff8fa0;
+  margin-bottom: 32px;
+  animation: fadeUp .9s var(--ease) both;
+}
+.hero-tag .dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(3.2rem, 7.5vw, 7rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -.04em;
+  margin-bottom: 28px;
+  animation: fadeUp .9s var(--ease) .12s both;
+}
+.hero-title .line2 {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255,255,255,.55);
+  display: block;
+}
+.hero-title .line3 {
+  color: var(--red);
+  display: block;
+}
+.hero-body {
+  font-family: var(--f-body);
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,.6);
+  max-width: 560px;
+  margin-bottom: 44px;
+  animation: fadeUp .9s var(--ease) .24s both;
+}
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: fadeUp .9s var(--ease) .36s both;
+}
+.hero-stats {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  animation: fadeUp .9s var(--ease) .5s both;
+}
+.hero-stat {
+  padding: 36px 40px;
+  border-right: 1px solid var(--border);
+}
+.hero-stat:last-child { border-right: none; }
+.hero-stat .n {
+  font-family: var(--f-display);
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.hero-stat .n span { color: var(--red); }
+.hero-stat .l {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-top: 6px;
+}
+@keyframes fadeUp { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── RIBBON ──────────────────────────────────────────────────── */
+.ribbon {
+  background: var(--red);
+  overflow: hidden;
+  padding: 0;
+  line-height: 0;
+}
+.ribbon-inner {
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
+.ribbon-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  animation: marquee 30s linear infinite;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.ribbon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 44px;
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85);
+  border-right: 1px solid rgba(255,255,255,.2);
+  height: 56px;
+}
+.ribbon-item i { font-size: .9rem; opacity: .7; }
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ── ABOUT ─────────────────────────────────────────────────────── */
+#about {
+  background: var(--bg-alt);
+  color: var(--ink);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.about-image-col { position: relative; }
+.about-main-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+/* ADD_IMAGE: About section main image */
+.about-floater {
+  position: absolute;
+  bottom: -32px;
+  right: -36px;
+  width: 220px;
+  background: var(--red);
+  color: #fff;
+  padding: 28px 28px 24px;
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(217,30,54,.45);
+}
+.about-floater .big {
+  font-family: var(--f-display);
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.about-floater .sm {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .75;
+  margin-top: 6px;
+}
+.about-corner {
+  position: absolute;
+  top: -24px;
+  left: -24px;
+  width: 160px;
+  background: var(--bg-about-card);
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.about-corner i { font-size: 1.5rem; color: var(--red); flex-shrink: 0; }
+.about-corner .txt { font-family: var(--f-ui); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #fff; }
+.about-corner .txt small { display: block; font-weight: 400; opacity: .5; font-size: .65rem; }
+.about-text { padding: 20px 0; }
+.about-text .eyebrow { margin-bottom: 24px; }
+.about-text .display { font-size: clamp(2.4rem, 4vw, 3.5rem); color: var(--c-heading); margin-bottom: 28px; }
+.about-text p { color: var(--c-text-2); font-size: 1.1rem; line-height: 1.9; margin-bottom: 20px; font-weight: 300; }
+.values-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 36px 0; }
+.val-item {
+  background: var(--bg-surface);
+  border-radius: 8px;
+  padding: 20px;
+  border-bottom: 3px solid var(--red);
+  transition: transform .3s var(--ease), box-shadow .3s;
+}
+.val-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.val-item i { color: var(--red); font-size: 1.1rem; margin-bottom: 10px; }
+.val-item h4 { font-family: var(--f-ui); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--c-text); margin-bottom: 4px; }
+.val-item p  { font-size: .88rem; color: var(--c-text-3); margin: 0; line-height: 1.55; }
+
+/* ── UGANDA ───────────────────────────────────────────────────── */
+#uganda {
+  background: var(--navy);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+#uganda::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(217,30,54,.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.uganda-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.uganda-img-col { position: relative; order: 2; }
+.uganda-main-img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* ADD_IMAGE: Uganda section */
+.flag-bar {
+  height: 6px;
+  background: linear-gradient(90deg, #000 33.33%, #FCDC04 33.33% 66.66%, #D90000 66.66%);
+  border-radius: 0 0 4px 4px;
+  margin-top: 4px;
+}
+.uganda-text-col { order: 1; }
+.uganda-text-col .eyebrow { margin-bottom: 24px; }
+.uganda-text-col .display { font-size: clamp(2.4rem, 4vw, 3.5rem); margin-bottom: 28px; }
+.uganda-text-col p { color: rgba(255,255,255,.55); font-size: 1.1rem; font-weight: 300; line-height: 1.9; margin-bottom: 18px; }
+.ug-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 40px;
+}
+.ug-stat {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  padding: 24px 20px;
+  text-align: center;
+  transition: background .3s, border-color .3s;
+}
+.ug-stat:hover { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.15); }
+.ug-stat .n {
+  font-family: var(--f-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--red);
+  letter-spacing: -.03em;
+  line-height: 1;
+}
+.ug-stat .l {
+  font-family: var(--f-ui);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+  margin-top: 6px;
+}
+
+/* ── PROGRAMS ─────────────────────────────────────────────────── */
+#programs {
+  background: var(--bg-page);
+  padding: 140px 0;
+  position: relative;
+}
+.programs-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+.programs-head .display { font-size: clamp(2.6rem, 4.5vw, 4rem); color: var(--c-text); }
+.programs-head .lead { margin-top: 0; }
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.prog-card {
+  background: var(--bg-surface);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: background .4s;
+  cursor: default;
+}
+.prog-card:hover { background: var(--bg-surface-2); }
+.prog-card-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+}
+/* ADD_IMAGE: Program card images */
+.prog-card-body { padding: 32px 28px 36px; background: var(--bg-surface); transition: background .4s; }
+.prog-num {
+  font-family: var(--f-display);
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255,255,255,.04);
+  position: absolute;
+  top: 8px; right: 16px;
+  line-height: 1;
+  pointer-events: none;
+  transition: color .4s;
+}
+.prog-card:hover .prog-num { color: rgba(217,30,54,.08); }
+.prog-icon {
+  width: 48px; height: 48px;
+  background: rgba(217,30,54,.12);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  transition: background .3s;
+}
+.prog-card:hover .prog-icon { background: var(--red); color: #fff; }
+.prog-card-body h3 {
+  font-family: var(--f-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin-bottom: 10px;
+  color: var(--c-text);
+}
+.prog-card-body p { font-size: .95rem; color: var(--c-text-3); line-height: 1.75; font-weight: 300; }
+
+/* ── DONATE ──────────────────────────────────────────────────── */
+#donate { background: var(--bg-alt); color: var(--c-text); padding: 140px 0 0; }
+
+/* WHY DONATE — full bleed dark panel */
+.donate-why {
+  background: var(--ink);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.donate-why-text {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.donate-why-text .eyebrow { margin-bottom: 24px; }
+.donate-why-text .display { font-size: clamp(2.2rem, 3.5vw, 3rem); color: #fff; margin-bottom: 28px; }
+.donate-why-text p { color: rgba(255,255,255,.55); font-size: 1.05rem; font-weight: 300; line-height: 1.85; margin-bottom: 18px; }
+.donate-why-text blockquote {
+  border-left: 3px solid var(--red);
+  padding-left: 24px;
+  margin: 28px 0;
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: rgba(255,255,255,.7);
+  line-height: 1.7;
+}
+.scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.scroll-hint i { animation: bounceY 1.5s infinite; color: var(--red); }
+@keyframes bounceY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+.donate-why-img {
+  position: relative;
+  overflow: hidden;
+}
+/* ADD_IMAGE: Donate section image */
+.donate-why-img-ph {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+}
+.donate-why-img-ph::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(8,10,15,.5) 0%, transparent 100%);
+}
+.impact-pills {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+.impact-pill {
+  background: rgba(8,10,15,.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+  letter-spacing: .06em;
+}
+.impact-pill .pill-icon { color: var(--red); }
+
+.donate-cats-head { text-align: center; margin-bottom: 16px; }
+.donate-cats-head .display { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--c-text); margin-top: 14px; }
+.donate-cats-head .lead.dark { margin-top: 12px; }
+.donate-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.dtab {
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 11px 26px;
+  border-radius: 4px;
+  border: 1.5px solid var(--donate-chip-border);
+  background: transparent;
+  color: var(--donate-chip-text);
+  cursor: pointer;
+  transition: all .25s;
+}
+.dtab.active, .dtab:hover { border-color: var(--red); color: var(--red); background: rgba(217,30,54,.06); }
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-bottom: 100px;
+}
+.d-card {
+  background: var(--bg-surface);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform .35s var(--ease), box-shadow .35s, border-color .35s;
+}
+.d-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); border-color: var(--red); }
+.d-card-top {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  position: relative;
+  overflow: hidden;
+}
+.dc1 { background: linear-gradient(135deg, #07122b, #0d1e42); }
+.dc2 { background: linear-gradient(135deg, #b01629, #d91e36); }
+.dc3 { background: linear-gradient(135deg, #080a0f, #1a1a2e); }
+.dc4 { background: linear-gradient(135deg, #0d1e42, #152656); }
+.dc5 { background: linear-gradient(135deg, #d91e36, #ff3355); }
+.dc6 { background: linear-gradient(135deg, #152656, #07122b); }
+.d-card-body { padding: 28px 24px 32px; }
+.d-card-body h3 {
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--c-text);
+  margin-bottom: 10px;
+}
+.d-card-body p { font-size: .95rem; color: var(--c-text-3); line-height: 1.7; margin-bottom: 22px; }
+.amount-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.amount-chips button {
+  font-family: var(--f-ui);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  padding: 7px 14px;
+  border-radius: 4px;
+  border: 1.5px solid var(--donate-chip-border);
+  background: transparent;
+  color: var(--donate-chip-text);
+  cursor: pointer;
+  transition: all .2s;
+}
+.amount-chips button:hover { border-color: var(--red); color: var(--red); }
+.d-card-body .btn { width: 100%; justify-content: center; font-size: .72rem; }
+
+/* ── TEAM ───────────────────────────────────────────────────────── */
+#team { background: var(--bg-page); padding: 140px 0; }
+.team-head { text-align: center; margin-bottom: 80px; }
+.team-head .display { font-size: clamp(2.4rem, 4vw, 3.8rem); margin-top: 16px; color: var(--c-text); }
+.team-head .lead { margin: 16px auto 0; max-width: 600px; }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tm-card {
+  background: var(--bg-surface);
+  overflow: hidden;
+  position: relative;
+  transition: background .35s;
+}
+.tm-card:hover { background: var(--bg-surface-2); }
+.tm-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+}
+/* ADD_IMAGE: Team member photos */
+.tm-img .img-placeholder { height: 100%; }
+.tm-hover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,10,15,.95) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity .35s;
+}
+.tm-card:hover .tm-hover { opacity: 1; }
+.tm-hover .quals { font-size: .8rem; color: rgba(255,255,255,.7); line-height: 1.7; font-weight: 300; }
+.tm-body { padding: 24px 24px 28px; }
+.tm-role {
+  font-family: var(--f-ui);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+.tm-name {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  line-height: 1.25;
+  color: var(--c-text);
+}
+.tm-qual {
+  font-size: .8rem;
+  color: var(--c-text-4);
+  line-height: 1.65;
+  margin-top: 8px;
+}
+
+/* ── GALLERY ─────────────────────────────────────────────────── */
+#gallery {
+  background: var(--bg-alt);
+  color: var(--ink);
+  padding: 140px 0;
+}
+.gallery-head { margin-bottom: 64px; }
+.gallery-head .display { font-size: clamp(2.4rem, 4vw, 3.8rem); color: var(--c-text); margin-top: 16px; }
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+  gap: 8px;
+}
+.g-item {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.g-item:nth-child(1) { grid-column: 1/8; grid-row: 1/3; }
+.g-item:nth-child(2) { grid-column: 8/13; grid-row: 1; }
+.g-item:nth-child(3) { grid-column: 8/13; grid-row: 2; }
+.g-item:nth-child(4) { grid-column: 1/5; grid-row: 3; }
+.g-item:nth-child(5) { grid-column: 5/9; grid-row: 3; }
+.g-item:nth-child(6) { grid-column: 9/13; grid-row: 3; }
+/* ADD_IMAGE: Gallery photos */
+.g-item .img-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+}
+.g-item:nth-child(1) .img-placeholder { min-height: 460px; }
+.g-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,10,15,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.g-item:hover .g-overlay { opacity: 1; }
+.g-overlay i { font-size: 1.8rem; color: #fff; }
+.gallery-note {
+  margin-top: 32px;
+  text-align: center;
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  color: var(--c-text-3);
+  letter-spacing: .06em;
+}
+.gallery-note code { background: rgba(8,10,15,.08); padding: 3px 8px; border-radius: 4px; font-size: .7rem; }
+
+/* ── NEWSLETTER ────────────────────────────────────────────────── */
+#newsletter {
+  background: var(--bg-alt);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+#newsletter::after {
+  content: '';
+  position: absolute;
+  bottom: -200px; left: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(217,30,54,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.nl-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.nl-text .eyebrow { margin-bottom: 24px; }
+.nl-text .display { font-size: clamp(2.4rem, 4vw, 3.5rem); margin-bottom: 24px; color: var(--c-text); }
+.nl-text p { color: var(--c-text-2); font-size: 1.05rem; font-weight: 300; line-height: 1.85; margin-bottom: 32px; }
+.nl-perks { display: flex; flex-direction: column; gap: 14px; }
+.nl-perk {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: .95rem;
+  color: var(--c-text-2);
+}
+.nl-perk i { color: var(--red); font-size: .9rem; flex-shrink: 0; width: 16px; }
+.nl-form-wrap {
+  background: var(--bg-form);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px 44px;
+}
+.form-switcher {
+  display: flex;
+  background: var(--bg-switcher);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 36px;
+  gap: 4px;
+}
+.fsw-btn {
+  flex: 1;
+  text-align: center;
+  padding: 11px;
+  border-radius: 6px;
+  font-family: var(--f-ui);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  cursor: pointer;
+  transition: all .25s;
+  user-select: none;
+}
+.fsw-btn.active { background: var(--red); color: #fff; }
+.f-group { margin-bottom: 18px; }
+.f-group label {
+  display: block;
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 8px;
+}
+.f-group input {
+  width: 100%;
+  background: var(--bg-form-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-family: var(--f-body);
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+  transition: border-color .25s, background .25s;
+}
+.f-group input:focus { border-color: var(--red); background: var(--bg-input); }
+.f-group input::placeholder { color: rgba(255,255,255,.2); }
+.f-submit .btn { width: 100%; justify-content: center; margin-top: 6px; }
+.f-panel { display: none; }
+.f-panel.active { display: block; }
+
+/* ── CONTACT ─────────────────────────────────────────────────── */
+#contact { background: var(--bg-page); padding: 140px 0; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-left .eyebrow { margin-bottom: 24px; }
+.contact-left .display { font-size: clamp(2.2rem, 3.5vw, 3rem); margin-bottom: 24px; color: var(--c-text); }
+.contact-left > p { color: var(--c-text-2); font-size: 1.05rem; font-weight: 300; line-height: 1.85; margin-bottom: 48px; }
+.c-items { display: flex; flex-direction: column; gap: 24px; margin-bottom: 48px; }
+.c-item { display: flex; gap: 18px; align-items: flex-start; }
+.c-icon {
+  width: 48px; height: 48px;
+  background: rgba(217,30,54,.1);
+  border: 1px solid rgba(217,30,54,.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.c-item h4 {
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 4px;
+}
+.c-item p { font-size: 1rem; color: var(--c-text-2); }
+.c-item a { color: var(--red); }
+.socials { display: flex; gap: 10px; }
+.soc-btn {
+  width: 44px; height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .25s, box-shadow .25s, opacity .25s;
+  overflow: hidden;
+}
+.soc-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.4); opacity: .88; }
+.soc-btn img { width: 24px; height: 24px; object-fit: contain; }
+.sb-fb  { background: #1877F2; }
+.sb-ig  { background: linear-gradient(135deg, #f09433,#e6683c,#dc2743,#cc2366,#bc1888); }
+.sb-x   { background: #000; border: 1px solid rgba(255,255,255,.15); }
+.sb-wa  { background: #25D366; }
+.sb-yt  { background: #FF0000; }
+.sb-li  { background: #0A66C2; }
+.contact-form-wrap {
+  background: var(--bg-surface);
+  border-radius: 16px;
+  padding: 52px 48px;
+  border: 1px solid var(--border);
+}
+.contact-form-wrap h3 {
+  font-family: var(--f-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -.03em;
+  margin-bottom: 36px;
+  color: var(--c-text);
+}
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cf-group { margin-bottom: 20px; }
+.cf-group label {
+  display: block;
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 8px;
+}
+.cf-group input, .cf-group textarea, .cf-group select {
+  width: 100%;
+  background: var(--bg-form-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-family: var(--f-body);
+  font-size: 1rem;
+  color: var(--c-text);
+  outline: none;
+  transition: border-color .25s, background .25s;
+}
+.cf-group input:focus, .cf-group textarea:focus, .cf-group select:focus { border-color: var(--red); background: var(--bg-input); }
+.cf-group input::placeholder, .cf-group textarea::placeholder { color: rgba(255,255,255,.2); }
+.cf-group textarea { height: 140px; resize: vertical; }
+.cf-group select option { background: var(--bg-surface); color: var(--c-text); }
+.cf-submit .btn { width: 100%; justify-content: center; }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid var(--border);
+}
+.ft-brand p { font-size: .95rem; line-height: 1.8; margin-top: 24px; max-width: 320px; color: var(--c-footer); }
+.ft-brand .socials { margin-top: 28px; }
+.ft-col h5 {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 22px;
+}
+.ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+.ft-col ul a { font-size: .95rem; color: var(--c-footer-link); transition: color .2s; }
+.ft-col ul a:hover { color: var(--c-text); }
+.ft-nl h5 {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 14px;
+}
+.ft-nl p { font-size: .88rem; margin-bottom: 18px; }
+.ft-nl-row { display: flex; gap: 8px; }
+.ft-nl-row input {
+  flex: 1;
+  background: var(--bg-form-input);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 11px 14px;
+  font-family: var(--f-body);
+  font-size: .95rem;
+  color: #fff;
+  outline: none;
+}
+.ft-nl-row input::placeholder { color: rgba(255,255,255,.2); }
+.ft-nl-row button {
+  background: var(--red);
+  border: none;
+  border-radius: 6px;
+  padding: 0 18px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .2s;
+}
+.ft-nl-row button:hover { background: var(--red-2); }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  letter-spacing: .06em;
+  color: var(--c-text-4);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom-links { display: flex; gap: 24px; }
+.footer-bottom-links a { color: var(--c-text-4); transition: color .2s; }
+.footer-bottom-links a:hover { color: var(--c-text-2); }
+
+/* ── BACK TO TOP ─────────────────────────────────────────────── */
+.btt {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 52px; height: 52px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 900;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s, background .2s;
+  box-shadow: 0 8px 32px rgba(217,30,54,.4);
+}
+.btt.show { opacity: 1; transform: translateY(0); }
+.btt:hover { background: var(--red-2); }
+
+/* ── SCROLL REVEAL ───────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s var(--ease), transform .8s var(--ease);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ── LIGHT THEME SPECIFIC OVERRIDES ─────────────────────────
+   Sections that always stay dark (intentional contrast anchors)
+   ─────────────────────────────────────────────────────────── */
+
+/* Hero always dark */
+#hero { background: var(--navy); }
+
+/* Uganda section always dark navy — strong contrast anchor */
+#uganda { background: #07122B; }
+
+/* Donate "why" panel always dark — quote, scripture */
+.donate-why { background: #080A0F; }
+
+/* Newsletter always dark navy */
+#newsletter { background: #07122B; }
+
+/* In light mode, prog-card-body needs card bg */
+[data-theme="light"] .prog-card { background: var(--bg-surface); border: 1px solid var(--border); }
+[data-theme="light"] .prog-card:hover { background: var(--bg-surface-2); }
+
+/* Light mode: about section floating cards stay dark for contrast */
+[data-theme="light"] .about-floater { box-shadow: 0 24px 80px rgba(217,30,54,.3); }
+
+/* Light mode: hero stat bar */
+[data-theme="light"] .hero-stats { background: rgba(7,18,43,.95); }
+[data-theme="light"] .hero-stat .l { color: rgba(255,255,255,.4); }
+
+/* Light mode: gallery item bg */
+[data-theme="light"] .g-item { border: 1px solid var(--border); }
+
+/* Light mode: donate card top keeps gradient (already dark gradient) */
+[data-theme="light"] .d-card { box-shadow: 0 2px 20px rgba(8,10,15,.06); }
+
+/* Light mode: impact pills */
+[data-theme="light"] .impact-pill { background: rgba(8,10,15,.8); border-color: rgba(255,255,255,.15); }
+
+/* Light mode: fsw-btn inactive */
+[data-theme="light"] .fsw-btn { color: rgba(255,255,255,.45); }
+[data-theme="light"] .fsw-btn.active { background: var(--red); color: #fff; }
+
+/* Light mode: nl-form f-group inputs get correct text color */
+[data-theme="light"] .f-group input { color: var(--c-text); }
+[data-theme="light"] .f-group input::placeholder { color: rgba(8,10,15,.3); }
+
+/* Light mode: contact icon bg */
+[data-theme="light"] .c-icon { background: rgba(217,30,54,.08); border-color: rgba(217,30,54,.15); }
+
+/* Light mode: topbar always red */
+.topbar { background: var(--red); }
+
+/* Light mode: val-item border bottom */
+[data-theme="light"] .val-item { border-bottom-color: var(--red); box-shadow: 0 2px 12px rgba(8,10,15,.04); }
+
+/* Light mode: prog-icon in light stays red tint */
+[data-theme="light"] .prog-icon { background: rgba(217,30,54,.08); }
+[data-theme="light"] .prog-card:hover .prog-icon { background: var(--red); color: #fff; }
+
+/* Light mode: section eyebrow on light bg sections */
+[data-theme="light"] #about .eyebrow,
+[data-theme="light"] #donate .eyebrow,
+[data-theme="light"] #gallery .eyebrow { color: var(--red); }
+[data-theme="light"] #about .eyebrow::before,
+[data-theme="light"] #donate .eyebrow::before,
+[data-theme="light"] #gallery .eyebrow::before { background: var(--red); }
+
+/* Light mode: footer */
+[data-theme="light"] footer { background: #1a1a24; }
+[data-theme="light"] .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); }
+
+/* Light mode: back to top */
+[data-theme="light"] .btt { box-shadow: 0 8px 32px rgba(217,30,54,.3); }
+
+/* Smooth all theme transitions */
+nav, body, section, .val-item, .d-card, .prog-card, .prog-card-body,
+.tm-card, .contact-form-wrap, .nl-form-wrap, footer, .about-corner,
+.cf-group input, .cf-group textarea, .cf-group select,
+.f-group input, .ft-nl-row input {
+  transition: var(--theme-transition);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media(max-width:1100px){
+  .programs-grid { grid-template-columns: repeat(2,1fr); }
+  .team-grid     { grid-template-columns: repeat(2,1fr); }
+  .footer-top    { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media(max-width:900px){
+  .about-grid,.uganda-grid,.donate-why,.nl-grid,.contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .programs-head { grid-template-columns: 1fr; gap: 20px; }
+  .donate-why-img-ph { min-height: 300px; }
+  .donate-why-text { padding: 48px 36px; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
+  .gallery-masonry { grid-template-columns: repeat(6,1fr); }
+  .g-item:nth-child(1) { grid-column: 1/7; grid-row: 1; }
+  .g-item:nth-child(2) { grid-column: 1/4; grid-row: 2; }
+  .g-item:nth-child(3) { grid-column: 4/7; grid-row: 2; }
+  .g-item:nth-child(4) { grid-column: 1/3; grid-row: 3; }
+  .g-item:nth-child(5) { grid-column: 3/5; grid-row: 3; }
+  .g-item:nth-child(6) { grid-column: 5/7; grid-row: 3; }
+  .donate-grid { grid-template-columns: repeat(2,1fr); }
+  .contact-form-wrap { padding: 36px 28px; }
+}
+@media(max-width:680px){
+  .nav-links { display: none; }
+  .hamburger  { display: flex; }
+  .hero-stat  { padding: 24px 20px; }
+  .team-grid  { grid-template-columns: repeat(2,1fr); }
+  .programs-grid { grid-template-columns: 1fr; }
+  .donate-grid { grid-template-columns: 1fr; }
+  .cf-row     { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .values-list { grid-template-columns: 1fr; }
+  .ug-stats   { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:480px){
+  .team-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .gallery-masonry { display: flex; flex-direction: column; }
+  .g-item .img-placeholder { min-height: 220px !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ ANNOUNCEMENT BAR ════════════════ -->
+<div class="topbar">
+  🙏 2025 Campaign — Help us reach 500 more children this year. &nbsp;<span>|</span>&nbsp;
+  <a href="#donate">Give Today →</a>
+</div>
+
+<!-- ════════════════ NAV ════════════════ -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+
+      <a href="#hero" class="nav-logo" aria-label="HFM Home">
+        <!-- YOUR MINISTRY LOGO — saved as logo.png in same folder as this file -->
+        <img src="logo.png" alt="HFM Logo" class="logo-mark" style="width:44px;height:44px;object-fit:contain;border-radius:8px;"/>
+        <div class="logo-words">
+          <span class="l1">Hands to the Fatherless</span>
+          <span class="l2">Ministries — HFM Uganda</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#uganda">Uganda</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#newsletter">Know More</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="donate-link"><a href="#donate"><i class="fa-solid fa-heart fa-sm"></i> &nbsp;Donate</a></li>
+      </ul>
+
+      <!-- Theme toggle -->
+      <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light/dark theme">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+      </button>
+
+      <div class="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#about"       onclick="toggleNav()">About Us</a>
+    <a href="#uganda"      onclick="toggleNav()">About Uganda</a>
+    <a href="#programs"    onclick="toggleNav()">Programs</a>
+    <a href="#team"        onclick="toggleNav()">Our Team</a>
+    <a href="#gallery"     onclick="toggleNav()">Gallery</a>
+    <a href="#newsletter"  onclick="toggleNav()">Know More</a>
+    <a href="#contact"     onclick="toggleNav()">Contact</a>
+    <a href="#donate" class="red" onclick="toggleNav()">❤ Donate Now</a>
+  </div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-img"></div>
+    <!--
+      ══════════════════════════════════════════
+      ADD YOUR HERO BACKGROUND IMAGE:
+      1. Open this file in a text editor
+      2. Find the .hero-bg-img CSS rule
+      3. Replace the `background:` gradient with:
+         background-image: url('YOUR-PHOTO.jpg');
+         background-size: cover;
+         background-position: center top;
+      ══════════════════════════════════════════
+    -->
+    <div class="hero-bg-gradient"></div>
+    <div class="hero-accent"></div>
+  </div>
+  <div class="hero-watermark">HFM</div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-inner">
+        <div class="hero-tag">
+          <div class="dot"></div>
+          Faith — Community — Transformation
+        </div>
+        <h1 class="hero-title">
+          Extending<br>
+          <span class="line2">God's hand to</span>
+          <span class="line3">every fatherless child.</span>
+        </h1>
+        <p class="hero-body">
+          Hands to the Fatherless Ministries is a faith-based organisation in Uganda
+          transforming the lives of orphaned and vulnerable children through education,
+          healthcare, vocational training, and the enduring hope of the Gospel.
+        </p>
+        <div class="hero-cta">
+          <a href="#donate" class="btn btn-red">
+            <i class="fa-solid fa-heart fa-sm"></i> Give Today
+          </a>
+          <a href="#about" class="btn btn-ghost">
+            Our Story <i class="fa-solid fa-arrow-right fa-sm"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-stats container">
+    <div class="hero-stat">
+      <div class="n">320<span>+</span></div>
+      <div class="l">Children Served</div>
+    </div>
+    <div class="hero-stat">
+      <div class="n">5<span>+</span></div>
+      <div class="l">Districts Reached</div>
+    </div>
+    <div class="hero-stat">
+      <div class="n">7</div>
+      <div class="l">Years of Ministry</div>
+    </div>
+    <div class="hero-stat">
+      <div class="n">100<span>%</span></div>
+      <div class="l">Faith Driven</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ RIBBON ════════════════ -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-inner">
+    <div class="ribbon-track">
+      <div class="ribbon-item"><i class="fa-solid fa-graduation-cap"></i> Education Support</div>
+      <div class="ribbon-item"><i class="fa-solid fa-heart-pulse"></i> Healthcare</div>
+      <div class="ribbon-item"><i class="fa-solid fa-hands-holding-child"></i> Child Protection</div>
+      <div class="ribbon-item"><i class="fa-solid fa-briefcase"></i> Vocational Training</div>
+      <div class="ribbon-item"><i class="fa-solid fa-store"></i> Business Development</div>
+      <div class="ribbon-item"><i class="fa-solid fa-cross"></i> Spiritual Formation</div>
+      <div class="ribbon-item"><i class="fa-solid fa-seedling"></i> Community Empowerment</div>
+      <!-- duplicate for seamless loop -->
+      <div class="ribbon-item"><i class="fa-solid fa-graduation-cap"></i> Education Support</div>
+      <div class="ribbon-item"><i class="fa-solid fa-heart-pulse"></i> Healthcare</div>
+      <div class="ribbon-item"><i class="fa-solid fa-hands-holding-child"></i> Child Protection</div>
+      <div class="ribbon-item"><i class="fa-solid fa-briefcase"></i> Vocational Training</div>
+      <div class="ribbon-item"><i class="fa-solid fa-store"></i> Business Development</div>
+      <div class="ribbon-item"><i class="fa-solid fa-cross"></i> Spiritual Formation</div>
+      <div class="ribbon-item"><i class="fa-solid fa-seedling"></i> Community Empowerment</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ ABOUT ════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Image column -->
+      <div class="about-image-col reveal">
+        <div class="about-main-img">
+          <!--
+            ══════════════════════════════════════════
+            ADD YOUR ABOUT IMAGE:
+            Replace the div below with:
+            <img src="about-photo.jpg" alt="About HFM"
+                 style="width:100%;height:100%;object-fit:cover;"/>
+            ══════════════════════════════════════════
+          -->
+          <div class="img-placeholder" style="height:100%;min-height:560px;">
+            <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+            <div class="ph-label">Add Your About<br>Section Photo Here</div>
+            <div class="ph-tag">ADD_IMAGE → about-photo.jpg</div>
+          </div>
+        </div>
+        <div class="about-floater">
+          <div class="big">2018</div>
+          <div class="sm">Year Founded</div>
+        </div>
+        <div class="about-corner">
+          <i class="fa-solid fa-award"></i>
+          <div class="txt">Registered NGO <small>Uganda Bureau</small></div>
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="about-text reveal reveal-delay-2">
+        <div class="eyebrow">Who We Are</div>
+        <h2 class="display">A ministry born<br>out of <em>compassion.</em></h2>
+        <p>Hands to the Fatherless Ministries (HFM) was founded on a conviction as old as Scripture itself: that to care for the orphan and the widow is not optional — it is the very heart of pure religion (James 1:27).</p>
+        <p>Operating across Uganda, we work in the most underserved communities — reaching children who have lost parents, who face extreme poverty, and who desperately need both practical support and the unconditional love of a God who sees them.</p>
+        <p>We believe in holistic transformation: meeting physical needs while nurturing spiritual growth, academic excellence, and emotional wholeness. Every child we serve is known by name.</p>
+        <div class="values-list">
+          <div class="val-item">
+            <!-- icon-faith.png → cross / faith icon -->
+            <img src="icon-faith.png" alt="Faith" style="width:32px;height:32px;object-fit:contain;margin-bottom:10px;"/>
+            <h4>Faith-Centred</h4>
+            <p>Everything flows from our commitment to the Gospel.</p>
+          </div>
+          <div class="val-item">
+            <!-- icon-child.png → child / hands icon -->
+            <img src="icon-child.png" alt="Child-Focused" style="width:32px;height:32px;object-fit:contain;margin-bottom:10px;"/>
+            <h4>Child-Focused</h4>
+            <p>Children are not a project. They are our purpose.</p>
+          </div>
+          <div class="val-item">
+            <!-- icon-safeguarding.png → shield / protection icon -->
+            <img src="icon-safeguarding.png" alt="Safeguarding" style="width:32px;height:32px;object-fit:contain;margin-bottom:10px;"/>
+            <h4>Safeguarding First</h4>
+            <p>Protection of every child is non-negotiable for us.</p>
+          </div>
+          <div class="val-item">
+            <!-- icon-community.png → reuse same community icon -->
+            <img src="icon-community.png" alt="Community" style="width:32px;height:32px;object-fit:contain;margin-bottom:10px;filter:invert(20%) sepia(80%) saturate(600%) hue-rotate(330deg);"/>
+            <h4>Community Rooted</h4>
+            <p>Sustainable impact built from the inside out.</p>
+          </div>
+        </div>
+        <a href="#programs" class="btn btn-dark" style="margin-top:8px;">
+          Explore Our Programs <i class="fa-solid fa-arrow-right fa-sm"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ UGANDA ════════════════ -->
+<section id="uganda">
+  <div class="container">
+    <div class="uganda-grid">
+
+      <div class="uganda-text-col reveal">
+        <div class="eyebrow light">The Context</div>
+        <h2 class="display">The Pearl of Africa<br>needs our <em>hands.</em></h2>
+        <p>Uganda is a nation of extraordinary beauty, resilient people, and immense youth. With over 48 million people — more than 52% under the age of 15 — it is one of the youngest, and most dynamic, nations on earth.</p>
+        <p>Yet beneath the beauty lies deep need. An estimated 2.5 million children grow up without one or both parents, due to HIV/AIDS, poverty, conflict, and preventable disease. Nearly 35% of Ugandans live below the poverty line, with limited access to quality education and healthcare.</p>
+        <p>Uganda is also a deeply spiritual nation — and the Church stands at the front line. HFM believes the local church is the most powerful vehicle for lasting community transformation. We partner with local leaders to ensure our impact is dignified, rooted, and self-sustaining.</p>
+        <div class="ug-stats">
+          <div class="ug-stat"><div class="n">48M+</div><div class="l">Population</div></div>
+          <div class="ug-stat"><div class="n">52%</div><div class="l">Under Age 15</div></div>
+          <div class="ug-stat"><div class="n">2.5M</div><div class="l">Orphaned Children</div></div>
+          <div class="ug-stat"><div class="n">35%</div><div class="l">Below Poverty Line</div></div>
+        </div>
+      </div>
+
+      <div class="uganda-img-col reveal reveal-delay-2">
+        <!--
+          ══════════════════════════════════════════
+          ADD YOUR UGANDA PHOTO:
+          Replace the div below with:
+          <img src="uganda-photo.jpg" alt="Uganda"
+               style="width:100%;height:100%;object-fit:cover;border-radius:8px;"/>
+          ══════════════════════════════════════════
+        -->
+        <div class="uganda-main-img">
+          <div class="img-placeholder" style="height:100%;min-height:520px;">
+            <div class="ph-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <div class="ph-label">Add Your Uganda<br>Section Photo Here</div>
+            <div class="ph-tag">ADD_IMAGE → uganda-photo.jpg</div>
+          </div>
+        </div>
+        <div class="flag-bar"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ PROGRAMS ════════════════ -->
+<section id="programs">
+  <div class="container">
+    <div class="programs-head reveal">
+      <div>
+        <div class="eyebrow light">What We Do</div>
+        <h2 class="display" style="margin-top:20px;">Programs that<br><em>change lives.</em></h2>
+      </div>
+      <p class="lead">Our work is holistic — addressing the full spectrum of a child's needs: body, mind, community, and spirit.</p>
+    </div>
+
+    <div class="programs-grid reveal">
+
+      <!-- P1 -->
+      <div class="prog-card">
+        <div class="prog-card-img">
+          <!--
+            ADD_IMAGE: Education program photo
+            Replace with: <img src="program-education.jpg" style="width:100%;height:100%;object-fit:cover;"/>
+          -->
+          <div class="img-placeholder" style="height:100%;min-height:180px;">
+            <div class="ph-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="ph-label">Education Program Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+        </div>
+        <div class="prog-num">01</div>
+        <div class="prog-card-body">
+          <div class="prog-icon"><img src="icon-education.png" alt="Education" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/></div>
+          <h3>Education & Sponsorship</h3>
+          <p>School fees, uniforms, books, and scholastic materials for orphaned children from primary through university — because education is the most powerful equaliser.</p>
+        </div>
+      </div>
+
+      <!-- P2 -->
+      <div class="prog-card">
+        <div class="prog-card-img">
+          <!--ADD_IMAGE: Healthcare program photo-->
+          <div class="img-placeholder" style="height:100%;min-height:180px;">
+            <div class="ph-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="ph-label">Healthcare Program Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+        </div>
+        <div class="prog-num">02</div>
+        <div class="prog-card-body">
+          <div class="prog-icon"><img src="icon-health.png" alt="Healthcare" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/></div>
+          <h3>Healthcare & Medical</h3>
+          <p>Medical check-ups, medications, mental health support, and health education for children and caregivers who would otherwise go without care.</p>
+        </div>
+      </div>
+
+      <!-- P3 -->
+      <div class="prog-card">
+        <div class="prog-card-img">
+          <!--ADD_IMAGE: Vocational program photo-->
+          <div class="img-placeholder" style="height:100%;min-height:180px;">
+            <div class="ph-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="ph-label">Vocational Program Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+        </div>
+        <div class="prog-num">03</div>
+        <div class="prog-card-body">
+          <div class="prog-icon"><img src="icon-vocational.png" alt="Vocational" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/></div>
+          <h3>Vocational Training</h3>
+          <p>Tailoring, carpentry, ICT, catering, and more — practical skills that give youth a dignified path to sustainable income and independence.</p>
+        </div>
+      </div>
+
+      <!-- P4 -->
+      <div class="prog-card">
+        <div class="prog-card-img">
+          <!--ADD_IMAGE: Business program photo-->
+          <div class="img-placeholder" style="height:100%;min-height:180px;">
+            <div class="ph-icon"><i class="fa-solid fa-store"></i></div>
+            <div class="ph-label">Business Program Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+        </div>
+        <div class="prog-num">04</div>
+        <div class="prog-card-body">
+          <div class="prog-icon"><img src="icon-business.png" alt="Business" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/></div>
+          <h3>Small Business Development</h3>
+          <p>Micro-grants and mentorship for youth and caregivers to launch businesses, breaking the cycle of dependency and poverty for entire families.</p>
+        </div>
+      </div>
+
+      <!-- P5 -->
+      <div class="prog-card">
+        <div class="prog-card-img">
+          <!--ADD_IMAGE: Discipleship program photo-->
+          <div class="img-placeholder" style="height:100%;min-height:180px;">
+            <div class="ph-icon"><i class="fa-solid fa-cross"></i></div>
+            <div class="ph-label">Discipleship Program Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+        </div>
+        <div class="prog-num">05</div>
+        <div class="prog-card-body">
+          <div class="prog-icon"><img src="icon-faith.png" alt="Faith" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/></div>
+          <h3>Spiritual Formation</h3>
+          <p>Bible clubs, Sunday school, devotions, and discipleship programmes that root children in faith, identity, and a future full of hope.</p>
+        </div>
+      </div>
+
+      <!-- P6 -->
+      <div class="prog-card">
+        <div class="prog-card-img">
+          <!--ADD_IMAGE: Family reintegration photo-->
+          <div class="img-placeholder" style="height:100%;min-height:180px;">
+            <div class="ph-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>
+            <div class="ph-label">Family & Community Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+        </div>
+        <div class="prog-num">06</div>
+        <div class="prog-card-body">
+          <div class="prog-icon"><img src="icon-family.png" alt="Family" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/></div>
+          <h3>Family Strengthening</h3>
+          <p>Supporting caregivers and extended families to create stable, loving environments — keeping children out of institutional care where possible.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ DONATE ════════════════ -->
+<section id="donate">
+  <div class="container">
+
+    <!-- WHY DONATE PANEL -->
+    <div class="donate-why reveal">
+      <div class="donate-why-text">
+        <div class="eyebrow light">Before You Give</div>
+        <h2 class="display" style="color:#fff;">Why your gift<br><em>matters right now.</em></h2>
+        <p>In Uganda today, over 2.5 million children live without one or both parents. Many go to bed hungry, miss school, and grow up without a sense of identity or future. Every single one has a name. Every single one matters.</p>
+        <blockquote>"Religion that God our Father accepts as pure and faultless is this: to look after orphans and widows in their distress." — James 1:27</blockquote>
+        <p>100% of your donation reaches the children and families we serve. We are transparent, accountable, and deeply grateful for every act of generosity — no matter the size.</p>
+        <div class="scroll-hint">
+          <i class="fa-solid fa-chevron-down"></i>
+          Choose where your gift goes
+        </div>
+      </div>
+      <div class="donate-why-img">
+        <!--
+          ══════════════════════════════════════════
+          ADD YOUR DONATE SECTION IMAGE:
+          Replace the div below with:
+          <img src="donate-photo.jpg" alt="Children"
+               style="width:100%;height:100%;object-fit:cover;"/>
+          ══════════════════════════════════════════
+        -->
+        <div class="donate-why-img-ph">
+          <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <i class="fa-solid fa-image" style="font-size:2.5rem;color:rgba(255,255,255,.15)"></i>
+            <p style="font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2)">Add Donate Section Photo</p>
+            <span style="font-family:var(--f-ui);font-size:.6rem;background:var(--red);color:#fff;padding:4px 12px;border-radius:2px;letter-spacing:.1em;text-transform:uppercase;">ADD_IMAGE → donate-photo.jpg</span>
+          </div>
+        </div>
+        <div class="impact-pills">
+          <div class="impact-pill"><span class="pill-icon"><i class="fa-solid fa-circle-check"></i></span> $30/month — sponsors a child's school term</div>
+          <div class="impact-pill"><span class="pill-icon"><i class="fa-solid fa-circle-check"></i></span> $50 — funds one year of medical care</div>
+          <div class="impact-pill"><span class="pill-icon"><i class="fa-solid fa-circle-check"></i></span> $200 — seeds a family business</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DONATION CATEGORIES -->
+    <div class="donate-cats-head reveal">
+      <div class="eyebrow" style="justify-content:center">Choose Your Giving</div>
+      <h2 class="display">Every cause.<br>Every child. <em>Covered.</em></h2>
+      <p class="lead dark">Select the area that speaks to your heart — or give to the general fund and let us direct where need is greatest.</p>
+    </div>
+
+    <div class="donate-tabs">
+      <button class="dtab active" onclick="filterDonate('all',this)">All Causes</button>
+      <button class="dtab" onclick="filterDonate('general',this)">General</button>
+      <button class="dtab" onclick="filterDonate('staff',this)">Child Support</button>
+      <button class="dtab" onclick="filterDonate('community',this)">Community</button>
+    </div>
+
+    <div class="donate-grid reveal">
+
+      <div class="d-card" data-cat="general">
+        <!-- icon-general.png → your "general / heart / giving" icon -->
+        <div class="d-card-top dc1"><img src="icon-general.png" alt="General Fund" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-body">
+          <h3>General Fund</h3>
+          <p>Support wherever the need is greatest. Your gift is deployed to the most urgent needs across all programs.</p>
+          <div class="amount-chips"><button>$10</button><button>$25</button><button>$50</button><button>$100</button></div>
+          <a href="mailto:info.handsthfm@gmail.com?subject=General Fund Donation" class="btn btn-red"><i class="fa-solid fa-heart fa-sm"></i> Give Now</a>
+        </div>
+      </div>
+
+      <div class="d-card" data-cat="staff">
+        <!-- icon-education.png → your graduation / school icon -->
+        <div class="d-card-top dc2"><img src="icon-education.png" alt="School Fees" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-body">
+          <h3>School Fees</h3>
+          <p>Sponsor a child's education — from primary school through university. Education breaks the cycle.</p>
+          <div class="amount-chips"><button>$30</button><button>$60</button><button>$100</button><button>$200</button></div>
+          <a href="mailto:info.handsthfm@gmail.com?subject=School Fees Donation" class="btn btn-red"><i class="fa-solid fa-graduation-cap fa-sm"></i> Sponsor a Child</a>
+        </div>
+      </div>
+
+      <div class="d-card" data-cat="staff">
+        <!-- icon-health.png → your medical / health icon -->
+        <div class="d-card-top dc3"><img src="icon-health.png" alt="Healthcare" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-body">
+          <h3>Healthcare</h3>
+          <p>Fund medical check-ups, medications, and mental health support for children and families in need.</p>
+          <div class="amount-chips"><button>$20</button><button>$50</button><button>$75</button><button>$150</button></div>
+          <a href="mailto:info.handsthfm@gmail.com?subject=Healthcare Donation" class="btn btn-red"><i class="fa-solid fa-heart-pulse fa-sm"></i> Support Health</a>
+        </div>
+      </div>
+
+      <div class="d-card" data-cat="staff">
+        <!-- icon-vocational.png → your tools / vocational icon -->
+        <div class="d-card-top dc4"><img src="icon-vocational.png" alt="Vocational Training" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-body">
+          <h3>Vocational Training</h3>
+          <p>Equip youth with real, marketable skills — tailoring, ICT, carpentry, catering — for lifelong income.</p>
+          <div class="amount-chips"><button>$50</button><button>$100</button><button>$200</button><button>$500</button></div>
+          <a href="mailto:info.handsthfm@gmail.com?subject=Vocational Training Donation" class="btn btn-red"><i class="fa-solid fa-briefcase fa-sm"></i> Train a Youth</a>
+        </div>
+      </div>
+
+      <div class="d-card" data-cat="community">
+        <!-- icon-business.png → your business / briefcase icon -->
+        <div class="d-card-top dc5"><img src="icon-business.png" alt="Business" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-body">
+          <h3>Business Startup</h3>
+          <p>Seed a small business for a caregiver or youth, lifting entire families out of poverty and dependency.</p>
+          <div class="amount-chips"><button>$100</button><button>$200</button><button>$500</button></div>
+          <a href="mailto:info.handsthfm@gmail.com?subject=Business Grant Donation" class="btn btn-red"><i class="fa-solid fa-store fa-sm"></i> Seed a Business</a>
+        </div>
+      </div>
+
+      <div class="d-card" data-cat="community">
+        <!-- icon-community.png → your community / globe / Uganda icon -->
+        <div class="d-card-top dc6"><img src="icon-community.png" alt="Community" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-body">
+          <h3>Community Needs</h3>
+          <p>Clean water, food security, emergency relief, and infrastructure for the most vulnerable communities in Uganda.</p>
+          <div class="amount-chips"><button>$25</button><button>$75</button><button>$150</button><button>$300</button></div>
+          <a href="mailto:info.handsthfm@gmail.com?subject=Community Needs Donation" class="btn btn-red"><i class="fa-solid fa-globe-africa fa-sm"></i> Help Communities</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TEAM ════════════════ -->
+<section id="team">
+  <div class="container">
+    <div class="team-head reveal">
+      <div class="eyebrow light">The People</div>
+      <h2 class="display">Leadership with<br><em>purpose & credentials.</em></h2>
+      <p class="lead">Dedicated, qualified, and deeply passionate — our team brings global expertise and local heart to everything we do. Hover to see qualifications.</p>
+    </div>
+
+    <div class="team-grid reveal">
+
+      <!-- Member 1: CEO & Founder -->
+      <div class="tm-card">
+        <div class="tm-img">
+          <!--
+            ══════════════════════════════════════════
+            ADD TEAM PHOTO — Joel:
+            Replace div with:
+            <img src="joel-photo.jpg" alt="Nimurungi Joel Shalom"
+                 style="width:100%;height:100%;object-fit:cover;"/>
+            ══════════════════════════════════════════
+          -->
+          <div class="img-placeholder" style="height:100%;min-height:340px;">
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">NJS</div>
+            <div class="ph-label">Joel Shalom Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+          <div class="tm-hover">
+            <div class="quals">
+              <strong>Qualifications:</strong><br>
+              PG Cert. Safeguarding & Child Protection<br>
+              <em style="font-size:.75rem;opacity:.7">University of Reading, UK</em><br><br>
+              BA Economics<br>
+              <em style="font-size:.75rem;opacity:.7">Makerere University</em>
+            </div>
+          </div>
+        </div>
+        <div class="tm-body">
+          <div class="tm-role">CEO &amp; Founder</div>
+          <div class="tm-name">Nimurungi Joel Shalom</div>
+          <div class="tm-qual">PG Cert. Safeguarding — University of Reading, UK · BA Economics — Makerere University</div>
+        </div>
+      </div>
+
+      <!-- Member 2: Director of Expansion -->
+      <div class="tm-card">
+        <div class="tm-img">
+          <!--
+            ADD TEAM PHOTO — Kevin:
+            Replace with: <img src="kevin-photo.jpg" alt="Asiimwe Kevin".../>
+          -->
+          <div class="img-placeholder" style="height:100%;min-height:340px;">
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">AK</div>
+            <div class="ph-label">Asiimwe Kevin Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+          <div class="tm-hover">
+            <div class="quals">
+              <strong>Qualifications:</strong><br>
+              MSc Computer Science<br>
+              <em style="font-size:.75rem;opacity:.7">Tiffin University, USA</em><br><br>
+              BSc Computer Science<br>
+              <em style="font-size:.75rem;opacity:.7">Makerere University</em>
+            </div>
+          </div>
+        </div>
+        <div class="tm-body">
+          <div class="tm-role">Director of Expansion</div>
+          <div class="tm-name">Asiimwe Kevin</div>
+          <div class="tm-qual">MSc Computer Science — Tiffin University, USA · BSc Computer Science — Makerere University</div>
+        </div>
+      </div>
+
+      <!-- Member 3: Director of Community Engagement -->
+      <div class="tm-card">
+        <div class="tm-img">
+          <!--
+            ADD TEAM PHOTO — Jonathan:
+            Replace with: <img src="jonathan-photo.jpg" alt="Atukorirebikuru Jonathan".../>
+          -->
+          <div class="img-placeholder" style="height:100%;min-height:340px;">
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">AJ</div>
+            <div class="ph-label">Jonathan Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+          <div class="tm-hover">
+            <div class="quals">
+              <strong>Qualifications:</strong><br>
+              BSc Community Development<br>
+              <em style="font-size:.75rem;opacity:.7">Mbarara University of<br>Science &amp; Technology</em>
+            </div>
+          </div>
+        </div>
+        <div class="tm-body">
+          <div class="tm-role">Director of Community Engagement</div>
+          <div class="tm-name">Atukorirebikuru Jonathan</div>
+          <div class="tm-qual">BSc Community Development — Mbarara University of Science & Technology</div>
+        </div>
+      </div>
+
+      <!-- Member 4: Director of Operations -->
+      <div class="tm-card">
+        <div class="tm-img">
+          <!--
+            ADD TEAM PHOTO — Gift:
+            Replace with: <img src="gift-photo.jpg" alt="Nakato Gift Angel".../>
+          -->
+          <div class="img-placeholder" style="height:100%;min-height:340px;">
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">NGA</div>
+            <div class="ph-label">Gift Angel Photo</div>
+            <div class="ph-tag">ADD_IMAGE</div>
+          </div>
+          <div class="tm-hover">
+            <div class="quals">
+              <strong>Qualifications:</strong><br>
+              MBChB<br>
+              <em style="font-size:.75rem;opacity:.7">Bachelor of Medicine &amp;<br>Bachelor of Surgery</em>
+            </div>
+          </div>
+        </div>
+        <div class="tm-body">
+          <div class="tm-role">Director of Operations</div>
+          <div class="tm-name">Nakato Gift Angel</div>
+          <div class="tm-qual">MBChB — Bachelor of Medicine & Bachelor of Surgery</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ GALLERY ════════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <div class="eyebrow">Our Story in Pictures</div>
+      <h2 class="display">Moments of <em>transformation.</em></h2>
+    </div>
+
+    <div class="gallery-masonry reveal">
+      <!--
+        ══════════════════════════════════════════
+        ADD GALLERY IMAGES:
+        For each g-item, replace the img-placeholder div with:
+        <img src="gallery-1.jpg" alt="Description"
+             style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        ══════════════════════════════════════════
+      -->
+      <div class="g-item">
+        <div class="img-placeholder" style="height:100%;min-height:460px;">
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="ph-label">Gallery Photo 1<br>(Large Feature)</div>
+          <div class="ph-tag">ADD_IMAGE → gallery-1.jpg</div>
+        </div>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="g-item">
+        <div class="img-placeholder" style="min-height:220px;height:100%;">
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="ph-label">Gallery Photo 2</div>
+          <div class="ph-tag">ADD_IMAGE → gallery-2.jpg</div>
+        </div>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="g-item">
+        <div class="img-placeholder" style="min-height:220px;height:100%;">
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="ph-label">Gallery Photo 3</div>
+          <div class="ph-tag">ADD_IMAGE → gallery-3.jpg</div>
+        </div>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="g-item">
+        <div class="img-placeholder" style="min-height:220px;">
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="ph-label">Gallery Photo 4</div>
+          <div class="ph-tag">ADD_IMAGE → gallery-4.jpg</div>
+        </div>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="g-item">
+        <div class="img-placeholder" style="min-height:220px;">
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="ph-label">Gallery Photo 5</div>
+          <div class="ph-tag">ADD_IMAGE → gallery-5.jpg</div>
+        </div>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+      <div class="g-item">
+        <div class="img-placeholder" style="min-height:220px;">
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
+          <div class="ph-label">Gallery Photo 6</div>
+          <div class="ph-tag">ADD_IMAGE → gallery-6.jpg</div>
+        </div>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
+      </div>
+    </div>
+
+    <p class="gallery-note">
+      To add your photos, find each <code>ADD_IMAGE</code> comment in the HTML and replace the placeholder div with an <code>&lt;img&gt;</code> tag pointing to your photo file. Save in the same folder as this HTML file.
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════ NEWSLETTER ════════════════ -->
+<section id="newsletter">
+  <div class="container">
+    <div class="nl-grid">
+
+      <div class="nl-text reveal">
+        <div class="eyebrow light">Stay Connected</div>
+        <h2 class="display">Know more.<br>Give more.<br><em>Be more.</em></h2>
+        <p>Join our community of supporters and be the first to receive ministry updates, impact stories, urgent prayer requests, and news from the ground in Uganda.</p>
+        <div class="nl-perks">
+          <div class="nl-perk"><i class="fa-solid fa-newspaper"></i> Monthly impact newsletters & children's stories</div>
+          <div class="nl-perk"><i class="fa-solid fa-video"></i> Exclusive video updates from Uganda</div>
+          <div class="nl-perk"><i class="fa-solid fa-bell"></i> First access to urgent prayer & giving alerts</div>
+          <div class="nl-perk"><i class="fa-solid fa-calendar-days"></i> Event invitations & ministry updates</div>
+          <div class="nl-perk"><i class="fa-solid fa-lock"></i> Your data is safe. We never spam or sell it.</div>
+        </div>
+      </div>
+
+      <div class="nl-form-wrap reveal reveal-delay-2">
+        <div class="form-switcher">
+          <div class="fsw-btn active" onclick="switchPanel('register')">Join Community</div>
+          <div class="fsw-btn" onclick="switchPanel('login')">Sign In</div>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="f-panel active" id="registerPanel">
+          <div class="f-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name" id="reg-name"/>
+          </div>
+          <div class="f-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" id="reg-email"/>
+          </div>
+          <div class="f-group">
+            <label>Country</label>
+            <input type="text" placeholder="e.g. Uganda, UK, USA…"/>
+          </div>
+          <div class="f-group">
+            <label>How would you like to be involved?</label>
+            <input type="text" placeholder="Donor, Volunteer, Partner, Prayer…"/>
+          </div>
+          <div class="f-submit">
+            <button class="btn btn-red" onclick="handleSignup()">
+              Join & Stay Updated <i class="fa-solid fa-arrow-right fa-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="f-panel" id="loginPanel">
+          <div class="f-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com"/>
+          </div>
+          <div class="f-group">
+            <label>Password</label>
+            <input type="password" placeholder="••••••••"/>
+          </div>
+          <div class="f-submit">
+            <button class="btn btn-red">Sign In <i class="fa-solid fa-sign-in-alt fa-sm"></i></button>
+          </div>
+          <p style="text-align:center;margin-top:16px;font-size:.85rem;color:rgba(255,255,255,.3);">
+            Forgot password? <a href="mailto:info.handsthfm@gmail.com" style="color:var(--red);">Email us</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CONTACT ════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-left reveal">
+        <div class="eyebrow light">Get in Touch</div>
+        <h2 class="display">We'd love to<br><em>hear from you.</em></h2>
+        <p>Whether you want to partner, volunteer, ask questions, or simply know more — our door is always open.</p>
+        <div class="c-items">
+          <div class="c-item">
+            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email Us</h4>
+              <p><a href="mailto:info.handsthfm@gmail.com">info.handsthfm@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4>Location</h4>
+              <p>Kampala, Uganda 🇺🇬</p>
+            </div>
+          </div>
+          <div class="c-item">
+            <div class="c-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <h4>Response Time</h4>
+              <p>Within 24–48 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social handles — URLs set in CONFIG block in the JavaScript below -->
+        <div class="socials" id="contactSocials"></div>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <h3>Send a Message</h3>
+        <div class="cf-row">
+          <div class="cf-group"><label>First Name</label><input type="text" placeholder="Joel"/></div>
+          <div class="cf-group"><label>Last Name</label><input type="text" placeholder="Shalom"/></div>
+        </div>
+        <div class="cf-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="cf-group">
+          <label>Subject</label>
+          <select>
+            <option>General Enquiry</option>
+            <option>Donation / Giving</option>
+            <option>Volunteer / Partnership</option>
+            <option>Child Sponsorship</option>
+            <option>Media & Press</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="cf-group"><label>Message</label><textarea placeholder="Write your message here…"></textarea></div>
+        <div class="cf-submit">
+          <button class="btn btn-red" onclick="handleContact()">
+            Send Message <i class="fa-solid fa-paper-plane fa-sm"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="ft-brand">
+        <a href="#hero" class="nav-logo">
+          <img src="logo.png" alt="HFM Logo" class="logo-mark" style="width:44px;height:44px;object-fit:contain;border-radius:8px;"/>
+          <div class="logo-words">
+            <span class="l1">Hands to the Fatherless</span>
+            <span class="l2">Ministries — HFM Uganda</span>
+          </div>
+        </a>
+        <p>A faith-based organisation in Uganda transforming the lives of orphaned and vulnerable children through education, healthcare, vocational training, and the enduring hope of the Gospel.</p>
+        <div class="socials" id="footerSocials"></div>
+      </div>
+
+      <div class="ft-col">
+        <h5>Ministry</h5>
+        <ul>
+          <li><a href="#about">About HFM</a></li>
+          <li><a href="#uganda">About Uganda</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#donate">Donate Now</a></li>
+          <li><a href="#donate">Sponsor a Child</a></li>
+          <li><a href="#newsletter">Join Community</a></li>
+          <li><a href="#contact">Volunteer</a></li>
+          <li><a href="#contact">Partner With Us</a></li>
+        </ul>
+      </div>
+
+      <div class="ft-nl">
+        <h5>Newsletter</h5>
+        <p>Get monthly stories and updates from Uganda.</p>
+        <div class="ft-nl-row">
+          <input type="email" placeholder="your@email.com"/>
+          <button><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+        <p style="margin-top:20px;font-size:.85rem;">
+          <i class="fa-solid fa-envelope" style="color:var(--red);margin-right:6px;"></i>
+          <a href="mailto:info.handsthfm@gmail.com" style="color:rgba(255,255,255,.45);">info.handsthfm@gmail.com</a>
+        </p>
+        <p style="margin-top:8px;font-size:.85rem;">
+          <i class="fa-solid fa-location-dot" style="color:var(--red);margin-right:6px;"></i>
+          Kampala, Uganda 🇺🇬
+        </p>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Hands to the Fatherless Ministries (HFM). Registered in Uganda. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Safeguarding Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- ════════════════ JAVASCRIPT ════════════════ -->
+<script src="content.js"></script>
+<script src="images.js"></script>
+<script>
+// ── THEME TOGGLE ─────────────────────────────────────────────
+(function(){
+  // Apply saved or system preference immediately (before paint)
+  const saved = localStorage.getItem('hfm-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = saved || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+
+function toggleTheme(){
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme') || 'dark';
+  const next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('hfm-theme', next);
+  // Brief "flash" animation on toggle button
+  const btn = document.getElementById('themeToggle');
+  btn.style.transform = 'scale(0.85) rotate(20deg)';
+  setTimeout(() => btn.style.transform = '', 300);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   WEBSITE ENGINE — reads from content.js and images.js
+   Do not edit below unless you know what you're doing.
+═══════════════════════════════════════════════════════════════ */
+
+// Merge external CONTENT into CONFIG
+const CONFIG = (typeof CONTENT !== 'undefined') ? CONTENT : {};
+
+// ── SOCIAL LOGOS ──────────────────────────────────────────────
+const SOCIALS = [
+  { key: 'socialFacebook',  cls: 'sb-fb', label: 'Facebook',  logo: 'https://cdn.simpleicons.org/facebook/ffffff' },
+  { key: 'socialInstagram', cls: 'sb-ig', label: 'Instagram', logo: 'https://cdn.simpleicons.org/instagram/ffffff' },
+  { key: 'socialX',         cls: 'sb-x',  label: 'X',         logo: 'https://cdn.simpleicons.org/x/ffffff' },
+  { key: 'socialWhatsApp',  cls: 'sb-wa', label: 'WhatsApp',  logo: 'https://cdn.simpleicons.org/whatsapp/ffffff' },
+  { key: 'socialYouTube',   cls: 'sb-yt', label: 'YouTube',   logo: 'https://cdn.simpleicons.org/youtube/ffffff' },
+  { key: 'socialLinkedIn',  cls: 'sb-li', label: 'LinkedIn',  logo: 'https://cdn.simpleicons.org/linkedin/ffffff' },
+];
+const SOCIALS_FOOTER = ['socialFacebook','socialInstagram','socialWhatsApp','socialYouTube'];
+
+function buildSocials(containerId, keys){
+  const el = document.getElementById(containerId);
+  if(!el) return;
+  el.innerHTML = keys.map(k => {
+    const s = SOCIALS.find(x => x.key === k);
+    if(!s) return '';
+    const url = CONFIG[s.key] || '#';
+    return `<a href="${url}" class="soc-btn ${s.cls}" title="${s.label}" target="_blank" rel="noopener">
+              <img src="${s.logo}" alt="${s.label} logo" width="22" height="22"/>
+            </a>`;
+  }).join('');
+}
+buildSocials('contactSocials', SOCIALS.map(s=>s.key));
+buildSocials('footerSocials',  SOCIALS_FOOTER);
+
+// ── APPLY IMAGES ──────────────────────────────────────────────
+function applyImages(){
+  if(typeof IMAGES === 'undefined') return;
+  const C = CONFIG;
+
+  // Logo
+  document.querySelectorAll('img.logo-mark').forEach(el => { el.src = IMAGES.logo; el.alt = C.orgName || 'HFM'; });
+
+  // Hero background
+  const heroBgEl = document.querySelector('.hero-bg-img');
+  if(heroBgEl && IMAGES.heroBg) {
+    heroBgEl.style.backgroundImage = `url('${IMAGES.heroBg}')`;
+    heroBgEl.style.backgroundSize = 'cover';
+    heroBgEl.style.backgroundPosition = 'center top';
+    heroBgEl.style.opacity = '0.45';
+  }
+
+  // About photo
+  const aboutWrap = document.querySelector('.about-main-img');
+  if(aboutWrap && IMAGES.aboutPhoto)
+    aboutWrap.innerHTML = `<img src="${IMAGES.aboutPhoto}" alt="About ${C.orgName||'HFM'}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"/>`;
+
+  // Uganda photo
+  const ugWrap = document.querySelector('.uganda-main-img');
+  if(ugWrap && IMAGES.ugandaPhoto)
+    ugWrap.innerHTML = `<img src="${IMAGES.ugandaPhoto}" alt="Uganda" style="width:100%;height:100%;object-fit:cover;border-radius:8px;"/>`;
+
+  // Donate photo
+  const donateWrap = document.querySelector('.donate-why-img-ph');
+  if(donateWrap && IMAGES.donatePhoto) {
+    donateWrap.style.backgroundImage = `url('${IMAGES.donatePhoto}')`;
+    donateWrap.style.backgroundSize = 'cover';
+    donateWrap.style.backgroundPosition = 'center';
+  }
+
+  // Program card images
+  const progImgSrcs = [IMAGES.programEducation, IMAGES.programHealthcare, IMAGES.programVocational,
+                       IMAGES.programBusiness, IMAGES.programDiscipleship, IMAGES.programFamily];
+  document.querySelectorAll('.prog-card-img').forEach((wrap, i) => {
+    if(progImgSrcs[i])
+      wrap.innerHTML = `<img src="${progImgSrcs[i]}" alt="Program" style="width:100%;height:100%;object-fit:cover;display:block;"/>`;
+  });
+
+  // Team photos
+  const teamSrcs = [IMAGES.teamJoel, IMAGES.teamKevin, IMAGES.teamJonathan, IMAGES.teamGift];
+  const teamNames = [C.member1Name, C.member2Name, C.member3Name, C.member4Name];
+  document.querySelectorAll('.tm-img').forEach((wrap, i) => {
+    if(teamSrcs[i]) {
+      const hoverContent = wrap.querySelector('.tm-hover')?.innerHTML || '';
+      wrap.innerHTML = `<img src="${teamSrcs[i]}" alt="${teamNames[i]||''}" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <div class="tm-hover">${hoverContent}</div>`;
+    }
+  });
+
+  // Gallery
+  const galSrcs = [IMAGES.gallery1, IMAGES.gallery2, IMAGES.gallery3, IMAGES.gallery4, IMAGES.gallery5, IMAGES.gallery6];
+  const galCaps = [C.galleryCaption1, C.galleryCaption2, C.galleryCaption3, C.galleryCaption4, C.galleryCaption5, C.galleryCaption6];
+  document.querySelectorAll('.g-item').forEach((item, i) => {
+    if(galSrcs[i]) {
+      item.innerHTML = `<img src="${galSrcs[i]}" alt="${galCaps[i]||''}" style="width:100%;height:100%;min-height:220px;object-fit:cover;display:block;transition:transform .5s ease;"/>
+        <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>`;
+    }
+  });
+
+  // Icons — donation card tops
+  const dIconList = [IMAGES.iconGeneral, IMAGES.iconEducation, IMAGES.iconHealth, IMAGES.iconVocational, IMAGES.iconBusiness, IMAGES.iconCommunity];
+  document.querySelectorAll('.d-card-top').forEach((top, i) => {
+    if(dIconList[i]) top.innerHTML = `<img src="${dIconList[i]}" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/>`;
+  });
+
+  // Icons — program card badges
+  const progIconList = [IMAGES.iconEducation, IMAGES.iconHealth, IMAGES.iconVocational, IMAGES.iconBusiness, IMAGES.iconFaith, IMAGES.iconFamily];
+  document.querySelectorAll('.prog-icon').forEach((icon, i) => {
+    if(progIconList[i]) icon.innerHTML = `<img src="${progIconList[i]}" alt="" style="width:22px;height:22px;object-fit:contain;filter:invert(23%) sepia(87%) saturate(1600%) hue-rotate(340deg);"/>`;
+  });
+
+  // Icons — value cards
+  const valIconList = [IMAGES.iconFaith, IMAGES.iconChild, IMAGES.iconSafeguarding, IMAGES.iconCommunity];
+  document.querySelectorAll('.val-item img').forEach((img, i) => { if(valIconList[i]) img.src = valIconList[i]; });
+}
+
+// ── APPLY CONTENT TO DOM ──────────────────────────────────────
+function applyContent(){
+  if(!CONFIG || Object.keys(CONFIG).length === 0) return;
+  const set = (sel, val, prop='textContent') => {
+    if(!val) return;
+    document.querySelectorAll(sel).forEach(el => { if(prop==='innerHTML') el.innerHTML=val; else el.textContent=val; });
+  };
+  const setAttr = (sel, attr, val) => { if(!val) return; document.querySelectorAll(sel).forEach(el => el.setAttribute(attr, val)); };
+
+  // Meta
+  if(CONFIG.metaTitle) document.title = CONFIG.metaTitle;
+  setAttr('meta[name="description"]', 'content', CONFIG.metaDesc);
+
+  // Announcement
+  const aBar = document.querySelector('.topbar');
+  if(aBar) aBar.innerHTML = `${CONFIG.announcementText||''} &nbsp;<span style="opacity:.5">|</span>&nbsp; <a href="#donate">${CONFIG.announcementCTA||'Give Today →'}</a>`;
+
+  // Logo
+  set('.l1', CONFIG.orgName); set('.l2', CONFIG.orgTagline);
+
+  // Hero
+  const hTag = document.querySelector('.hero-tag');
+  if(hTag) hTag.innerHTML = `<div class="dot"></div>${CONFIG.heroTag||''}`;
+  const hTitle = document.querySelector('.hero-title');
+  if(hTitle) hTitle.innerHTML = `${CONFIG.heroLine1||''}<br><span class="line2">${CONFIG.heroLine2||''}</span><span class="line3">${CONFIG.heroLine3||''}</span>`;
+  set('.hero-body', CONFIG.heroBody);
+  const cta1 = document.querySelector('.hero-cta .btn-red');
+  const cta2 = document.querySelector('.hero-cta .btn-ghost');
+  if(cta1 && CONFIG.heroCTA1) cta1.innerHTML = `<i class="fa-solid fa-heart fa-sm"></i> ${CONFIG.heroCTA1}`;
+  if(cta2 && CONFIG.heroCTA2) cta2.innerHTML = `${CONFIG.heroCTA2} <i class="fa-solid fa-arrow-right fa-sm"></i>`;
+
+  // Hero stats
+  const hStats = document.querySelectorAll('.hero-stat');
+  [['stat1Num','stat1Label'],['stat2Num','stat2Label'],['stat3Num','stat3Label'],['stat4Num','stat4Label']].forEach(([n,l],i) => {
+    if(hStats[i]) { if(CONFIG[n]) hStats[i].querySelector('.n').textContent=CONFIG[n]; if(CONFIG[l]) hStats[i].querySelector('.l').textContent=CONFIG[l]; }
+  });
+
+  // About
+  const aboutTitle = document.querySelector('.about-text .display');
+  if(aboutTitle && CONFIG.aboutTitle) aboutTitle.innerHTML = CONFIG.aboutTitle;
+  const aPs = document.querySelectorAll('.about-text p');
+  ['aboutP1','aboutP2','aboutP3'].forEach((k,i) => { if(aPs[i] && CONFIG[k]) aPs[i].textContent = CONFIG[k]; });
+  const valItems = document.querySelectorAll('.val-item');
+  [['val1Title','val1Text'],['val2Title','val2Text'],['val3Title','val3Text'],['val4Title','val4Text']].forEach(([t,d],i) => {
+    if(valItems[i]) { const h4=valItems[i].querySelector('h4'); const p=valItems[i].querySelector('p'); if(h4&&CONFIG[t]) h4.textContent=CONFIG[t]; if(p&&CONFIG[d]) p.textContent=CONFIG[d]; }
+  });
+
+  // Uganda
+  const uPs = document.querySelectorAll('.uganda-text-col p');
+  ['ugandaP1','ugandaP2','ugandaP3'].forEach((k,i) => { if(uPs[i] && CONFIG[k]) uPs[i].textContent = CONFIG[k]; });
+  const ugStats = document.querySelectorAll('.ug-stat');
+  [['ugStat1Num','ugStat1Label'],['ugStat2Num','ugStat2Label'],['ugStat3Num','ugStat3Label'],['ugStat4Num','ugStat4Label']].forEach(([n,l],i) => {
+    if(ugStats[i]) { if(CONFIG[n]) ugStats[i].querySelector('.n').textContent=CONFIG[n]; if(CONFIG[l]) ugStats[i].querySelector('.l').textContent=CONFIG[l]; }
+  });
+
+  // Programs
+  const progCards = document.querySelectorAll('.prog-card-body');
+  [['prog1Title','prog1Body'],['prog2Title','prog2Body'],['prog3Title','prog3Body'],['prog4Title','prog4Body'],['prog5Title','prog5Body'],['prog6Title','prog6Body']].forEach(([t,b],i) => {
+    if(progCards[i]) { const h3=progCards[i].querySelector('h3'); const p=progCards[i].querySelector('p'); if(h3&&CONFIG[t]) h3.textContent=CONFIG[t]; if(p&&CONFIG[b]) p.textContent=CONFIG[b]; }
+  });
+
+  // Donate
+  const donateTitle = document.querySelector('.donate-why-text .display');
+  if(donateTitle && CONFIG.donateTitle) donateTitle.innerHTML = CONFIG.donateTitle;
+  const donatePs = document.querySelectorAll('.donate-why-text p');
+  ['donateP1','donateP2'].forEach((k,i) => { if(donatePs[i] && CONFIG[k]) donatePs[i].textContent = CONFIG[k]; });
+  const donateQuote = document.querySelector('.donate-why-text blockquote');
+  if(donateQuote && CONFIG.donateQuote) donateQuote.textContent = CONFIG.donateQuote;
+  const pills = document.querySelectorAll('.impact-pill');
+  [CONFIG.donatePill1, CONFIG.donatePill2, CONFIG.donatePill3].forEach((t,i) => { if(pills[i]&&t) pills[i].lastChild.textContent=' '+t; });
+
+  // Donate grid
+  const dCards = document.querySelectorAll('.d-card');
+  const gK = [['give1Title','give1Body','give1Amounts','give1CTA','give1Subject'],['give2Title','give2Body','give2Amounts','give2CTA','give2Subject'],
+              ['give3Title','give3Body','give3Amounts','give3CTA','give3Subject'],['give4Title','give4Body','give4Amounts','give4CTA','give4Subject'],
+              ['give5Title','give5Body','give5Amounts','give5CTA','give5Subject'],['give6Title','give6Body','give6Amounts','give6CTA','give6Subject']];
+  dCards.forEach((card,i) => {
+    if(!gK[i]) return;
+    const [tK,bK,aK,cK,sK] = gK[i];
+    const h3=card.querySelector('.d-card-body h3'), p=card.querySelector('.d-card-body p');
+    const chips=card.querySelector('.amount-chips'), link=card.querySelector('.d-card-body .btn');
+    if(h3&&CONFIG[tK]) h3.textContent=CONFIG[tK];
+    if(p&&CONFIG[bK]) p.textContent=CONFIG[bK];
+    if(chips&&CONFIG[aK]) chips.innerHTML=CONFIG[aK].map(a=>`<button>${a}</button>`).join('');
+    if(link&&CONFIG[cK]) { const ico=link.querySelector('i'); link.innerHTML=(ico?ico.outerHTML:'')+' '+CONFIG[cK]; }
+    if(link&&CONFIG[sK]) link.href=`mailto:${CONFIG.orgEmail||'info.handsthfm@gmail.com'}?subject=${encodeURIComponent(CONFIG[sK])}`;
+  });
+
+  // Team
+  const tmCards = document.querySelectorAll('.tm-card');
+  ['member1','member2','member3','member4'].forEach((k,i) => {
+    if(!tmCards[i]) return;
+    const r=tmCards[i].querySelector('.tm-role'), n=tmCards[i].querySelector('.tm-name'), q=tmCards[i].querySelector('.tm-qual');
+    if(r&&CONFIG[k+'Role']) r.textContent=CONFIG[k+'Role'];
+    if(n&&CONFIG[k+'Name']) n.textContent=CONFIG[k+'Name'];
+    if(q&&CONFIG[k+'Short']) q.textContent=CONFIG[k+'Short'];
+  });
+
+  // Gallery
+  const galTitle = document.querySelector('.gallery-head .display');
+  if(galTitle && CONFIG.galleryTitle) galTitle.innerHTML = CONFIG.galleryTitle;
+
+  // Newsletter
+  const nlTitle = document.querySelector('.nl-text .display');
+  if(nlTitle && CONFIG.nlTitle) nlTitle.textContent = CONFIG.nlTitle;
+  const nlPs = document.querySelectorAll('.nl-text p');
+  if(CONFIG.nlBody && nlPs[0]) nlPs[0].textContent = CONFIG.nlBody;
+  const nlPerks = document.querySelectorAll('.nl-perk');
+  [CONFIG.nlPerk1,CONFIG.nlPerk2,CONFIG.nlPerk3,CONFIG.nlPerk4,CONFIG.nlPerk5].forEach((t,i) => {
+    if(nlPerks[i]&&t) nlPerks[i].lastChild.textContent=' '+t;
+  });
+
+  // Contact
+  const cTitle = document.querySelector('.contact-left .display');
+  if(cTitle && CONFIG.contactTitle) cTitle.innerHTML = CONFIG.contactTitle;
+  const cPs = document.querySelectorAll('.contact-left > p');
+  if(CONFIG.contactBody && cPs[0]) cPs[0].textContent = CONFIG.contactBody;
+
+  // Emails
+  document.querySelectorAll('a[href*="mailto:"]').forEach(a => {
+    if(!CONFIG.orgEmail) return;
+    const sub = a.href.includes('?') ? '?'+a.href.split('?')[1] : '';
+    a.href = `mailto:${CONFIG.orgEmail}${sub}`;
+    if(a.textContent.includes('@')) a.textContent = CONFIG.orgEmail;
+  });
+
+  // Footer
+  const fc = document.querySelector('.footer-bottom p');
+  if(fc && CONFIG.footerCopyright) fc.textContent = CONFIG.footerCopyright;
+  const ftDesc = document.querySelector('.ft-brand p');
+  if(ftDesc && CONFIG.footerDesc) ftDesc.textContent = CONFIG.footerDesc;
+  const wm = document.querySelector('.hero-watermark');
+  if(wm && CONFIG.orgShort) wm.textContent = CONFIG.orgShort;
+}
+
+applyContent();
+applyImages();
+
+
+// ── NAV ──────────────────────────────────────────────────────
+function toggleNav(){
+  document.getElementById('mobNav').classList.toggle('open');
+}
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+  document.getElementById('btt').classList.toggle('show', scrollY > 500);
+});
+
+// ── DONATE FILTER ────────────────────────────────────────────
+function filterDonate(cat, btn){
+  document.querySelectorAll('.dtab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.d-card').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+
+// ── NEWSLETTER PANEL SWITCH ──────────────────────────────────
+function switchPanel(p){
+  document.querySelectorAll('.fsw-btn').forEach((b,i) => {
+    b.classList.toggle('active', (p==='register'&&i===0)||(p==='login'&&i===1));
+  });
+  ['registerPanel','loginPanel'].forEach(id => {
+    document.getElementById(id).classList.remove('active');
+    document.getElementById(id).style.display = 'none';
+  });
+  const panel = p==='register' ? 'registerPanel' : 'loginPanel';
+  document.getElementById(panel).classList.add('active');
+  document.getElementById(panel).style.display = 'block';
+}
+document.getElementById('loginPanel').style.display = 'none';
+
+// ── SIGNUP ───────────────────────────────────────────────────
+function handleSignup(){
+  const name  = document.getElementById('reg-name').value.trim();
+  const email = document.getElementById('reg-email').value.trim();
+  if(!name||!email){ alert('Please enter your name and email.'); return; }
+  window.location.href = `mailto:${CONFIG.orgEmail}?subject=New Community Member — ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}`;
+}
+
+// ── CONTACT ──────────────────────────────────────────────────
+function handleContact(){
+  const inputs = document.querySelectorAll('.contact-form-wrap input, .contact-form-wrap textarea, .contact-form-wrap select');
+  const fn = inputs[0]?.value.trim();
+  const ln = inputs[1]?.value.trim();
+  const em = inputs[2]?.value.trim();
+  const sub = inputs[3]?.value || 'General Enquiry';
+  const msg = inputs[4]?.value.trim();
+  if(!fn||!em){ alert('Please fill in your name and email.'); return; }
+  window.location.href = `mailto:${CONFIG.orgEmail}?subject=${encodeURIComponent(sub)} — ${encodeURIComponent(fn+' '+ln)}&body=${encodeURIComponent(msg||'')}`;
+}
+
+// ── SCROLL REVEAL ────────────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ── COUNTER ANIMATION ────────────────────────────────────────
+function animateCount(el, target, suffix=''){
+  let start = 0;
+  const duration = 1800;
+  const step = ts => {
+    if(!start) start = ts;
+    const progress = Math.min((ts - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if(progress < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const statIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.n').forEach(n => {
+        const raw = n.textContent;
+        const val = parseInt(raw.replace(/\D/g,''));
+        const suf = raw.replace(/[0-9]/g,'');
+        if(!isNaN(val) && val > 0) animateCount(n, val, suf);
+      });
+      statIO.unobserve(e.target);
+    }
+  });
+}, { threshold: .3 });
+document.querySelectorAll('.hero-stats, .ug-stats').forEach(el => statIO.observe(el));
+</script>
+</body>
+</html>
