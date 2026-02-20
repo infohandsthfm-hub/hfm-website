@@ -74,8 +74,8 @@
   --c-heading:       #FFFFFF;
   --c-heading-alt:   #FFFFFF;
   --c-muted:         rgba(255,255,255,.4);
-  --c-footer:        rgba(255,255,255,.4);
-  --c-footer-link:   rgba(255,255,255,.45);
+  --c-footer:        rgba(255,255,255,.55);
+  --c-footer-link:   rgba(255,255,255,.7);
 
   --border:          rgba(255,255,255,.08);
   --border-2:        rgba(255,255,255,.12);
@@ -572,6 +572,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   font-family: var(--f-display);
   font-size: clamp(3.2rem, 7.5vw, 7rem);
   font-weight: 800;
+  color: #fff;
   line-height: 1.0;
   letter-spacing: -.04em;
   margin-bottom: 28px;
@@ -580,7 +581,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 .hero-title .line2 {
   font-style: italic;
   font-weight: 300;
-  color: rgba(255,255,255,.55);
+  color: rgba(255,255,255,.75);
   display: block;
 }
 .hero-title .line3 {
@@ -592,7 +593,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   font-size: 1.2rem;
   font-weight: 300;
   line-height: 1.8;
-  color: rgba(255,255,255,.6);
+  color: rgba(255,255,255,.65);
   max-width: 560px;
   margin-bottom: 44px;
   animation: fadeUp .9s var(--ease) .24s both;
@@ -1396,7 +1397,9 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 .cf-submit .btn { width: 100%; justify-content: center; }
 
 /* ── FOOTER ──────────────────────────────────────────────────── */
-footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; }
+footer { background: #07122B; color: rgba(255,255,255,.55); padding: 80px 0 0; }
+footer .l1 { color: rgba(255,255,255,.85) !important; }
+footer .l2 { color: rgba(255,255,255,.35) !important; }
 .footer-top {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
@@ -1404,7 +1407,7 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
   padding-bottom: 60px;
   border-bottom: 1px solid var(--border);
 }
-.ft-brand p { font-size: .95rem; line-height: 1.8; margin-top: 24px; max-width: 320px; color: var(--c-footer); }
+.ft-brand p { font-size: .95rem; line-height: 1.8; margin-top: 24px; max-width: 320px; color: rgba(255,255,255,.5); }
 .ft-brand .socials { margin-top: 28px; }
 .ft-col h5 {
   font-family: var(--f-ui);
@@ -1412,22 +1415,22 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--c-muted);
+  color: rgba(255,255,255,.45);
   margin-bottom: 22px;
 }
 .ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-.ft-col ul a { font-size: .95rem; color: var(--c-footer-link); transition: color .2s; }
-.ft-col ul a:hover { color: var(--c-text); }
+.ft-col ul a { font-size: .95rem; color: rgba(255,255,255,.7); transition: color .2s; }
+.ft-col ul a:hover { color: #fff; }
 .ft-nl h5 {
   font-family: var(--f-ui);
   font-size: .65rem;
   font-weight: 700;
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: var(--c-muted);
+  color: rgba(255,255,255,.45);
   margin-bottom: 14px;
 }
-.ft-nl p { font-size: .88rem; margin-bottom: 18px; }
+.ft-nl p { font-size: .88rem; margin-bottom: 18px; color: rgba(255,255,255,.5); }
 .ft-nl-row { display: flex; gap: 8px; }
 .ft-nl-row input {
   flex: 1;
@@ -1437,7 +1440,7 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
   padding: 11px 14px;
   font-family: var(--f-body);
   font-size: .95rem;
-  color: #fff;
+  color: rgba(255,255,255,.85);
   outline: none;
 }
 .ft-nl-row input::placeholder { color: var(--c-text-4); }
@@ -1460,13 +1463,13 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
   font-family: var(--f-ui);
   font-size: .68rem;
   letter-spacing: .06em;
-  color: var(--c-text-4);
+  color: rgba(255,255,255,.28);
   flex-wrap: wrap;
   gap: 12px;
 }
 .footer-bottom-links { display: flex; gap: 24px; }
-.footer-bottom-links a { color: var(--c-text-4); transition: color .2s; }
-.footer-bottom-links a:hover { color: var(--c-text-2); }
+.footer-bottom-links a { color: rgba(255,255,255,.35); transition: color .2s; }
+.footer-bottom-links a:hover { color: rgba(255,255,255,.7); }
 
 /* ── BACK TO TOP ─────────────────────────────────────────────── */
 .btt {
@@ -1600,21 +1603,15 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
 [data-theme="light"] .cf-group select option { background: #fff; color: #080A0F; }
 [data-theme="light"] .contact-form-wrap h3 { color: var(--c-text); }
 
-/* Light mode: footer always dark */
-[data-theme="light"] footer { background: #0D1020; }
-[data-theme="light"] footer .l1,
-[data-theme="light"] footer .l2,
-[data-theme="light"] footer .ft-brand p,
-[data-theme="light"] footer .ft-col h5,
-[data-theme="light"] footer .ft-col ul a,
-[data-theme="light"] footer .ft-nl h5 { color: rgba(255,255,255,.5); }
-[data-theme="light"] footer .ft-col ul a:hover { color: #fff; }
-[data-theme="light"] footer .ft-nl-row input { color: #fff; background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
-[data-theme="light"] footer .ft-nl-row input::placeholder { color: rgba(255,255,255,.25); }
-[data-theme="light"] footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); }
-[data-theme="light"] footer .footer-bottom p,
-[data-theme="light"] footer .footer-bottom-links a { color: rgba(255,255,255,.25); }
-[data-theme="light"] footer .footer-bottom-links a:hover { color: rgba(255,255,255,.6); }
+/* Footer is ALWAYS dark — no theme vars needed, all colors hardcoded white */
+.ft-email-link { color: rgba(255,255,255,.65); transition: color .2s; }
+.ft-email-link:hover { color: #fff; }
+footer .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); }
+footer .footer-bottom-links a { color: rgba(255,255,255,.28); transition: color .2s; }
+footer .footer-bottom-links a:hover { color: rgba(255,255,255,.65); }
+/* ft-nl-row input always dark-style */
+.ft-nl-row input { color: rgba(255,255,255,.85) !important; background: rgba(255,255,255,.07) !important; border-color: rgba(255,255,255,.12) !important; }
+.ft-nl-row input::placeholder { color: rgba(255,255,255,.3) !important; }
 
 /* Light mode: program eyebrow */
 [data-theme="light"] .programs-head .eyebrow { color: var(--red); }
@@ -1722,7 +1719,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
         <li><a href="#programs">Programs</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#newsletter">Know More</a></li>
+        <li><a href="know-more.html">Know More</a></li>
         <li><a href="#contact">Contact</a></li>
         <li class="donate-link"><a href="donate.html"><i class="fa-solid fa-heart fa-sm"></i> &nbsp;Donate</a></li>
       </ul>
@@ -1744,7 +1741,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
     <a href="#programs"    onclick="toggleNav()">Programs</a>
     <a href="#team"        onclick="toggleNav()">Our Team</a>
     <a href="#gallery"     onclick="toggleNav()">Gallery</a>
-    <a href="#newsletter"  onclick="toggleNav()">Know More</a>
+    <a href="know-more.html" onclick="toggleNav()">Know More</a>
     <a href="#contact"     onclick="toggleNav()">Contact</a>
     <a href="donate.html" class="red" onclick="toggleNav()">❤ Donate Now</a>
   </div>
@@ -2600,15 +2597,15 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
         <p>Get monthly stories and updates from Uganda.</p>
         <div class="ft-nl-row">
           <input type="email" placeholder="your@email.com"/>
-          <button><i class="fa-solid fa-paper-plane"></i></button>
+          <button style="font-family:var(--f-ui);font-size:.75rem;font-weight:700;letter-spacing:.06em;min-width:48px;">→</button>
         </div>
         <p style="margin-top:20px;font-size:.85rem;">
           <i class="fa-solid fa-envelope" style="color:var(--red);margin-right:6px;"></i>
-          <a href="mailto:info.handsthfm@gmail.com" style="color:rgba(255,255,255,.45);">info.handsthfm@gmail.com</a>
+          <a href="mailto:info.handsthfm@gmail.com" class="ft-email-link">info.handsthfm@gmail.com</a>
         </p>
         <p style="margin-top:8px;font-size:.85rem;">
           <i class="fa-solid fa-location-dot" style="color:var(--red);margin-right:6px;"></i>
-          Kampala, Uganda 🇺🇬
+          <span style="color:rgba(255,255,255,.65);">Kampala, Uganda</span> 🇺🇬
         </p>
       </div>
 
@@ -2616,9 +2613,9 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
     <div class="footer-bottom">
       <p>© 2025 Hands to the Fatherless Ministries (HFM). Registered in Uganda. All rights reserved.</p>
       <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Safeguarding Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="know-more.html">Know More</a>
       </div>
     </div>
   </div>
