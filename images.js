@@ -9,21 +9,21 @@
 
 const IMAGES = {
   // Logo (png)
-  logo: "images/logo.png",
+  logo: "images/logo.jpeg",
 
   // Hero / Section photos (use what you have; jpg/jpeg both ok)
-  heroBg:     "images/hero-bg.jpg",
-  aboutPhoto: "images/about-photo.jpg",
-  ugandaPhoto:"images/uganda-photo.jpg",
-  donatePhoto:"images/donate-photo.jpg",
+  heroBg:     "images/hero-bg.jpeg",
+  aboutPhoto: "images/about-photo.jpeg",
+  ugandaPhoto:"images/uganda-photo.jpeg",
+  donatePhoto:"images/donate-photo.jpeg",
 
   // Programs photos
-  programEducation:    "images/program-education.jpg",
-  programHealthcare:   "images/program-healthcare.jpg",
-  programVocational:   "images/program-vocational.jpg",
-  programBusiness:     "images/program-business.jpg",
-  programDiscipleship: "images/program-discipleship.jpg",
-  programFamily:       "images/program-family.jpg",
+  programEducation:    "images/program-education.jpeg",
+  programHealthcare:   "images/program-healthcare.jpeg",
+  programVocational:   "images/program-vocational.jpeg",
+  programBusiness:     "images/program-business.jpeg",
+  programDiscipleship: "images/program-discipleship.jpeg",
+  programFamily:       "images/program-family.jpeg",
 
   // Team member photos (png)
   teamJoel:     "images/joel-photo.jpeg",
