@@ -26,10 +26,10 @@ const IMAGES = {
   programFamily:       "images/program-family.jpeg",
 
   // Team member photos (png)
-  teamJoel:     "images/joel-photo.jpg",
-  teamKevin:    "images/kevin-photo.jpg",
-  teamJonathan: "images/jonathan-photo.jpg",
-  teamGift:     "images/gift-photo.jpg",
+  teamJoel:     "images/joel-photo.png",
+  teamKevin:    "images/kevin-photo.png",
+  teamJonathan: "images/jonathan-photo.png",
+  teamGift:     "images/gift-photo.png",
 
   // Gallery (jpeg)
   gallery1: "images/gallery-1.jpeg",
@@ -49,5 +49,5 @@ const IMAGES = {
   iconVocational:   "images/icon-vocational.png",
   iconBusiness:     "images/icon-business.png",
   iconFamily:       "images/icon-family.png",
-  iconGeneral:      "images/icon-general.png",
+  iconGeneral:      "images/icon-general.jpeg",
 };
