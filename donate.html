@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="donate-content.js"></script>
 <script src="content.js"></script>
 <script src="images.js"></script>
 <style>
@@ -770,14 +771,14 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 
 <!-- ═══════════════════ HERO STRIP ════════════════════════ -->
 <div class="page-hero">
-  <div class="page-hero-wm">GIVE</div>
+  <div class="page-hero-wm" id="heroWm">GIVE</div>
   <div class="page-hero .eyebrow fade-in">
     <div class="eyebrow" style="color:rgba(255,255,255,.5);font-family:var(--f-ui);font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;">
       <span style="display:block;width:24px;height:2px;background:#D91E36;"></span>
       Secure Giving Portal
     </div>
   </div>
-  <h1 class="fade-in">Your gift<br><em>changes everything.</em></h1>
+  <h1 class="fade-in" id="heroTitle">Your gift<br><em id="heroTitleEm">changes everything.</em></h1>
   <p class="fade-in-2">Every child we serve has a name. Every gift you give has a story. Choose your cause, set your amount, and watch your generosity become transformation.</p>
   <div class="scripture-strip fade-in-3">
     <i class="fa-solid fa-cross"></i>
@@ -810,7 +811,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">1</div>
-        <div class="section-title">Giving Frequency</div>
+        <div class="section-title" id="step1Label">Giving Frequency</div>
         <div class="section-divider"></div>
       </div>
 
@@ -831,7 +832,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">2</div>
-        <div class="section-title">Choose Amount</div>
+        <div class="section-title" id="step2Label">Choose Amount</div>
         <div class="section-divider"></div>
       </div>
 
@@ -856,7 +857,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">3</div>
-        <div class="section-title">Choose Your Cause</div>
+        <div class="section-title" id="step3Label">Choose Your Cause</div>
         <div class="section-divider"></div>
       </div>
 
@@ -910,7 +911,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">4</div>
-        <div class="section-title">Your Details</div>
+        <div class="section-title" id="step4Label">Your Details</div>
         <div class="section-divider"></div>
       </div>
 
@@ -986,7 +987,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">5</div>
-        <div class="section-title">Payment Method</div>
+        <div class="section-title" id="step5Label">Payment Method</div>
         <div class="section-divider"></div>
       </div>
 
@@ -1136,7 +1137,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   <!-- ── RIGHT: SUMMARY COL ─────────────────────────── -->
   <div class="donate-summary-col">
 
-    <div class="summary-header"><i class="fa-solid fa-chart-simple" style="color:var(--red);"></i> Your Gift Summary</div>
+    <div class="summary-header"><i class="fa-solid fa-chart-simple" style="color:var(--red);"></i> <span id="summaryTitle">Your Gift Summary</span></div>
 
     <!-- Big amount -->
     <div class="summary-amount-display">
@@ -1182,7 +1183,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 
     <!-- Trust -->
     <div class="trust-section">
-      <div class="trust-title">Why give with HFM</div>
+      <div class="trust-title" id="trustTitle">Why give with HFM</div>
       <div class="trust-badges">
         <div class="trust-badge">
           <i class="fa-solid fa-shield-halved"></i>
@@ -1508,6 +1509,121 @@ updateSummary();
     setCause(cause, card);
   }
 })();
+
+// ── APPLY DONATE CONTENT ─────────────────────────────────────────────────────
+(function(){
+  if(typeof DONATE_CONTENT === 'undefined') return;
+  const C = DONATE_CONTENT;
+  const set = (id, val, asHtml=false) => {
+    const el = document.getElementById(id);
+    if(el && val !== undefined){ if(asHtml) el.innerHTML=val; else el.textContent=val; }
+  };
+  const setHTML = (id, val) => set(id, val, true);
+
+  // Nav
+  if(C.orgName)    set('navName', C.orgName);
+  if(C.orgTagline) set('navTagline', C.orgTagline);
+
+  // Hero
+  if(C.heroTitle)   document.getElementById('heroTitle').childNodes[0].textContent = C.heroTitle;
+  if(C.heroTitleEm) set('heroTitleEm', C.heroTitleEm);
+
+  // Step labels
+  if(C.step1Label) set('step1Label', C.step1Label);
+  if(C.step2Label) set('step2Label', C.step2Label);
+  if(C.step3Label) set('step3Label', C.step3Label);
+  if(C.step4Label) set('step4Label', C.step4Label);
+  if(C.step5Label) set('step5Label', C.step5Label);
+
+  // Frequency toggle
+  const freqOnce = document.getElementById('freqOnce');
+  const freqMon  = document.getElementById('freqMonthly');
+  if(freqOnce && C.freqOnceLabel)    freqOnce.childNodes[2].textContent = ' ' + C.freqOnceLabel;
+  if(freqMon  && C.freqMonthlyLabel) freqMon.childNodes[2].textContent = ' ' + C.freqMonthlyLabel;
+  const badge = freqMon && freqMon.querySelector('.freq-badge');
+  if(badge && C.freqMonthlyBadge) badge.textContent = C.freqMonthlyBadge;
+
+  // Amount grid
+  if(C.amounts) {
+    const grid = document.getElementById('amountGrid');
+    if(grid) {
+      grid.innerHTML = C.amounts.map(([amt, note], i) => {
+        const isDefault = amt === (C.defaultAmount || 50);
+        const isLast = i === C.amounts.length - 1;
+        return '<button class="amount-btn' + (isDefault ? ' active' : '') + '" onclick="setAmount(' + amt + ',this)"' + (isLast ? ' style="grid-column:span 2;"' : '') + '>$' + amt.toLocaleString() + '<span class="impact-note">' + note + '</span></button>';
+      }).join('');
+    }
+  }
+
+  // Cause cards
+  if(C.causes) {
+    const causeGrid = document.querySelector('.cause-grid');
+    if(causeGrid) {
+      const iconMap = {
+        general: 'fa-heart', education: 'fa-graduation-cap', health: 'fa-heart-pulse',
+        vocational: 'fa-briefcase', business: 'fa-store', community: 'fa-globe-africa'
+      };
+      causeGrid.innerHTML = Object.entries(C.causes).map(([key, val]) => {
+        const isActive = key === (C.defaultCause || 'education');
+        return '<div class="cause-card' + (isActive ? ' active' : '') + '" onclick="setCause('' + key + '',this)" data-cause="' + key + '">' +
+          '<div class="cause-icon"><img src="icon-' + key + '.png" alt="" onerror="this.parentNode.innerHTML='<i class=\\'fa-solid ' + iconMap[key] + '\\'></i>'"/></div>' +
+          '<h4>' + val.label + '</h4>' +
+          '<p>' + val.desc + '</p>' +
+          '</div>';
+      }).join('');
+    }
+  }
+
+  // Mobile money steps
+  if(C.mobileStep1) { const el = document.querySelector('.mobile-step:nth-child(1) p'); if(el) el.innerHTML = C.mobileStep1; }
+  if(C.mobileStep2) { const el = document.querySelector('.mobile-step:nth-child(2) p'); if(el) el.innerHTML = C.mobileStep2; }
+  if(C.mobileStep4) { const el = document.querySelector('.mobile-step:nth-child(4) p'); if(el) el.innerHTML = C.mobileStep4; }
+
+  // Bank details
+  const bankDetails = [
+    ['Bank Name',    'bankName',      C.bankName],
+    ['Account Name', 'bankAccName',   C.bankAccName],
+    ['Account Number','bankAccNumber',C.bankAccNumber],
+    ['Swift / BIC',  'bankSwift',     C.bankSwift],
+  ];
+  document.querySelectorAll('.bank-detail .dv').forEach((el, i) => {
+    const val = [C.bankName, C.bankAccName, C.bankAccNumber, C.bankSwift, C.bankRefNote][i];
+    if(val) el.textContent = val;
+  });
+
+  // Trust badges
+  if(C.trustBadges) {
+    const trustWrap = document.querySelector('.trust-badges');
+    if(trustWrap) {
+      const icons = ['fa-shield-halved','fa-file-contract','fa-envelope','fa-lock','fa-church'];
+      trustWrap.innerHTML = C.trustBadges.map((b, i) =>
+        '<div class="trust-badge"><i class="fa-solid ' + (icons[i]||'fa-check') + '"></i><p>' + b.text + '</p></div>'
+      ).join('');
+    }
+  }
+
+  // Summary title
+  if(C.summaryTitle) set('summaryTitle', C.summaryTitle);
+  if(C.trustTitle)   set('trustTitle', C.trustTitle);
+
+  // Thank-you overlay
+  const tyH2 = document.querySelector('.ty-title');
+  if(tyH2 && C.tyTitle) tyH2.innerHTML = 'Thank <em>' + (C.tyTitleEm||'you.') + '</em>';
+  const tyScr = document.querySelector('.ty-scripture');
+  if(tyScr && C.tyScripture) tyScr.textContent = C.tyScripture;
+  const tyBtn1 = document.querySelector('.ty-btn-secondary');
+  if(tyBtn1 && C.tyBtnReturn) tyBtn1.textContent = C.tyBtnReturn;
+  const tyBtn2 = document.querySelector('.ty-btn-primary');
+  if(tyBtn2 && C.tyBtnAgain) tyBtn2.innerHTML = '<i class="fa-solid fa-rotate"></i> ' + C.tyBtnAgain;
+
+  // Update email in submitDonation
+  if(C.orgEmail) {
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+      if(a.textContent.includes('@')) a.textContent = C.orgEmail;
+    });
+  }
+})();
+
 </script>
 </body>
 </html>
