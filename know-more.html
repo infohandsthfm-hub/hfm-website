@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="know-more-content.js"></script>
 <style>
 :root{--red:#D91E36;--red-2:#B01629;--f-display:'Fraunces',Georgia,serif;--f-ui:'Syne',sans-serif;--f-body:'Crimson Pro',Georgia,serif;--ease:cubic-bezier(.22,1,.36,1);}
 :root,[data-theme="dark"]{--bg:#080A0F;--bg-nav:rgba(8,10,15,.96);--bg-card:#0D1E42;--bg-card2:#07122B;--bg-input:rgba(255,255,255,.06);--bg-input-f:rgba(255,255,255,.09);--c:#fff;--c2:rgba(255,255,255,.65);--c3:rgba(255,255,255,.4);--c4:rgba(255,255,255,.22);--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);--shadow:0 12px 48px rgba(0,0,0,.4);}
@@ -138,7 +139,7 @@ footer{background:#07122B;padding:36px 0;margin-top:0;}
     <div class="nav-inner">
       <a href="htfm.html" class="nav-logo" aria-label="HFM Home">
         <img src="logo.png" alt="HFM" class="logo-mark"/>
-        <div class="logo-words"><span class="l1">Hands to the Fatherless</span><span class="l2">Ministries — HFM Uganda</span></div>
+        <div class="logo-words"><span class="l1" id="navName">Hands to the Fatherless</span><span class="l2" id="navTagline">Ministries — HFM Uganda</span></div>
       </a>
       <div style="display:flex;align-items:center;gap:10px;">
         <a href="htfm.html" class="nav-back"><i class="fa-solid fa-arrow-left fa-sm"></i> Back to Site</a>
@@ -152,19 +153,19 @@ footer{background:#07122B;padding:36px 0;margin-top:0;}
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-wm">KNOW</div>
+  <div class="page-hero-wm" id="heroWm">KNOW</div>
   <div class="hero-inner">
-    <div class="eyebrow">Stay Connected</div>
-    <h1>Know more.<br><em>Give more. Be more.</em></h1>
-    <p class="lead">Join the HFM community — receive stories from Uganda, volunteer, partner with us, or sponsor a child. Every way you engage transforms lives.</p>
+    <div class="eyebrow" id="heroEyebrow">Stay Connected</div>
+    <h1><span id="heroTitle">Know more.</span><br><em id="heroTitleEm">Give more. Be more.</em></h1>
+    <p class="lead" id="heroBody">Join the HFM community — receive stories from Uganda, volunteer, partner with us, or sponsor a child. Every way you engage transforms lives.</p>
   </div>
   <div class="page-tabs">
     <div class="page-tabs-inner">
-      <button class="ptab active" onclick="switchTab('newsletter',this)">Newsletter</button>
-      <button class="ptab" onclick="switchTab('ways',this)">Ways to Help</button>
-      <button class="ptab" onclick="switchTab('volunteer',this)">Volunteer</button>
-      <button class="ptab" onclick="switchTab('partner',this)">Partner With Us</button>
-      <button class="ptab" onclick="switchTab('stories',this)">Stories</button>
+      <button class="ptab active" onclick="switchTab('newsletter',this)" id="tab1">Newsletter</button>
+      <button class="ptab" onclick="switchTab('ways',this)" id="tab2">Ways to Help</button>
+      <button class="ptab" onclick="switchTab('volunteer',this)" id="tab3">Volunteer</button>
+      <button class="ptab" onclick="switchTab('partner',this)" id="tab4">Partner With Us</button>
+      <button class="ptab" onclick="switchTab('stories',this)" id="tab5">Stories</button>
     </div>
   </div>
 </div>
@@ -487,7 +488,7 @@ footer{background:#07122B;padding:36px 0;margin-top:0;}
   <div class="container">
     <div class="foot-inner">
       <div class="foot-left">
-        <span class="foot-org">Hands to the Fatherless Ministries</span>
+        <span class="foot-org" id="footerOrg">Hands to the Fatherless Ministries</span>
         <span style="font-family:var(--f-ui);font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);">Registered NGO — Uganda NGO Bureau · 2018</span>
       </div>
       <div class="foot-links">
@@ -553,6 +554,160 @@ function submitPartner(){
   setTimeout(()=>{document.getElementById('partnerSuccess').classList.add('show');},500);
 }
 window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>10));
+
+// ── APPLY KNOW-MORE CONTENT ─────────────────────────────────────────────────
+(function(){
+  if(typeof KNOW_MORE_CONTENT === 'undefined') return;
+  const C = KNOW_MORE_CONTENT;
+  const set = (id, val, asHtml=false) => {
+    const el = document.getElementById(id);
+    if(el && val !== undefined){ if(asHtml) el.innerHTML=val; else el.textContent=val; }
+  };
+
+  set('navName',    C.orgName);
+  set('navTagline', C.orgTagline);
+  set('heroEyebrow',C.heroEyebrow);
+  set('heroTitle',  C.heroTitle);
+  set('heroTitleEm',C.heroTitleEm);
+  set('heroBody',   C.heroBody);
+  set('heroWm',     (C.heroTitle||'KNOW').toUpperCase().replace(/[^A-Z]/g,'').slice(0,4));
+
+  // Tab labels
+  ['tab1','tab2','tab3','tab4','tab5'].forEach((id,i)=>{
+    const t = C['tab'+(i+1)];
+    if(t) set(id, t);
+  });
+
+  // Newsletter section headings/body
+  const nlHead = document.querySelector('#panel-newsletter .section-hd h2');
+  if(nlHead && C.nlTitle) nlHead.innerHTML = C.nlTitle + '<br><em>' + (C.nlTitleEm||'') + '</em>';
+  const nlEyebrow = document.querySelector('#panel-newsletter .section-hd .eyebrow');
+  if(nlEyebrow && C.nlEyebrow) nlEyebrow.textContent = C.nlEyebrow;
+  const nlBodyEl = document.querySelector('#panel-newsletter .section-hd p');
+  if(nlBodyEl && C.nlBody) nlBodyEl.textContent = C.nlBody;
+
+  // Newsletter perks list
+  const perkList = document.querySelector('.perk-list');
+  if(perkList && C.nlPerks){
+    const icons = ['fa-check-circle','fa-check-circle','fa-check-circle','fa-check-circle','fa-check-circle'];
+    perkList.innerHTML = C.nlPerks.map((p,i)=>
+      '<li><i class="fa-solid '+(icons[i]||'fa-check-circle')+'"></i> '+p+'</li>'
+    ).join('');
+    if(C.nlPrivacyNote) perkList.innerHTML += '<li><i class="fa-solid fa-shield-halved"></i> '+C.nlPrivacyNote+'</li>';
+  }
+
+  // Testimonial
+  const testEl = document.querySelector('.perk-list + div p:first-child');
+  if(testEl && C.nlTestimonial) testEl.style.fontStyle='italic';
+
+  // Newsletter success
+  const nlSucc = document.getElementById('nlSuccess');
+  if(nlSucc){
+    const h4=nlSucc.querySelector('h4'), p=nlSucc.querySelector('p');
+    if(h4 && C.nlSuccessTitle) h4.textContent=C.nlSuccessTitle;
+    if(p  && C.nlSuccessBody)  p.textContent=C.nlSuccessBody;
+  }
+
+  // Ways grid — rebuild
+  const waysGrid = document.querySelector('.ways-grid');
+  if(waysGrid && C.ways){
+    waysGrid.innerHTML = C.ways.map(w => {
+      const href = w.link.startsWith('#') ? 'javascript:void(0)' : w.link;
+      const onclick = w.link.startsWith('#newsletter') ? ' onclick="switchTab('newsletter',document.querySelectorAll('.ptab')[0]);return false;"'
+                    : w.link.startsWith('#volunteer')   ? ' onclick="switchTab('volunteer',document.querySelectorAll('.ptab')[2]);return false;"'
+                    : w.link.startsWith('#partner')     ? ' onclick="switchTab('partner',document.querySelectorAll('.ptab')[3]);return false;"'
+                    : '';
+      return \`<div class="way-card">
+        <div class="way-icon"><i class="fa-solid \${w.icon}"></i></div>
+        <h3>\${w.title}</h3>
+        <p>\${w.body}</p>
+        <a href="\${w.link}"\${onclick} class="way-link">\${w.cta} <i class="fa-solid fa-arrow-right fa-sm"></i></a>
+      </div>\`;
+    }).join('');
+  }
+
+  // Volunteer section
+  const volHead = document.querySelector('#panel-volunteer .section-hd h2');
+  if(volHead && C.volTitle) volHead.innerHTML = C.volTitle + ' <em>' + (C.volTitleEm||'') + '</em>';
+
+  const volSkillsWrap = document.querySelector('#panel-volunteer .nl-text > div:last-of-type');
+  if(volSkillsWrap && C.volSkillAreas){
+    volSkillsWrap.innerHTML = C.volSkillAreas.map(s =>
+      \`<div style="display:flex;align-items:flex-start;gap:14px;">
+        <div style="width:32px;height:32px;border-radius:8px;background:rgba(217,30,54,.1);border:1px solid rgba(217,30,54,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--red);font-size:.8rem;"><i class="fa-solid \${s.icon}"></i></div>
+        <div><strong style="font-family:var(--f-ui);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c);display:block;margin-bottom:2px;">\${s.label}</strong><span style="font-size:.9rem;color:var(--c3);">\${s.desc}</span></div>
+      </div>\`
+    ).join('');
+  }
+
+  // Volunteer form success
+  const volSucc = document.getElementById('volSuccess');
+  if(volSucc){
+    const h4=volSucc.querySelector('h4'), p=volSucc.querySelector('p');
+    if(h4&&C.volSuccessTitle) h4.textContent=C.volSuccessTitle;
+    if(p&&C.volSuccessBody)   p.textContent=C.volSuccessBody;
+  }
+
+  // Partner cards
+  const partnerGrid = document.querySelector('.partner-grid');
+  if(partnerGrid && C.partnerCards){
+    partnerGrid.innerHTML = C.partnerCards.map(pc =>
+      \`<div class="partner-card">
+        <div class="badge">\${pc.badge}</div>
+        <h3>\${pc.title}</h3>
+        <p>\${pc.body}</p>
+        <a href="mailto:\${C.orgEmail||'info.handsthfm@gmail.com'}?subject=\${encodeURIComponent(pc.emailSubject)}" style="font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:8px;">Contact Us <i class="fa-solid fa-arrow-right fa-sm"></i></a>
+      </div>\`
+    ).join('');
+  }
+
+  // Partner form success
+  const partSucc = document.getElementById('partnerSuccess');
+  if(partSucc){
+    const h4=partSucc.querySelector('h4'), p=partSucc.querySelector('p');
+    if(h4&&C.partnerSuccessTitle) h4.textContent=C.partnerSuccessTitle;
+    if(p&&C.partnerSuccessBody)   p.textContent=C.partnerSuccessBody;
+  }
+
+  // Stories grid
+  const storyGrid = document.querySelector('.story-grid');
+  if(storyGrid && C.stories){
+    const moreCard = storyGrid.querySelector('.story-card:last-child');
+    storyGrid.innerHTML = C.stories.map(s =>
+      \`<div class="story-card">
+        <div class="story-img"><i class="fa-solid \${s.icon} fa-2x"></i></div>
+        <div class="story-body">
+          <div class="story-cat">\${s.category}</div>
+          <h3>\${s.title}</h3>
+          <p>\${s.body}</p>
+          <span class="read-more">Full story coming soon →</span>
+        </div>
+      </div>\`
+    ).join('');
+    // Re-add the "more stories" placeholder
+    if(C.storiesMoreTitle){
+      storyGrid.innerHTML += \`<div class="story-card" style="display:flex;align-items:center;justify-content:center;flex-direction:column;padding:32px;text-align:center;border-style:dashed;">
+        <i class="fa-solid fa-camera" style="font-size:2rem;color:var(--c4);margin-bottom:16px;"></i>
+        <h3 style="font-size:1rem;color:var(--c3);margin-bottom:8px;">\${C.storiesMoreTitle}</h3>
+        <p style="font-size:.85rem;color:var(--c4);margin-bottom:16px;">\${C.storiesMoreBody||''}</p>
+        <button onclick="switchTab('newsletter',document.querySelectorAll('.ptab')[0])" style="font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);background:rgba(217,30,54,.1);border:1px solid rgba(217,30,54,.2);border-radius:6px;padding:8px 16px;cursor:pointer;">\${C.storiesMoreBtn||'Subscribe Free'}</button>
+      </div>\`;
+    }
+  }
+
+  // Footer
+  set('footerOrg', C.footerOrg);
+  const footCopy = document.querySelector('.foot-copy');
+  if(footCopy && C.footerCopy) footCopy.textContent = C.footerCopy;
+
+  // Update all mailto links
+  if(C.orgEmail){
+    document.querySelectorAll('a[href^="mailto:info.handsthfm"]').forEach(a => {
+      if(a.textContent.includes('@')) a.textContent = C.orgEmail;
+    });
+  }
+})();
+
 // Read URL param to open correct tab
 (function(){
   const tab = new URLSearchParams(window.location.search).get('tab');
