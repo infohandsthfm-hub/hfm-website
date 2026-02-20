@@ -90,8 +90,8 @@
   --val-subtext:     #8A8A8A;
 
   --donate-why-bg:   #080A0F;
-  --donate-chip-border: rgba(8,10,15,.15);
-  --donate-chip-text:   rgba(8,10,15,.5);
+  --donate-chip-border: rgba(255,255,255,.22);
+  --donate-chip-text:   rgba(255,255,255,.72);
 
   --ribbon-text:     rgba(255,255,255,.85);
   --topbar-text:     rgba(255,255,255,.9);
@@ -360,6 +360,8 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   align-items: center;
   justify-content: space-between;
   height: 76px;
+  overflow: hidden;
+  gap: 8px;
 }
 .nav-logo {
   display: flex;
@@ -398,21 +400,23 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 }
 .nav-links li a {
   font-family: var(--f-ui);
-  font-size: .75rem;
+  font-size: .68rem;
   font-weight: 600;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--c-text-3);
-  padding: 8px 14px;
+  padding: 8px 10px;
   border-radius: 4px;
   transition: color .2s, background .2s;
+  white-space: nowrap;
 }
 .nav-links li a:hover { color: var(--c-text); background: var(--bg-input); }
 .nav-links .donate-link a {
   background: var(--red);
   color: #fff;
-  padding: 9px 22px;
+  padding: 9px 16px;
   border-radius: 4px;
+  white-space: nowrap;
 }
 .nav-links .donate-link a:hover { background: var(--red-2); color: #fff; }
 .hamburger {
@@ -458,9 +462,10 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   font-size: .95rem;
   transition: background .3s, color .3s, border-color .3s, transform .2s;
   flex-shrink: 0;
-  margin-left: 8px;
+  margin-left: 4px;
   position: relative;
   overflow: hidden;
+  z-index: 10;
 }
 .theme-toggle:hover { background: var(--red); color: #fff; border-color: var(--red); transform: scale(1.08); }
 .theme-toggle .icon-sun,
@@ -786,8 +791,9 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   margin-top: 4px;
 }
 .uganda-text-col { order: 1; }
-.uganda-text-col .eyebrow { margin-bottom: 24px; }
-.uganda-text-col .display { font-size: clamp(2.4rem, 4vw, 3.5rem); margin-bottom: 28px; }
+.uganda-text-col .eyebrow { margin-bottom: 24px; color: rgba(255,255,255,.5); }
+.uganda-text-col .eyebrow::before { background: var(--red) !important; }
+.uganda-text-col .display { font-size: clamp(2.4rem, 4vw, 3.5rem); margin-bottom: 28px; color: #fff; }
 .uganda-text-col p { color: rgba(255,255,255,.55); font-size: 1.1rem; font-weight: 300; line-height: 1.9; margin-bottom: 18px; }
 .ug-stats {
   display: grid;
@@ -1016,7 +1022,8 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   cursor: pointer;
   transition: all .25s;
 }
-.dtab.active, .dtab:hover { border-color: var(--red); color: var(--red); background: rgba(217,30,54,.06); }
+.dtab.active { background: var(--red); color: #fff !important; border-color: var(--red); }
+.dtab:hover { border-color: var(--red); color: var(--red); background: rgba(217,30,54,.08); }
 .donate-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1036,7 +1043,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
+  font-size: 0;  /* prevents alt text from rendering huge on broken images */
   position: relative;
   overflow: hidden;
 }
@@ -1070,7 +1077,8 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   cursor: pointer;
   transition: all .2s;
 }
-.amount-chips button:hover { border-color: var(--red); color: var(--red); }
+.amount-chips button:hover { background: rgba(217,30,54,.08); border-color: var(--red); color: var(--red); }
+.amount-chips button.active { background: var(--red); border-color: var(--red); color: #fff; }
 .d-card-body .btn { width: 100%; justify-content: center; font-size: .72rem; }
 
 /* ── TEAM ───────────────────────────────────────────────────────── */
@@ -1463,7 +1471,7 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
 /* ── BACK TO TOP ─────────────────────────────────────────────── */
 .btt {
   position: fixed;
-  bottom: 32px; right: 32px;
+  bottom: 24px; right: 16px;
   width: 52px; height: 52px;
   background: var(--red);
   color: #fff;
@@ -1536,6 +1544,11 @@ footer { background: var(--bg-deep); color: var(--c-footer); padding: 80px 0 0; 
 #newsletter .f-switcher-note a { color: rgba(255,255,255,.65); }
 
 /* ── LIGHT MODE — sections that flip ────────────────────────── */
+/* Always-dark section headings stay white regardless of theme */
+#uganda .display,
+.donate-why .display,
+#newsletter .display { color: #fff !important; }
+
 [data-theme="light"] .prog-card { background: var(--bg-surface); border: 1px solid var(--border); }
 [data-theme="light"] .prog-card:hover { background: var(--bg-surface-2); }
 [data-theme="light"] .prog-card-body { background: var(--bg-surface); }
@@ -1632,6 +1645,9 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
   .team-grid     { grid-template-columns: repeat(2,1fr); }
   .footer-top    { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
+@media(max-width:1100px){
+  .logo-words .l2 { display: none; }
+}
 @media(max-width:900px){
   .about-grid,.uganda-grid,.donate-why,.nl-grid,.contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .programs-head { grid-template-columns: 1fr; gap: 20px; }
@@ -1655,16 +1671,26 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
   .team-grid  { grid-template-columns: repeat(2,1fr); }
   .programs-grid { grid-template-columns: 1fr; }
   .donate-grid { grid-template-columns: 1fr; }
+  .d-card-top { height: 130px; }
+  .d-card-body h3 { font-size: 1.1rem; }
+  .amount-chips button { padding: 6px 10px; font-size: .65rem; }
   .cf-row     { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
   .values-list { grid-template-columns: 1fr; }
   .ug-stats   { grid-template-columns: 1fr 1fr; }
+  /* Mobile nav items always visible */
+  .mob-nav { display: none; }
+  .mob-nav.open { display: flex; }
 }
 @media(max-width:480px){
   .team-grid { grid-template-columns: 1fr; }
   .hero-stats { grid-template-columns: 1fr 1fr; }
   .gallery-masonry { display: flex; flex-direction: column; }
   .g-item .img-placeholder { min-height: 220px !important; }
+  .amount-chips { gap: 5px; }
+  .amount-chips button { padding: 5px 8px; font-size: .62rem; }
+  .donate-grid { grid-template-columns: 1fr; }
+  .d-card-body { padding: 20px 16px 24px; }
 }
 </style>
 </head>
@@ -1698,7 +1724,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#newsletter">Know More</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="donate-link"><a href="#donate"><i class="fa-solid fa-heart fa-sm"></i> &nbsp;Donate</a></li>
+        <li class="donate-link"><a href="donate.html"><i class="fa-solid fa-heart fa-sm"></i> &nbsp;Donate</a></li>
       </ul>
 
       <!-- Theme toggle -->
@@ -1720,7 +1746,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
     <a href="#gallery"     onclick="toggleNav()">Gallery</a>
     <a href="#newsletter"  onclick="toggleNav()">Know More</a>
     <a href="#contact"     onclick="toggleNav()">Contact</a>
-    <a href="#donate" class="red" onclick="toggleNav()">❤ Donate Now</a>
+    <a href="donate.html" class="red" onclick="toggleNav()">❤ Donate Now</a>
   </div>
 </nav>
 
@@ -1762,7 +1788,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
           healthcare, vocational training, and the enduring hope of the Gospel.
         </p>
         <div class="hero-cta">
-          <a href="#donate" class="btn btn-red">
+          <a href="donate.html" class="btn btn-red">
             <i class="fa-solid fa-heart fa-sm"></i> Give Today
           </a>
           <a href="#about" class="btn btn-ghost">
@@ -2119,67 +2145,67 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
 
       <div class="d-card" data-cat="general">
         <!-- icon-general.png → your "general / heart / giving" icon -->
-        <div class="d-card-top dc1"><img src="icon-general.png" alt="General Fund" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-top dc1"><img src="icon-general.png" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<i class=&quot;fa-solid fa-heart&quot; style=&quot;font-size:2.2rem;color:rgba(255,255,255,.8);&quot;></i>')"/></div>
         <div class="d-card-body">
           <h3>General Fund</h3>
           <p>Support wherever the need is greatest. Your gift is deployed to the most urgent needs across all programs.</p>
           <div class="amount-chips"><button>$10</button><button>$25</button><button>$50</button><button>$100</button></div>
-          <a href="mailto:info.handsthfm@gmail.com?subject=General Fund Donation" class="btn btn-red"><i class="fa-solid fa-heart fa-sm"></i> Give Now</a>
+          <a href="donate.html?cause=general" class="btn btn-red"><i class="fa-solid fa-heart fa-sm"></i> Give Now</a>
         </div>
       </div>
 
       <div class="d-card" data-cat="staff">
         <!-- icon-education.png → your graduation / school icon -->
-        <div class="d-card-top dc2"><img src="icon-education.png" alt="School Fees" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-top dc2"><img src="icon-education.png" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<i class=&quot;fa-solid fa-graduation-cap&quot; style=&quot;font-size:2.2rem;color:rgba(255,255,255,.8);&quot;></i>')"/></div>
         <div class="d-card-body">
           <h3>School Fees</h3>
           <p>Sponsor a child's education — from primary school through university. Education breaks the cycle.</p>
           <div class="amount-chips"><button>$30</button><button>$60</button><button>$100</button><button>$200</button></div>
-          <a href="mailto:info.handsthfm@gmail.com?subject=School Fees Donation" class="btn btn-red"><i class="fa-solid fa-graduation-cap fa-sm"></i> Sponsor a Child</a>
+          <a href="donate.html?cause=education" class="btn btn-red"><i class="fa-solid fa-graduation-cap fa-sm"></i> Sponsor a Child</a>
         </div>
       </div>
 
       <div class="d-card" data-cat="staff">
         <!-- icon-health.png → your medical / health icon -->
-        <div class="d-card-top dc3"><img src="icon-health.png" alt="Healthcare" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-top dc3"><img src="icon-health.png" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<i class=&quot;fa-solid fa-heart-pulse&quot; style=&quot;font-size:2.2rem;color:rgba(255,255,255,.8);&quot;></i>')"/></div>
         <div class="d-card-body">
           <h3>Healthcare</h3>
           <p>Fund medical check-ups, medications, and mental health support for children and families in need.</p>
           <div class="amount-chips"><button>$20</button><button>$50</button><button>$75</button><button>$150</button></div>
-          <a href="mailto:info.handsthfm@gmail.com?subject=Healthcare Donation" class="btn btn-red"><i class="fa-solid fa-heart-pulse fa-sm"></i> Support Health</a>
+          <a href="donate.html?cause=health" class="btn btn-red"><i class="fa-solid fa-heart-pulse fa-sm"></i> Support Health</a>
         </div>
       </div>
 
       <div class="d-card" data-cat="staff">
         <!-- icon-vocational.png → your tools / vocational icon -->
-        <div class="d-card-top dc4"><img src="icon-vocational.png" alt="Vocational Training" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-top dc4"><img src="icon-vocational.png" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<i class=&quot;fa-solid fa-briefcase&quot; style=&quot;font-size:2.2rem;color:rgba(255,255,255,.8);&quot;></i>')"/></div>
         <div class="d-card-body">
           <h3>Vocational Training</h3>
           <p>Equip youth with real, marketable skills — tailoring, ICT, carpentry, catering — for lifelong income.</p>
           <div class="amount-chips"><button>$50</button><button>$100</button><button>$200</button><button>$500</button></div>
-          <a href="mailto:info.handsthfm@gmail.com?subject=Vocational Training Donation" class="btn btn-red"><i class="fa-solid fa-briefcase fa-sm"></i> Train a Youth</a>
+          <a href="donate.html?cause=vocational" class="btn btn-red"><i class="fa-solid fa-briefcase fa-sm"></i> Train a Youth</a>
         </div>
       </div>
 
       <div class="d-card" data-cat="community">
         <!-- icon-business.png → your business / briefcase icon -->
-        <div class="d-card-top dc5"><img src="icon-business.png" alt="Business" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-top dc5"><img src="icon-business.png" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<i class=&quot;fa-solid fa-store&quot; style=&quot;font-size:2.2rem;color:rgba(255,255,255,.8);&quot;></i>')"/></div>
         <div class="d-card-body">
           <h3>Business Startup</h3>
           <p>Seed a small business for a caregiver or youth, lifting entire families out of poverty and dependency.</p>
           <div class="amount-chips"><button>$100</button><button>$200</button><button>$500</button></div>
-          <a href="mailto:info.handsthfm@gmail.com?subject=Business Grant Donation" class="btn btn-red"><i class="fa-solid fa-store fa-sm"></i> Seed a Business</a>
+          <a href="donate.html?cause=business" class="btn btn-red"><i class="fa-solid fa-store fa-sm"></i> Seed a Business</a>
         </div>
       </div>
 
       <div class="d-card" data-cat="community">
         <!-- icon-community.png → your community / globe / Uganda icon -->
-        <div class="d-card-top dc6"><img src="icon-community.png" alt="Community" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);"/></div>
+        <div class="d-card-top dc6"><img src="icon-community.png" alt="" style="width:64px;height:64px;object-fit:contain;filter:brightness(0) invert(1);" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<i class=&quot;fa-solid fa-globe-africa&quot; style=&quot;font-size:2.2rem;color:rgba(255,255,255,.8);&quot;></i>')"/></div>
         <div class="d-card-body">
           <h3>Community Needs</h3>
           <p>Clean water, food security, emergency relief, and infrastructure for the most vulnerable communities in Uganda.</p>
           <div class="amount-chips"><button>$25</button><button>$75</button><button>$150</button><button>$300</button></div>
-          <a href="mailto:info.handsthfm@gmail.com?subject=Community Needs Donation" class="btn btn-red"><i class="fa-solid fa-globe-africa fa-sm"></i> Help Communities</a>
+          <a href="donate.html?cause=community" class="btn btn-red"><i class="fa-solid fa-globe-africa fa-sm"></i> Help Communities</a>
         </div>
       </div>
 
