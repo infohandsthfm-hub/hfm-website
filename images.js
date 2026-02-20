@@ -9,7 +9,7 @@
 
 const IMAGES = {
   // Logo (png)
-  logo: "images/logo.jpeg",
+  logo: "images/logo.jpg",
 
   // Hero / Section photos (use what you have; jpg/jpeg both ok)
   heroBg:     "images/hero-bg.jpeg",
@@ -26,10 +26,10 @@ const IMAGES = {
   programFamily:       "images/program-family.jpeg",
 
   // Team member photos (png)
-  teamJoel:     "images/joel-photo.jpeg",
-  teamKevin:    "images/kevin-photo.jpeg",
-  teamJonathan: "images/jonathan-photo.jpeg",
-  teamGift:     "images/gift-photo.jpeg",
+  teamJoel:     "images/joel-photo.jpg",
+  teamKevin:    "images/kevin-photo.jpg",
+  teamJonathan: "images/jonathan-photo.jpg",
+  teamGift:     "images/gift-photo.jpg",
 
   // Gallery (jpeg)
   gallery1: "images/gallery-1.jpeg",
