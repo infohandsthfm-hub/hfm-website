@@ -9,7 +9,7 @@
 
 const IMAGES = {
   // Logo (png)
-  logo: "images/logo.jpg",
+  logo: "images/logo.png",
 
   // Hero / Section photos (use what you have; jpg/jpeg both ok)
   heroBg:     "images/hero-bg.jpeg",
