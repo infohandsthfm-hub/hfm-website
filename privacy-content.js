@@ -1,129 +1,315 @@
-/* ============================================================
-   PRIVACY POLICY — CONTENT FILE
-   Edit all text here. Save the file. Reload privacy.html.
-   Do NOT change the key names (left side of colon).
-   Only change the values (right side, inside quotes).
-   Use \n for line breaks inside paragraphs if needed.
-   ============================================================ */
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy — Hands to the Fatherless Ministries</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="privacy-content.js"></script>
+<style>
+:root{--red:#D91E36;--red-2:#B01629;--f-display:'Fraunces',Georgia,serif;--f-ui:'Syne',sans-serif;--f-body:'Crimson Pro',Georgia,serif;--ease:cubic-bezier(.22,1,.36,1);}
+:root,[data-theme="dark"]{--bg:#080A0F;--bg-nav:rgba(8,10,15,.96);--bg-card:#0D1E42;--c:#fff;--c2:rgba(255,255,255,.65);--c3:rgba(255,255,255,.4);--c4:rgba(255,255,255,.22);--border:rgba(255,255,255,.08);--border2:rgba(255,255,255,.14);}
+[data-theme="light"]{--bg:#FAFAF8;--bg-nav:rgba(250,250,248,.97);--bg-card:#FFFFFF;--c:#080A0F;--c2:rgba(8,10,15,.65);--c3:rgba(8,10,15,.4);--c4:rgba(8,10,15,.22);--border:rgba(8,10,15,.1);--border2:rgba(8,10,15,.15);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{font-family:var(--f-body);font-size:17px;line-height:1.7;background:var(--bg);color:var(--c);overflow-x:hidden;transition:background .35s,color .35s;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:780px;margin:0 auto;padding:0 40px;}
+@media(max-width:680px){.container{padding:0 20px;}}
+nav{position:sticky;top:0;z-index:200;background:var(--bg-nav);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:background .35s,border-color .35s;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px;gap:12px;}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{width:38px;height:38px;object-fit:contain;border-radius:7px;}
+.l1{font-family:var(--f-display);font-size:.85rem;font-weight:700;color:var(--c);line-height:1.2;}
+.l2{font-family:var(--f-ui);font-size:.54rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--c3);}
+.nav-back{font-family:var(--f-ui);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c3);padding:7px 13px;border:1px solid var(--border);border-radius:6px;transition:all .2s;display:flex;align-items:center;gap:7px;white-space:nowrap;}
+.nav-back:hover{color:var(--c);border-color:var(--border2);}
+.theme-toggle{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:var(--c3);cursor:pointer;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:all .25s;position:relative;overflow:hidden;flex-shrink:0;}
+[data-theme="light"] .theme-toggle{background:rgba(8,10,15,.05);}
+.theme-toggle:hover{background:var(--red);color:#fff;border-color:var(--red);}
+.icon-sun,.icon-moon{position:absolute;transition:transform .4s var(--ease),opacity .3s;}
+.icon-sun{transform:translateY(0);opacity:1;}
+.icon-moon{transform:translateY(20px);opacity:0;}
+[data-theme="light"] .icon-sun{transform:translateY(-20px);opacity:0;}
+[data-theme="light"] .icon-moon{transform:translateY(0);opacity:1;}
+/* HERO */
+.page-hero{background:linear-gradient(135deg,#07122B 0%,#080A0F 65%);padding:72px 0 80px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(217,30,54,.1) 0%,transparent 65%);pointer-events:none;}
+.page-hero-wm{position:absolute;bottom:-20px;right:0;font-family:var(--f-display);font-size:14rem;font-weight:900;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em;}
+.eyebrow{font-family:var(--f-ui);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;}
+.eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--red);}
+.page-hero h1{font-family:var(--f-display);font-size:clamp(2.4rem,6vw,4.5rem);font-weight:800;line-height:1.0;letter-spacing:-.04em;color:#fff;margin-bottom:16px;}
+.page-hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.5);}
+.page-hero p{font-family:var(--f-body);font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.55);max-width:480px;}
+/* CONTENT */
+.page-content{padding:68px 0 100px;}
+.updated-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-ui);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c4);margin-bottom:44px;padding:6px 14px;background:rgba(217,30,54,.06);border:1px solid rgba(217,30,54,.15);border-radius:100px;}
+.updated-badge i{color:var(--red);font-size:.7rem;}
+h2{font-family:var(--f-display);font-size:clamp(1.7rem,3vw,2.2rem);font-weight:800;letter-spacing:-.03em;color:var(--c);margin:52px 0 16px;line-height:1.15;}
+h2:first-of-type{margin-top:0;}
+h3{font-family:var(--f-ui);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:32px 0 10px;}
+p{font-size:1.05rem;color:var(--c2);line-height:1.85;margin-bottom:16px;}
+ul,ol{padding-left:22px;margin-bottom:16px;}
+li{font-size:1.05rem;color:var(--c2);line-height:1.8;margin-bottom:6px;}
+strong{color:var(--c);font-weight:600;}
+hr{border:none;border-top:1px solid var(--border);margin:48px 0;}
+.highlight-box{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:0 10px 10px 0;padding:22px 26px;margin:28px 0;}
+.highlight-box p{margin-bottom:0;font-size:.95rem;}
+.contact-row{display:flex;align-items:center;gap:12px;padding:16px 0;border-bottom:1px solid var(--border);}
+.contact-row:last-child{border-bottom:none;}
+.contact-row i{color:var(--red);font-size:.9rem;width:18px;flex-shrink:0;}
+.contact-row p{margin:0;font-size:.95rem;}
+/* FOOTER */
+footer{background:#07122B;padding:32px 0;margin-top:0;}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;}
+.foot-org{font-family:var(--f-display);font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+.foot-links a{font-family:var(--f-ui);font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);transition:color .2s;}
+.foot-links a:hover{color:rgba(255,255,255,.85);}
+.foot-copy{font-family:var(--f-ui);font-size:.58rem;color:rgba(255,255,255,.2);letter-spacing:.04em;width:100%;margin-top:4px;}
+@media(max-width:680px){.page-hero{padding:48px 0 56px;}.page-hero-wm{font-size:7rem;}.l2{display:none;}.page-content{padding:48px 0 72px;}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <div class="container" style="max-width:780px;">
+    <div class="nav-inner">
+      <a href="htfm.html" class="nav-logo">
+        <img src="logo.png" alt="HFM" class="logo-mark" onerror="this.style.display='none'"/>
+        <div class="logo-words"><span class="l1" id="navName">Hands to the Fatherless</span><span class="l2" id="navTagline">Ministries — HFM Uganda</span></div>
+      </a>
+      <div style="display:flex;align-items:center;gap:9px;">
+        <a href="htfm.html" class="nav-back"><i class="fa-solid fa-arrow-left fa-sm"></i> Home</a>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
 
-const PRIVACY_CONTENT = {
+<div class="page-hero">
+  <div class="page-hero-wm" id="heroWm">PRIVACY</div>
+  <div class="container" style="max-width:780px;position:relative;z-index:2;">
+    <div class="eyebrow" id="heroEyebrow">Legal Document</div>
+    <h1><span id="heroTitle">Privacy</span> <em id="heroTitleEm">Policy.</em></h1>
+    <p id="heroBody">How we collect, use, and protect your personal information — written in plain language.</p>
+  </div>
+</div>
 
-  // ── ORG INFO ───────────────────────────────────────────────
-  orgName:    "Hands to the Fatherless Ministries",
-  orgTagline: "Ministries — HFM Uganda",
-  orgShort:   "HFM",
-  orgEmail:   "info.handsthfm@gmail.com",
-  orgWebsite: "handsthefatherless.org",
-  orgLocation:"Kampala, Uganda",
-  orgReg:     "Uganda NGO Bureau, 2018",
+<div class="page-content">
+  <div class="container" style="max-width:780px;">
 
-  // ── PAGE META ──────────────────────────────────────────────
-  pageTitle:      "Privacy Policy — Hands to the Fatherless Ministries",
-  heroEyebrow:    "Legal Document",
-  heroTitle:      "Privacy",
-  heroTitleEm:    "Policy.",         // italic word
-  heroBody:       "How we collect, use, and protect your personal information — written in plain language.",
-  lastUpdated:    "January 2025",
+    <div class="updated-badge"><i class="fa-solid fa-calendar-check"></i> Last updated: <span id="lastUpdated">January 2025</span></div>
 
-  // ── SUMMARY BOX ────────────────────────────────────────────
-  summaryTitle: "The short version:",
-  summaryText:  "We collect only what we need to serve you and communicate with you. We never sell your data. We never share it with advertisers. You can ask us to delete your information at any time.",
+    <div class="highlight-box">
+      <p><strong>The short version:</strong> We collect only what we need to serve you and communicate with you. We never sell your data. We never share it with advertisers. You can ask us to delete your information at any time.</p>
+    </div>
 
-  // ── SECTION 1: WHO WE ARE ──────────────────────────────────
-  s1Title: "Who we are",
-  s1Body:  [
-    'Hands to the Fatherless Ministries (<strong>"HFM"</strong>, <strong>"we"</strong>, <strong>"us"</strong>) is a faith-based, non-profit organisation registered in Uganda under the Uganda NGO Bureau. We operate the website at <strong>handsthefatherless.org</strong> (the <strong>"Site"</strong>).',
-    'Our contact email is <a href="mailto:info.handsthfm@gmail.com">info.handsthfm@gmail.com</a>. We are based in Kampala, Uganda.',
-  ],
+    <h2>Who we are</h2>
+    <p>Hands to the Fatherless Ministries (<strong>"HFM"</strong>, <strong>"we"</strong>, <strong>"us"</strong>) is a faith-based, non-profit organisation registered in Uganda under the Uganda NGO Bureau. We operate the website at <strong>handsthefatherless.org</strong> (the <strong>"Site"</strong>).</p>
+    <p>Our contact email is <a href="mailto:info.handsthfm@gmail.com" style="color:var(--red);">info.handsthfm@gmail.com</a>. We are based in Kampala, Uganda.</p>
 
-  // ── SECTION 2: WHAT WE COLLECT ─────────────────────────────
-  s2Title: "What information we collect",
+    <hr/>
 
-  s2aSub:  "Information you give us directly",
-  s2aList: [
-    "<strong>Donation information</strong> — your name, email address, and gift details when you give through our website or contact us to donate.",
-    "<strong>Newsletter sign-up</strong> — your name and email address when you subscribe to our community updates.",
-    "<strong>Contact and enquiry forms</strong> — your name, email, phone number, and message when you reach out to us.",
-    "<strong>Volunteer and partnership applications</strong> — professional details, availability, and your message when you apply to serve with us.",
-  ],
+    <h2>What information we collect</h2>
 
-  s2bSub:  "Information collected automatically",
-  s2bList: [
-    "<strong>Website analytics</strong> — we may collect general, anonymous data about how pages are visited (page views, device type, country). This data is aggregated and contains no personal identifiers.",
-    "<strong>Cookies</strong> — we use one functional cookie to remember your light/dark theme preference. It stores only a single word (\"light\" or \"dark\") and contains no personal information.",
-  ],
+    <h3>Information you give us directly</h3>
+    <ul>
+      <li><strong>Donation information</strong> — your name, email address, and gift details when you give through our website or contact us to donate.</li>
+      <li><strong>Newsletter sign-up</strong> — your name and email address when you subscribe to our community updates.</li>
+      <li><strong>Contact and enquiry forms</strong> — your name, email, phone number, and message when you reach out to us.</li>
+      <li><strong>Volunteer and partnership applications</strong> — professional details, availability, and your message when you apply to serve with us.</li>
+    </ul>
 
-  s2AlertText: "We do <strong>not</strong> use advertising trackers, Facebook pixels, Google remarketing tags, or any third-party profiling technology on this website.",
+    <h3>Information collected automatically</h3>
+    <ul>
+      <li><strong>Website analytics</strong> — we may collect general, anonymous data about how pages are visited (page views, device type, country). This data is aggregated and contains no personal identifiers.</li>
+      <li><strong>Cookies</strong> — we use one functional cookie to remember your light/dark theme preference. It stores only a single word ("light" or "dark") and contains no personal information.</li>
+    </ul>
 
-  // ── SECTION 3: HOW WE USE IT ───────────────────────────────
-  s3Title: "How we use your information",
-  s3Intro: "We use the information we collect only for the following purposes:",
-  s3List: [
-    "To process your donation and send you a receipt",
-    "To send you the newsletter or community updates you have requested",
-    "To respond to your enquiries, volunteer applications, and partnership requests",
-    "To send you impact updates about the children and programmes your gift supports",
-    "To improve our website and communications",
-  ],
-  s3Footer: "We will never use your information to contact you for purposes unrelated to your original request without your explicit permission.",
+    <div class="highlight-box">
+      <p>We do <strong>not</strong> use advertising trackers, Facebook pixels, Google remarketing tags, or any third-party profiling technology on this website.</p>
+    </div>
 
-  // ── SECTION 4: WHO WE SHARE WITH ──────────────────────────
-  s4Title: "Who we share your information with",
-  s4Body1: "We do <strong>not</strong> sell, rent, or trade your personal information to any third party — ever.",
-  s4Body2: "We may share limited information in the following circumstances only:",
-  s4List: [
-    "<strong>Email service providers</strong> — if we use a third-party tool to send newsletters, your email address is shared with that provider solely to deliver messages.",
-    "<strong>Legal obligation</strong> — if required by Ugandan law or a valid legal process, we may need to disclose information. We will notify you unless legally prohibited from doing so.",
-  ],
+    <hr/>
 
-  // ── SECTION 5: HOW LONG ────────────────────────────────────
-  s5Title: "How long we keep your data",
-  s5List: [
-    "<strong>Donation records</strong> — we retain records for 7 years as required for financial accountability and audit purposes.",
-    "<strong>Newsletter subscriptions</strong> — we keep your email address for as long as you are subscribed. You may unsubscribe at any time.",
-    "<strong>Contact form submissions</strong> — we retain correspondence for 2 years for reference, then delete it.",
-    "<strong>Volunteer applications</strong> — we retain applications for 12 months from submission.",
-  ],
+    <h2>How we use your information</h2>
+    <p>We use the information we collect only for the following purposes:</p>
+    <ul>
+      <li>To process your donation and send you a receipt</li>
+      <li>To send you the newsletter or community updates you have requested</li>
+      <li>To respond to your enquiries, volunteer applications, and partnership requests</li>
+      <li>To send you impact updates about the children and programmes your gift supports</li>
+      <li>To improve our website and communications</li>
+    </ul>
+    <p>We will never use your information to contact you for purposes unrelated to your original request without your explicit permission.</p>
 
-  // ── SECTION 6: YOUR RIGHTS ─────────────────────────────────
-  s6Title: "Your rights",
-  s6Intro: "Regardless of where you are located, you have the following rights regarding your personal information:",
-  s6List: [
-    "<strong>Access</strong> — you can ask us what information we hold about you.",
-    "<strong>Correction</strong> — you can ask us to correct inaccurate information.",
-    "<strong>Deletion</strong> — you can ask us to delete your personal information. We will comply unless we have a legal obligation to retain it.",
-    "<strong>Unsubscribe</strong> — you can opt out of communications at any time by replying \"unsubscribe\" to any email we send.",
-  ],
-  s6Footer: 'To exercise any of these rights, email us at <a href="mailto:info.handsthfm@gmail.com">info.handsthfm@gmail.com</a> with "Privacy Request" in the subject line.',
+    <hr/>
 
-  // ── SECTION 7: CHILDREN'S PRIVACY ─────────────────────────
-  s7Title: "Children's privacy",
-  s7Body: [
-    "Our website is not directed at children under the age of 16. We do not knowingly collect personal information from children. If you believe a child has submitted personal information to us without parental consent, please contact us and we will delete it promptly.",
-    "Our communications about the children we serve are always handled with care. We share children's stories only with appropriate permissions and in ways that protect their dignity and safety.",
-  ],
+    <h2>Who we share your information with</h2>
+    <p>We do <strong>not</strong> sell, rent, or trade your personal information to any third party — ever.</p>
+    <p>We may share limited information in the following circumstances only:</p>
+    <ul>
+      <li><strong>Email service providers</strong> — if we use a third-party tool to send newsletters, your email address is shared with that provider solely to deliver messages.</li>
+      <li><strong>Legal obligation</strong> — if required by Ugandan law or a valid legal process, we may need to disclose information. We will notify you unless legally prohibited from doing so.</li>
+    </ul>
 
-  // ── SECTION 8: SECURITY ────────────────────────────────────
-  s8Title: "Security",
-  s8Body:  "We take reasonable steps to protect your personal information from unauthorised access or disclosure. Our email communications are transmitted over encrypted connections where possible. However, no internet transmission is completely secure — if you have concerns about sensitive information, please contact us directly.",
+    <hr/>
 
-  // ── SECTION 9: CHANGES ─────────────────────────────────────
-  s9Title: "Changes to this policy",
-  s9Body:  'We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of our website after any changes constitutes your acceptance of the updated policy.',
+    <h2>How long we keep your data</h2>
+    <ul>
+      <li><strong>Donation records</strong> — we retain records for 7 years as required for financial accountability and audit purposes.</li>
+      <li><strong>Newsletter subscriptions</strong> — we keep your email address for as long as you are subscribed. You may unsubscribe at any time.</li>
+      <li><strong>Contact form submissions</strong> — we retain correspondence for 2 years for reference, then delete it.</li>
+      <li><strong>Volunteer applications</strong> — we retain applications for 12 months from submission.</li>
+    </ul>
 
-  // ── SECTION 10: CONTACT ────────────────────────────────────
-  s10Title: "Contact us",
-  s10Intro: "For any questions about this Privacy Policy or your personal data:",
-  s10Details: [
-    { icon: "fa-envelope",      label: "Email",        value: "info.handsthfm@gmail.com", link: "mailto:info.handsthfm@gmail.com" },
-    { icon: "fa-building",      label: "Organisation", value: "Hands to the Fatherless Ministries (HFM)" },
-    { icon: "fa-location-dot",  label: "Location",     value: "Kampala, Uganda" },
-    { icon: "fa-file-contract", label: "Registration", value: "Uganda NGO Bureau, 2018" },
-  ],
+    <hr/>
 
-  // ── FOOTER ─────────────────────────────────────────────────
-  footerOrg:  "Hands to the Fatherless Ministries",
-  footerReg:  "Registered NGO — Uganda NGO Bureau · 2018",
-  footerCopy: "© 2025 HFM Uganda. Registered NGO — Uganda NGO Bureau. All rights reserved.",
+    <h2>Your rights</h2>
+    <p>Regardless of where you are located, you have the following rights regarding your personal information:</p>
+    <ul>
+      <li><strong>Access</strong> — you can ask us what information we hold about you.</li>
+      <li><strong>Correction</strong> — you can ask us to correct inaccurate information.</li>
+      <li><strong>Deletion</strong> — you can ask us to delete your personal information. We will comply unless we have a legal obligation to retain it.</li>
+      <li><strong>Unsubscribe</strong> — you can opt out of communications at any time by replying "unsubscribe" to any email we send.</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:info.handsthfm@gmail.com" style="color:var(--red);">info.handsthfm@gmail.com</a> with "Privacy Request" in the subject line.</p>
 
-};
+    <hr/>
+
+    <h2>Children's privacy</h2>
+    <p>Our website is not directed at children under the age of 16. We do not knowingly collect personal information from children. If you believe a child has submitted personal information to us without parental consent, please contact us and we will delete it promptly.</p>
+    <p>Our communications about the children we serve are always handled with care. We share children's stories only with appropriate permissions and in ways that protect their dignity and safety.</p>
+
+    <hr/>
+
+    <h2>Security</h2>
+    <p>We take reasonable steps to protect your personal information from unauthorised access or disclosure. Our email communications are transmitted over encrypted connections where possible. However, no internet transmission is completely secure — if you have concerns about sensitive information, please contact us directly.</p>
+
+    <hr/>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of our website after any changes constitutes your acceptance of the updated policy.</p>
+
+    <hr/>
+
+    <h2>Contact us</h2>
+    <p>For any questions about this Privacy Policy or your personal data:</p>
+    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin-top:8px;">
+      <div class="contact-row"><i class="fa-solid fa-envelope"></i><p>Email: <a href="mailto:info.handsthfm@gmail.com" style="color:var(--red);">info.handsthfm@gmail.com</a></p></div>
+      <div class="contact-row"><i class="fa-solid fa-building"></i><p>Organisation: Hands to the Fatherless Ministries (HFM)</p></div>
+      <div class="contact-row"><i class="fa-solid fa-location-dot"></i><p>Location: Kampala, Uganda</p></div>
+      <div class="contact-row"><i class="fa-solid fa-file-contract"></i><p>Registration: Uganda NGO Bureau, 2018</p></div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container" style="max-width:780px;">
+    <div class="foot-inner">
+      <span class="foot-org" id="footerOrg">Hands to the Fatherless Ministries</span>
+      <div class="foot-links">
+        <a href="htfm.html">Home</a>
+        <a href="donate.html">Donate</a>
+        <a href="know-more.html">Know More</a>
+        <a href="terms.html">Terms of Use</a>
+      </div>
+      <p class="foot-copy" id="footerCopy">© 2025 HFM Uganda. Registered NGO — Uganda NGO Bureau. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){const s=localStorage.getItem('hfm-theme'),d=window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme',s||(d?'dark':'light'));})();
+function toggleTheme(){const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);localStorage.setItem('hfm-theme',n);}
+// ── APPLY PRIVACY CONTENT ──────────────────────────────────────
+(function(){
+  if(typeof PRIVACY_CONTENT === 'undefined') return;
+  const C = PRIVACY_CONTENT;
+  const set = (id, val, html=false) => {
+    const el = document.getElementById(id);
+    if(el && val !== undefined) { if(html) el.innerHTML = val; else el.textContent = val; }
+  };
+  const setHTML = (id, val) => set(id, val, true);
+
+  // Meta
+  if(C.pageTitle) document.title = C.pageTitle;
+
+  // Nav
+  set('navName',    C.orgName);
+  set('navTagline', C.orgTagline);
+
+  // Hero
+  set('heroEyebrow',  C.heroEyebrow);
+  set('heroTitle',    C.heroTitle);
+  set('heroTitleEm',  C.heroTitleEm);
+  set('heroBody',     C.heroBody);
+  set('heroWm',       (C.heroTitle||'PRIVACY').toUpperCase().split(' ')[0]);
+  set('lastUpdated',  C.lastUpdated);
+
+  // Summary
+  const sumTitle = document.querySelector('.highlight-box strong');
+  if(sumTitle && C.summaryTitle) sumTitle.textContent = C.summaryTitle;
+  const sumText = document.querySelector('.highlight-box p');
+  if(sumText && C.summaryText) sumText.innerHTML = '<strong>' + C.summaryTitle + '</strong> ' + C.summaryText;
+
+  // All section headings — match by section data-id attributes
+  document.querySelectorAll('[data-section]').forEach(el => {
+    const id = el.getAttribute('data-section');
+    const key = 's' + id;
+    if(C[key+'Title'] && el.tagName === 'H2') el.textContent = C[key+'Title'];
+  });
+
+  // Section body paragraphs — match by data-para attributes
+  document.querySelectorAll('[data-para]').forEach(el => {
+    const key = el.getAttribute('data-para');
+    if(C[key]) el.innerHTML = C[key];
+  });
+
+  // List items — match by data-list attribute
+  document.querySelectorAll('[data-list]').forEach(ul => {
+    const key = ul.getAttribute('data-list');
+    const items = C[key];
+    if(Array.isArray(items)) {
+      ul.innerHTML = items.map(i => '<li>' + i + '</li>').join('');
+    }
+  });
+
+  // Contact details
+  const detailEls = document.querySelectorAll('[data-contact]');
+  if(C.s10Details) {
+    detailEls.forEach((row, i) => {
+      const d = C.s10Details[i];
+      if(!d) return;
+      const ico = row.querySelector('i');
+      if(ico && d.icon) ico.className = 'fa-solid ' + d.icon;
+      const p = row.querySelector('p');
+      if(p && d.value) p.innerHTML = (d.link ? '<a href="' + d.link + '" style="color:var(--red);">' + d.value + '</a>' : d.value);
+    });
+  }
+
+  // Footer
+  set('footerOrg',  C.footerOrg);
+  set('footerCopy', C.footerCopy);
+
+  // Update all mailto links
+  if(C.orgEmail) {
+    document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+      if(a.textContent.includes('@')) a.textContent = C.orgEmail;
+      if(a.href.startsWith('mailto:info.handsthfm@gmail.com')) {
+        const rest = a.href.split('?')[1] ? '?' + a.href.split('?')[1] : '';
+        a.href = 'mailto:' + C.orgEmail + rest;
+      }
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
