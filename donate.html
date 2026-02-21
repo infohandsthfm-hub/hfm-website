@@ -11,46 +11,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Syne:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-<!-- TEXT + CONFIG -->
 <script src="donate-content.js"></script>
 
 <style>
-/* NOTE: This is your same design system. */
-/* ── BRAND & THEME TOKENS ─────────────────────────────────── */
-:root {
-  --red:#D91E36; --red-2:#B01629; --navy:#07122B; --navy-2:#0D1E42;
-  --f-display:'Fraunces', Georgia, serif; --f-ui:'Syne', sans-serif; --f-body:'Crimson Pro', Georgia, serif;
-  --ease:cubic-bezier(.22,1,.36,1);
-}
-:root,[data-theme="dark"]{
-  --bg-page:#080A0F; --bg-nav:rgba(8,10,15,.96); --bg-input:rgba(255,255,255,.06); --bg-input-f:rgba(255,255,255,.09);
-  --c-text:#fff; --c-text-2:rgba(255,255,255,.65); --c-text-3:rgba(255,255,255,.4); --c-text-4:rgba(255,255,255,.22); --c-muted:rgba(255,255,255,.38);
-  --border:rgba(255,255,255,.08); --border-2:rgba(255,255,255,.14); --border-input:rgba(255,255,255,.12);
-  --shadow-nav:0 8px 60px rgba(0,0,0,.6);
-  --chip-bg:rgba(255,255,255,.06); --chip-border:rgba(255,255,255,.1);
-  --scrollbar:rgba(255,255,255,.12);
-}
-[data-theme="light"]{
-  --bg-page:#FAFAF8; --bg-nav:rgba(250,250,248,.97); --bg-input:rgba(8,10,15,.04); --bg-input-f:rgba(8,10,15,.06);
-  --c-text:#080A0F; --c-text-2:rgba(8,10,15,.65); --c-text-3:rgba(8,10,15,.4); --c-text-4:rgba(8,10,15,.22); --c-muted:rgba(8,10,15,.38);
-  --border:rgba(8,10,15,.1); --border-2:rgba(8,10,15,.14); --border-input:rgba(8,10,15,.12);
-  --shadow-nav:0 4px 40px rgba(8,10,15,.12);
-  --chip-bg:rgba(8,10,15,.04); --chip-border:rgba(8,10,15,.1);
-  --scrollbar:rgba(8,10,15,.12);
-}
+:root{--red:#D91E36;--red-2:#B01629;--f-display:'Fraunces',Georgia,serif;--f-ui:'Syne',sans-serif;--f-body:'Crimson Pro',Georgia,serif;--ease:cubic-bezier(.22,1,.36,1)}
+:root,[data-theme="dark"]{--bg-page:#080A0F;--bg-nav:rgba(8,10,15,.96);--bg-input:rgba(255,255,255,.06);--bg-input-f:rgba(255,255,255,.09);--c-text:#fff;--c-text-2:rgba(255,255,255,.65);--c-text-3:rgba(255,255,255,.4);--c-text-4:rgba(255,255,255,.22);--c-muted:rgba(255,255,255,.38);--border:rgba(255,255,255,.08);--border-2:rgba(255,255,255,.14);--border-input:rgba(255,255,255,.12);--shadow-nav:0 8px 60px rgba(0,0,0,.6);--chip-bg:rgba(255,255,255,.06);--chip-border:rgba(255,255,255,.1);--scrollbar:rgba(255,255,255,.12)}
+[data-theme="light"]{--bg-page:#FAFAF8;--bg-nav:rgba(250,250,248,.97);--bg-input:rgba(8,10,15,.04);--bg-input-f:rgba(8,10,15,.06);--c-text:#080A0F;--c-text-2:rgba(8,10,15,.65);--c-text-3:rgba(8,10,15,.4);--c-text-4:rgba(8,10,15,.22);--c-muted:rgba(8,10,15,.38);--border:rgba(8,10,15,.1);--border-2:rgba(8,10,15,.14);--border-input:rgba(8,10,15,.12);--shadow-nav:0 4px 40px rgba(8,10,15,.12);--chip-bg:rgba(8,10,15,.04);--chip-border:rgba(8,10,15,.1);--scrollbar:rgba(8,10,15,.12)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:var(--f-body); font-size:17px; line-height:1.7;
-  background:var(--bg-page); color:var(--c-text); overflow-x:hidden; min-height:100vh;
-  transition:background .35s ease,color .35s ease;
-}
+body{font-family:var(--f-body);font-size:17px;line-height:1.7;background:var(--bg-page);color:var(--c-text);overflow-x:hidden;min-height:100vh;transition:background .35s ease,color .35s ease}
 a{text-decoration:none;color:inherit}
 ::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--scrollbar);border-radius:3px}
-
-/* NAV */
 nav{position:sticky;top:0;z-index:200;background:var(--bg-nav);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:.35s}
 nav.scrolled{box-shadow:var(--shadow-nav)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px}
@@ -60,17 +32,9 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 .logo-words .l1{font-family:var(--f-display);font-size:.9rem;font-weight:700;line-height:1.2;color:var(--c-text)}
 .logo-words .l2{font-family:var(--f-ui);font-size:.58rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--c-muted);margin-top:1px}
 .nav-right{display:flex;align-items:center;gap:12px}
-.back-link{
-  font-family:var(--f-ui);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--c-text-2);padding:8px 16px;border-radius:6px;border:1px solid var(--border);
-  transition:.2s;display:flex;align-items:center;gap:8px
-}
+.back-link{font-family:var(--f-ui);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-text-2);padding:8px 16px;border-radius:6px;border:1px solid var(--border);transition:.2s;display:flex;align-items:center;gap:8px}
 .back-link:hover{color:var(--c-text);border-color:var(--border-2);background:var(--bg-input)}
-.theme-toggle{
-  width:40px;height:40px;border-radius:10px;background:var(--bg-input);border:1px solid var(--border);
-  color:var(--c-muted);cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:.25s;
-  position:relative;overflow:hidden
-}
+.theme-toggle{width:40px;height:40px;border-radius:10px;background:var(--bg-input);border:1px solid var(--border);color:var(--c-muted);cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:.25s;position:relative;overflow:hidden}
 .theme-toggle:hover{background:var(--red);color:#fff;border-color:var(--red)}
 .theme-toggle .icon-sun,.theme-toggle .icon-moon{position:absolute;transition:transform .4s var(--ease),opacity .3s}
 .theme-toggle .icon-sun{transform:translateY(0);opacity:1}
@@ -78,34 +42,15 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 [data-theme="light"] .theme-toggle .icon-sun{transform:translateY(-24px);opacity:0}
 [data-theme="light"] .theme-toggle .icon-moon{transform:translateY(0);opacity:1}
 
-/* HERO */
-.page-hero{
-  background:linear-gradient(135deg,#07122B 0%,#080A0F 60%);
-  padding:72px 40px 80px;position:relative;overflow:hidden;text-align:center
-}
-.page-hero::before{
-  content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);
-  width:700px;height:700px;background:radial-gradient(circle,rgba(217,30,54,.12) 0%,transparent 65%);
-  pointer-events:none
-}
-.page-hero-wm{
-  position:absolute;bottom:-40px;right:-20px;font-family:var(--f-display);font-size:18rem;font-weight:900;
-  color:rgba(255,255,255,.02);line-height:1;pointer-events:none;letter-spacing:-.05em;user-select:none
-}
-.page-hero .eyebrow{
-  font-family:var(--f-ui);font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px
-}
+.page-hero{background:linear-gradient(135deg,#07122B 0%,#080A0F 60%);padding:72px 40px 80px;position:relative;overflow:hidden;text-align:center}
+.page-hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(217,30,54,.12) 0%,transparent 65%);pointer-events:none}
+.page-hero-wm{position:absolute;bottom:-40px;right:-20px;font-family:var(--f-display);font-size:18rem;font-weight:900;color:rgba(255,255,255,.02);line-height:1;pointer-events:none;letter-spacing:-.05em;user-select:none}
+.page-hero .eyebrow{font-family:var(--f-ui);font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
 .page-hero .eyebrow::before{content:'';display:block;width:24px;height:2px;background:var(--red)}
-.page-hero h1{
-  font-family:var(--f-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-.04em;color:#fff;margin-bottom:20px
-}
+.page-hero h1{font-family:var(--f-display);font-size:clamp(2.8rem,6vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-.04em;color:#fff;margin-bottom:20px}
 .page-hero h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.55)}
 .page-hero p{font-size:1.1rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.6);max-width:540px;margin:0 auto 32px}
-.scripture-strip{
-  display:inline-flex;align-items:center;gap:12px;background:rgba(217,30,54,.12);border:1px solid rgba(217,30,54,.25);
-  border-radius:100px;padding:10px 22px;position:relative;z-index:1
-}
+.scripture-strip{display:inline-flex;align-items:center;gap:12px;background:rgba(217,30,54,.12);border:1px solid rgba(217,30,54,.25);border-radius:100px;padding:10px 22px;position:relative;z-index:1}
 .scripture-strip i{color:var(--red);font-size:.8rem}
 .scripture-strip span{font-size:.9rem;font-style:italic;color:rgba(255,255,255,.75)}
 .progress-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02)}
@@ -115,42 +60,30 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 .prog-stat .l{font-family:var(--f-ui);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:4px}
 .prog-stat .l span{color:var(--red)}
 
-/* LAYOUT */
 .donate-layout{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:0;align-items:start}
 .donate-form-col{padding:60px 60px 80px 40px;border-right:1px solid var(--border)}
 .donate-summary-col{position:sticky;top:73px;background:#07122B;padding:48px 40px 60px;min-height:calc(100vh - 73px)}
-
-/* SECTION */
 .form-section{margin-bottom:52px}
 .section-label{display:flex;align-items:center;gap:12px;margin-bottom:24px}
 .section-num{width:28px;height:28px;border-radius:6px;background:var(--red);color:#fff;font-family:var(--f-ui);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
 .section-title{font-family:var(--f-ui);font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--c-text-2)}
 .section-divider{flex:1;height:1px;background:var(--border)}
 
-/* FREQUENCY */
 .freq-toggle{display:inline-flex;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;padding:4px;margin-bottom:32px}
 .freq-btn{font-family:var(--f-ui);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:10px 28px;border-radius:7px;border:none;background:transparent;color:var(--c-text-3);cursor:pointer;transition:.25s var(--ease);display:flex;align-items:center;gap:8px}
 .freq-btn.active{background:var(--red);color:#fff;box-shadow:0 4px 16px rgba(217,30,54,.35)}
 .freq-badge{font-size:.58rem;padding:2px 7px;border-radius:100px;background:rgba(217,30,54,.15);color:var(--red);font-weight:700;letter-spacing:.08em}
 
-/* AMOUNTS */
 .amount-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
-.amount-btn{
-  font-family:var(--f-display);font-size:1.15rem;font-weight:700;padding:18px 10px;border-radius:10px;border:1.5px solid var(--chip-border);
-  background:var(--chip-bg);color:var(--c-text-2);cursor:pointer;transition:.2s var(--ease);text-align:center
-}
+.amount-btn{font-family:var(--f-display);font-size:1.15rem;font-weight:700;padding:18px 10px;border-radius:10px;border:1.5px solid var(--chip-border);background:var(--chip-bg);color:var(--c-text-2);cursor:pointer;transition:.2s var(--ease);text-align:center}
 .amount-btn:hover{border-color:var(--red);color:var(--c-text)}
 .amount-btn.active{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 6px 24px rgba(217,30,54,.3)}
 .amount-btn .impact-note{display:block;font-family:var(--f-ui);font-size:.56rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;opacity:.65;margin-top:3px}
 .custom-amount-wrap{position:relative}
 .custom-currency{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-family:var(--f-display);font-size:1.1rem;font-weight:700;color:var(--c-muted);pointer-events:none}
-#customAmount{
-  width:100%;background:var(--bg-input);border:1.5px solid var(--border-input);border-radius:10px;padding:16px 18px 16px 38px;
-  font-family:var(--f-display);font-size:1.3rem;font-weight:700;color:var(--c-text);outline:none
-}
+#customAmount{width:100%;background:var(--bg-input);border:1.5px solid var(--border-input);border-radius:10px;padding:16px 18px 16px 60px;font-family:var(--f-display);font-size:1.3rem;font-weight:700;color:var(--c-text);outline:none}
 #customAmount:focus{border-color:var(--red);background:var(--bg-input-f)}
 
-/* CAUSES */
 .cause-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .cause-card{border:1.5px solid var(--chip-border);border-radius:12px;padding:18px 16px;cursor:pointer;background:var(--chip-bg);transition:.2s var(--ease);position:relative}
 .cause-card:hover{border-color:rgba(217,30,54,.4);background:var(--bg-input)}
@@ -160,22 +93,17 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 .cause-card h4{font-family:var(--f-ui);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-text);margin-bottom:4px}
 .cause-card p{font-size:.82rem;color:var(--c-text-3);line-height:1.5}
 
-/* FORM */
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .form-row.full{grid-template-columns:1fr}
 .form-group{display:flex;flex-direction:column;gap:7px}
 .form-group label{font-family:var(--f-ui);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted)}
 .form-group label .req{color:var(--red);margin-left:2px}
-.form-group input,.form-group select{
-  background:var(--bg-input);border:1.5px solid var(--border-input);border-radius:10px;padding:14px 16px;
-  font-family:var(--f-body);font-size:1rem;color:var(--c-text);outline:none;width:100%
-}
+.form-group input,.form-group select{background:var(--bg-input);border:1.5px solid var(--border-input);border-radius:10px;padding:14px 16px;font-family:var(--f-body);font-size:1rem;color:var(--c-text);outline:none;width:100%}
 .form-group input:focus,.form-group select:focus{border-color:var(--red);background:var(--bg-input-f)}
 .form-group select{appearance:none;cursor:pointer}
 .select-wrap{position:relative}
 .select-wrap::after{content:'\f107';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--c-muted);pointer-events:none}
 
-/* CHECKBOX */
 .checkbox-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;cursor:pointer}
 .check-box{width:20px;height:20px;border-radius:5px;flex-shrink:0;border:1.5px solid var(--border-input);background:var(--bg-input);display:flex;align-items:center;justify-content:center;margin-top:2px;transition:.2s}
 .check-box.checked{background:var(--red);border-color:var(--red)}
@@ -183,8 +111,7 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 .check-label{font-size:.95rem;color:var(--c-text-2);line-height:1.55}
 .check-label strong{color:var(--c-text)}
 
-/* PAYMENT */
-.pay-methods{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:24px}
+.pay-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:24px}
 .pay-card{border:1.5px solid var(--chip-border);border-radius:12px;padding:16px 14px;cursor:pointer;background:var(--chip-bg);transition:.2s var(--ease);text-align:center}
 .pay-card:hover{border-color:rgba(217,30,54,.35)}
 .pay-card.active{border-color:var(--red);background:rgba(217,30,54,.15)}
@@ -204,26 +131,17 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 .copy-btn{background:rgba(217,30,54,.1);border:1px solid rgba(217,30,54,.2);color:var(--red);border-radius:5px;padding:4px 10px;font-family:var(--f-ui);font-size:.58rem;font-weight:700;letter-spacing:.06em;cursor:pointer;transition:.2s}
 .copy-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
 
-/* SUBMIT */
 .submit-area{margin-top:36px}
-.btn-submit{
-  width:100%;padding:20px 32px;background:var(--red);color:#fff;border:none;border-radius:12px;
-  font-family:var(--f-ui);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;
-  transition:.25s var(--ease);display:flex;align-items:center;justify-content:center;gap:12px
-}
+.btn-submit{width:100%;padding:20px 32px;background:var(--red);color:#fff;border:none;border-radius:12px;font-family:var(--f-ui);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:.25s var(--ease);display:flex;align-items:center;justify-content:center;gap:12px}
 .btn-submit:hover{background:var(--red-2);transform:translateY(-2px);box-shadow:0 12px 40px rgba(217,30,54,.4)}
 .submit-note{margin-top:16px;font-family:var(--f-ui);font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--c-text-4);text-align:center}
 
-/* SUMMARY */
-.summary-header{
-  font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);
-  margin-bottom:32px;display:flex;align-items:center;gap:10px
-}
+.summary-header{font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:32px;display:flex;align-items:center;gap:10px}
 .summary-header::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
 .summary-amount-display{text-align:center;margin-bottom:36px;padding:32px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:16px}
 .sum-freq-label{font-family:var(--f-ui);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px}
 .sum-amount{font-family:var(--f-display);font-size:4rem;font-weight:900;line-height:1;letter-spacing:-.05em;color:#fff}
-.sum-amount .currency{font-size:1.8rem;vertical-align:super;opacity:.6}
+.sum-amount .currency{font-size:1.3rem;vertical-align:super;opacity:.6}
 .sum-freq{font-family:var(--f-ui);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-top:8px}
 .sum-freq span{color:var(--red)}
 .sum-row{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07)}
@@ -235,56 +153,28 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 .impact-statement .i-label{font-family:var(--f-ui);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
 .impact-statement p{font-size:.92rem;font-style:italic;color:rgba(255,255,255,.65);line-height:1.65}
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-  .donate-layout{grid-template-columns:1fr}
-  .donate-form-col{padding:48px 32px;border-right:none;border-bottom:1px solid var(--border)}
-  .donate-summary-col{position:relative;top:0;min-height:auto;padding:48px 32px}
-  .amount-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:768px){
-  .nav-inner{padding:0 20px}
-  .logo-words{display:none}
-  .back-link span{display:none}
-  .back-link{padding:8px 12px}
-  .page-hero{padding:48px 20px 60px}
-  .page-hero-wm{font-size:8rem}
-  .progress-strip{grid-template-columns:1fr 1fr}
-  .progress-strip .prog-stat:nth-child(3){display:none}
-  .donate-form-col{padding:36px 20px}
-  .donate-summary-col{padding:36px 20px}
-  .amount-grid{grid-template-columns:repeat(2,1fr)}
-  .cause-grid{grid-template-columns:repeat(2,1fr)}
-  .form-row{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .freq-toggle{width:100%}
-  .freq-btn{flex:1;justify-content:center}
-  .cause-grid{grid-template-columns:1fr}
-  .pay-methods{grid-template-columns:1fr}
-}
-
-/* Light inputs */
+@media(max-width:1100px){.donate-layout{grid-template-columns:1fr}.donate-form-col{padding:48px 32px;border-right:none;border-bottom:1px solid var(--border)}.donate-summary-col{position:relative;top:0;min-height:auto;padding:48px 32px}.amount-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.nav-inner{padding:0 20px}.logo-words{display:none}.back-link span{display:none}.back-link{padding:8px 12px}.page-hero{padding:48px 20px 60px}.page-hero-wm{font-size:8rem}.progress-strip{grid-template-columns:1fr 1fr}.progress-strip .prog-stat:nth-child(3){display:none}.donate-form-col{padding:36px 20px}.donate-summary-col{padding:36px 20px}.amount-grid{grid-template-columns:repeat(2,1fr)}.cause-grid{grid-template-columns:repeat(2,1fr)}.form-row{grid-template-columns:1fr}.pay-methods{grid-template-columns:1fr}}
+@media(max-width:480px){.freq-toggle{width:100%}.freq-btn{flex:1;justify-content:center}.cause-grid{grid-template-columns:1fr}}
 [data-theme="light"] .form-group input,[data-theme="light"] .form-group select{color:#080A0F}
 [data-theme="light"] #customAmount{color:#080A0F}
 </style>
 </head>
 
 <body>
-
 <nav id="nav">
   <div class="nav-inner">
-    <a id="backLinkBrand" href="htfm.html" class="nav-logo">
-      <img id="navLogo" src="logo.png" alt="HFM" class="logo-mark"/>
+    <a id="backLinkBrand" href="#" class="nav-logo">
+      <img id="navLogo" src="" alt="HFM" class="logo-mark"/>
       <div class="logo-words">
-        <span class="l1" id="navName">Hands to the Fatherless Ministries</span>
-        <span class="l2" id="navTagline">Ministries — HFM Uganda</span>
+        <span class="l1" id="navName"></span>
+        <span class="l2" id="navTagline"></span>
       </div>
     </a>
     <div class="nav-right">
-      <a id="backLink" href="htfm.html" class="back-link">
+      <a id="backLink" href="#" class="back-link">
         <i class="fa-solid fa-arrow-left fa-sm"></i>
-        <span id="backLinkText">Back to Site</span>
+        <span id="backLinkText"></span>
       </a>
       <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <i class="fa-solid fa-sun icon-sun"></i>
@@ -295,33 +185,33 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-wm" id="heroWm">GIVE</div>
-  <div class="eyebrow" id="heroEyebrow">Secure Giving Portal</div>
+  <div class="page-hero-wm" id="heroWm"></div>
+  <div class="eyebrow" id="heroEyebrow"></div>
 
-  <h1 id="heroTitleWrap">
-    <span id="heroTitle">Your gift</span><br/>
-    <em id="heroTitleEm">changes everything.</em>
+  <h1>
+    <span id="heroTitle"></span><br/>
+    <em id="heroTitleEm"></em>
   </h1>
 
-  <p id="heroBody">Every child we serve has a name...</p>
+  <p id="heroBody"></p>
 
   <div class="scripture-strip">
     <i class="fa-solid fa-cross"></i>
-    <span id="heroScripture">"Pure religion… is to look after..."</span>
+    <span id="heroScripture"></span>
   </div>
 
   <div class="progress-strip">
     <div class="prog-stat">
-      <div class="n" id="stat1Num">320+</div>
-      <div class="l" id="stat1Label">Children <span>Served</span></div>
+      <div class="n" id="stat1Num"></div>
+      <div class="l" id="stat1Label"></div>
     </div>
     <div class="prog-stat">
-      <div class="n" id="stat2Num">5+</div>
-      <div class="l" id="stat2Label">Districts <span>Reached</span></div>
+      <div class="n" id="stat2Num"></div>
+      <div class="l" id="stat2Label"></div>
     </div>
     <div class="prog-stat">
-      <div class="n" id="stat3Num">100%</div>
-      <div class="l" id="stat3Label">Funds <span>to the Field</span></div>
+      <div class="n" id="stat3Num"></div>
+      <div class="l" id="stat3Label"></div>
     </div>
   </div>
 </div>
@@ -333,19 +223,19 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">1</div>
-        <div class="section-title" id="step1Label">Giving Frequency</div>
+        <div class="section-title" id="step1Label"></div>
         <div class="section-divider"></div>
       </div>
 
       <div class="freq-toggle">
         <button class="freq-btn active" id="freqOnce" onclick="setFreq('once',this)">
           <i class="fa-solid fa-hand-holding-heart fa-sm"></i>
-          <span id="freqOnceLabel">One-time</span>
+          <span id="freqOnceLabel"></span>
         </button>
         <button class="freq-btn" id="freqMonthly" onclick="setFreq('monthly',this)">
           <i class="fa-solid fa-rotate fa-sm"></i>
-          <span id="freqMonthlyLabel">Monthly</span>
-          <span class="freq-badge" id="freqMonthlyBadge">SAVE 10%</span>
+          <span id="freqMonthlyLabel"></span>
+          <span class="freq-badge" id="freqMonthlyBadge"></span>
         </button>
       </div>
     </div>
@@ -354,15 +244,15 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">2</div>
-        <div class="section-title" id="step2Label">Choose Amount</div>
+        <div class="section-title" id="step2Label"></div>
         <div class="section-divider"></div>
       </div>
 
       <div class="amount-grid" id="amountGrid"></div>
 
       <div class="custom-amount-wrap">
-        <span class="custom-currency" id="currencySymbol">$</span>
-        <input type="number" id="customAmount" placeholder="Enter custom amount" min="1"
+        <span class="custom-currency" id="currencySymbol"></span>
+        <input type="number" id="customAmount" min="1"
                oninput="setCustomAmount(this.value)" onfocus="clearAmountBtns()"/>
       </div>
     </div>
@@ -371,7 +261,7 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">3</div>
-        <div class="section-title" id="step3Label">Choose Your Cause</div>
+        <div class="section-title" id="step3Label"></div>
         <div class="section-divider"></div>
       </div>
 
@@ -382,32 +272,32 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">4</div>
-        <div class="section-title" id="step4Label">Your Details</div>
+        <div class="section-title" id="step4Label"></div>
         <div class="section-divider"></div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label>First Name <span class="req">*</span></label>
-          <input type="text" id="firstName" placeholder="Joel"/>
+          <input type="text" id="firstName"/>
         </div>
         <div class="form-group">
           <label>Last Name <span class="req">*</span></label>
-          <input type="text" id="lastName" placeholder="Shalom"/>
+          <input type="text" id="lastName"/>
         </div>
       </div>
 
       <div class="form-row full">
         <div class="form-group">
           <label>Email Address <span class="req">*</span></label>
-          <input type="email" id="donorEmail" placeholder="you@example.com"/>
+          <input type="email" id="donorEmail"/>
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label>Phone</label>
-          <input type="tel" id="donorPhone" placeholder="+256 700 000 000"/>
+          <input type="tel" id="donorPhone"/>
         </div>
         <div class="form-group">
           <label>Country</label>
@@ -431,24 +321,24 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
 
       <div class="checkbox-row" onclick="toggleCheck('dedicateCheck')">
         <div class="check-box" id="dedicateCheck"></div>
-        <div class="check-label"><span id="dedicationLabel">Make this gift in honour or memory of someone</span></div>
+        <div class="check-label"><span id="dedicationLabel"></span></div>
       </div>
 
       <div id="dedicateName" style="display:none; margin-top:8px;">
         <div class="form-group">
           <label>Honouree Name</label>
-          <input type="text" id="honoureeName" placeholder="e.g. In memory of Jane Doe"/>
+          <input type="text" id="honoureeName"/>
         </div>
       </div>
 
       <div class="checkbox-row" onclick="toggleCheck('receiptCheck')">
         <div class="check-box checked" id="receiptCheck"></div>
-        <div class="check-label"><span id="receiptLabel">Send me a donation receipt by email</span></div>
+        <div class="check-label"><span id="receiptLabel"></span></div>
       </div>
 
       <div class="checkbox-row" onclick="toggleCheck('updateCheck')">
         <div class="check-box checked" id="updateCheck"></div>
-        <div class="check-label"><span id="updatesLabel">Send me impact updates about the children my gift supports</span></div>
+        <div class="check-label"><span id="updatesLabel"></span></div>
       </div>
     </div>
 
@@ -456,32 +346,21 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
     <div class="form-section">
       <div class="section-label">
         <div class="section-num">5</div>
-        <div class="section-title" id="step5Label">Payment Method</div>
+        <div class="section-title" id="step5Label"></div>
         <div class="section-divider"></div>
       </div>
 
-      <div class="pay-methods">
-        <div class="pay-card active" onclick="setPayMethod('card',this)">
-          <div class="pay-icon"><i class="fa-solid fa-credit-card"></i></div>
-          <h5 id="payCardTitle">Card</h5>
-          <p id="payCardDesc">Secure checkout</p>
-        </div>
-        <div class="pay-card" onclick="setPayMethod('bank',this)">
-          <div class="pay-icon"><i class="fa-solid fa-building-columns"></i></div>
-          <h5 id="payBankTitle">Bank Transfer</h5>
-          <p id="payBankDesc">Direct wire</p>
-        </div>
-      </div>
+      <div class="pay-methods" id="payMethods"></div>
 
       <div class="pay-panel active" id="panel-card">
-        <div class="pay-panel-inner">
-          <p class="info-text" id="payCardPanelText">You’ll be redirected to a secure Stripe checkout to complete your gift.</p>
-        </div>
+        <div class="pay-panel-inner"><p class="info-text" id="panelTextCard"></p></div>
       </div>
-
+      <div class="pay-panel" id="panel-mobile">
+        <div class="pay-panel-inner"><p class="info-text" id="panelTextMobile"></p></div>
+      </div>
       <div class="pay-panel" id="panel-bank">
         <div class="pay-panel-inner">
-          <p class="info-text" id="payBankPanelText">Use the details below to make a bank transfer. Reference your name + cause.</p>
+          <p class="info-text" id="panelTextBank"></p>
 
           <div class="bank-detail">
             <span class="dk">Bank Name</span>
@@ -527,54 +406,53 @@ nav.scrolled{box-shadow:var(--shadow-nav)}
     <div class="submit-area">
       <button class="btn-submit" onclick="submitDonation()">
         <i class="fa-solid" id="submitIconLeft"></i>
-        <span id="submitLabel">Complete Gift — $50</span>
+        <span id="submitLabel"></span>
         <i class="fa-solid" id="submitIconRight"></i>
       </button>
-      <div class="submit-note" id="submitNote">Secure checkout · Receipt available</div>
+      <div class="submit-note" id="submitNote"></div>
     </div>
 
   </div>
 
   <!-- SUMMARY -->
   <div class="donate-summary-col">
-    <div class="summary-header"><i class="fa-solid fa-chart-simple" style="color:var(--red);"></i> <span id="summaryTitle">Your Gift Summary</span></div>
+    <div class="summary-header"><i class="fa-solid fa-chart-simple" style="color:var(--red);"></i> <span id="summaryTitle"></span></div>
 
     <div class="summary-amount-display">
-      <div class="sum-freq-label" id="sumFreqLabel">ONE-TIME GIFT</div>
-      <div class="sum-amount" id="sumAmount"><span class="currency" id="sumCurrency">$</span><span id="sumAmountNum">50</span></div>
-      <div class="sum-freq" id="sumFreqDesc">to support children in Uganda <span>today</span></div>
+      <div class="sum-freq-label" id="sumFreqLabel"></div>
+      <div class="sum-amount"><span class="currency" id="sumCurrency"></span><span id="sumAmountNum"></span></div>
+      <div class="sum-freq" id="sumFreqDesc"></div>
     </div>
 
     <div class="sum-row">
       <div class="sum-row-icon"><i class="fa-solid" id="sumCauseIcon"></i></div>
       <div class="sum-row-body">
-        <h5 id="summaryCauseLabel">Designated Cause</h5>
-        <p id="sumCauseName"><strong>Education</strong> — School fees, books & uniforms</p>
+        <h5 id="summaryCauseLabel"></h5>
+        <p id="sumCauseName"></p>
       </div>
     </div>
 
     <div class="sum-row">
       <div class="sum-row-icon"><i class="fa-solid fa-rotate" id="sumFreqIcon"></i></div>
       <div class="sum-row-body">
-        <h5 id="summaryFreqLabel">Frequency</h5>
-        <p id="sumFreqText"><strong>One-time gift</strong> — charged once</p>
+        <h5 id="summaryFreqLabel"></h5>
+        <p id="sumFreqText"></p>
       </div>
     </div>
 
     <div class="impact-statement">
-      <div class="i-label"><i class="fa-solid fa-star fa-sm"></i> &nbsp;<span id="impactLabel">Your Impact</span></div>
+      <div class="i-label"><i class="fa-solid fa-star fa-sm"></i> &nbsp;<span id="impactLabel"></span></div>
       <p id="impactText"></p>
     </div>
 
     <div class="trust-section">
-      <div class="trust-title" id="trustTitle">Why give with HFM</div>
+      <div class="trust-title" id="trustTitle"></div>
       <div id="trustBadges" style="display:flex;flex-direction:column;gap:12px;"></div>
     </div>
   </div>
 </div>
 
 <script>
-// ── THEME ────────────────────────────────────────────────
 (function(){
   const saved = localStorage.getItem('hfm-theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -586,36 +464,29 @@ function toggleTheme(){
   html.setAttribute('data-theme', next);
   localStorage.setItem('hfm-theme', next);
 }
-
-// ── NAV SHADOW ───────────────────────────────────────────
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', scrollY > 10);
 });
 
-// ── STATE ────────────────────────────────────────────────
-let currentAmount = 50;
+let currentAmount = 0;
 let currentFreq = 'once';
-let currentCause = 'education';
+let currentCause = '';
 let currentPayMethod = 'card';
 
-function currencySymbol(){ return (DONATE_CONTENT && DONATE_CONTENT.currencySymbol) ? DONATE_CONTENT.currencySymbol : '$'; }
-function currencyCode(){ return (DONATE_CONTENT && DONATE_CONTENT.currencyCode) ? DONATE_CONTENT.currencyCode : 'USD'; }
+function currencySymbol(){ return DONATE_CONTENT.currencySymbol || ''; }
+function currencyCode(){ return DONATE_CONTENT.currencyCode || 'UGX'; }
 
 function closestPresetAmount(amount){
   const presets = (DONATE_CONTENT.amounts || []).map(a => a[0]);
-  if(!presets.length) return 50;
-  return presets.reduce((a,b) => Math.abs(b-amount)<Math.abs(a-amount)?b:a);
+  if(!presets.length) return amount;
+  return presets.reduce((a,b) => Math.abs(b-amount) < Math.abs(a-amount) ? b : a);
 }
-
 function getImpactHTML(amount, causeKey){
   const preset = closestPresetAmount(amount);
   const map = DONATE_CONTENT.impactMap && DONATE_CONTENT.impactMap[preset];
-  const raw = map ? (map[causeKey] || map.general) : "";
-  // Replace $ with currency symbol and the preset amount with chosen amount
-  return (raw || "").replaceAll("$", currencySymbol()).replace(String(preset), String(amount));
+  return map ? (map[causeKey] || map.general) : "";
 }
 
-// ── BUILD UI FROM CONTENT ───────────────────────────────
 function applyContent(){
   const C = DONATE_CONTENT;
 
@@ -624,8 +495,8 @@ function applyContent(){
   document.getElementById('navName').textContent = C.orgName || "";
   document.getElementById('navTagline').textContent = C.orgTagline || "";
   document.getElementById('backLinkText').textContent = C.backLinkText || "Back";
-  document.getElementById('backLink').href = C.backLinkHref || "htfm.html";
-  document.getElementById('backLinkBrand').href = C.backLinkHref || "htfm.html";
+  document.getElementById('backLink').href = C.backLinkHref || "#";
+  document.getElementById('backLinkBrand').href = C.backLinkHref || "#";
 
   // Hero
   document.getElementById('heroWm').textContent = C.heroWm || "GIVE";
@@ -637,68 +508,24 @@ function applyContent(){
 
   // Stats
   const s = C.stats || [];
-  if(s[0]) { document.getElementById('stat1Num').textContent = s[0].num; document.getElementById('stat1Label').innerHTML = `${s[0].label} <span>${s[0].highlight}</span>`; }
-  if(s[1]) { document.getElementById('stat2Num').textContent = s[1].num; document.getElementById('stat2Label').innerHTML = `${s[1].label} <span>${s[1].highlight}</span>`; }
-  if(s[2]) { document.getElementById('stat3Num').textContent = s[2].num; document.getElementById('stat3Label').innerHTML = `${s[2].label} <span>${s[2].highlight}</span>`; }
+  if(s[0]){ document.getElementById('stat1Num').textContent = s[0].num; document.getElementById('stat1Label').innerHTML = `${s[0].label} <span>${s[0].highlight}</span>`; }
+  if(s[1]){ document.getElementById('stat2Num').textContent = s[1].num; document.getElementById('stat2Label').innerHTML = `${s[1].label} <span>${s[1].highlight}</span>`; }
+  if(s[2]){ document.getElementById('stat3Num').textContent = s[2].num; document.getElementById('stat3Label').innerHTML = `${s[2].label} <span>${s[2].highlight}</span>`; }
 
-  // Step labels
-  document.getElementById('step1Label').textContent = C.step1Label || "";
-  document.getElementById('step2Label').textContent = C.step2Label || "";
-  document.getElementById('step3Label').textContent = C.step3Label || "";
-  document.getElementById('step4Label').textContent = C.step4Label || "";
-  document.getElementById('step5Label').textContent = C.step5Label || "";
+  // Steps + freq
+  document.getElementById('step1Label').textContent = C.step1Label;
+  document.getElementById('step2Label').textContent = C.step2Label;
+  document.getElementById('step3Label').textContent = C.step3Label;
+  document.getElementById('step4Label').textContent = C.step4Label;
+  document.getElementById('step5Label').textContent = C.step5Label;
 
-  // Frequency
-  document.getElementById('freqOnceLabel').textContent = C.freqOnceLabel || "One-time";
-  document.getElementById('freqMonthlyLabel').textContent = C.freqMonthlyLabel || "Monthly";
-  document.getElementById('freqMonthlyBadge').textContent = C.freqMonthlyBadge || "";
+  document.getElementById('freqOnceLabel').textContent = C.freqOnceLabel;
+  document.getElementById('freqMonthlyLabel').textContent = C.freqMonthlyLabel;
+  document.getElementById('freqMonthlyBadge').textContent = C.freqMonthlyBadge;
 
-  // Currency symbol on inputs & summary
+  // Inputs
   document.getElementById('currencySymbol').textContent = currencySymbol();
-  document.getElementById('sumCurrency').textContent = currencySymbol();
-
-  // Amounts
-  const grid = document.getElementById('amountGrid');
-  grid.innerHTML = "";
-  const amounts = C.amounts || [];
-  const def = C.defaultAmount || (amounts[0] ? amounts[0][0] : 50);
-  currentAmount = def;
-
-  amounts.forEach((row, idx) => {
-    const [amt, note] = row;
-    const btn = document.createElement('button');
-    btn.className = "amount-btn" + (amt === def ? " active" : "");
-    // last amount spans 2
-    if(idx === amounts.length - 1) btn.style.gridColumn = "span 2";
-    btn.innerHTML = `${currencySymbol()}${Number(amt).toLocaleString()}<span class="impact-note">${note}</span>`;
-    btn.onclick = () => setAmount(amt, btn);
-    grid.appendChild(btn);
-  });
-
-  // Custom placeholder
-  document.getElementById('customAmount').placeholder = C.customPlaceholder || "Enter custom amount";
-
-  // Causes
-  const causeGrid = document.getElementById('causeGrid');
-  causeGrid.innerHTML = "";
-  const causes = C.causes || {};
-  const defaultCause = C.defaultCause || Object.keys(causes)[0] || "general";
-  currentCause = defaultCause;
-
-  Object.entries(causes).forEach(([key, v]) => {
-    const card = document.createElement('div');
-    card.className = "cause-card" + (key === defaultCause ? " active" : "");
-    card.dataset.cause = key;
-    card.onclick = () => setCause(key, card);
-    card.innerHTML = `
-      <div class="cause-icon"><i class="fa-solid ${v.iconFA || 'fa-heart'}"></i></div>
-      <h4>${v.label}</h4>
-      <p>${v.desc}</p>
-    `;
-    causeGrid.appendChild(card);
-  });
-
-  // Placeholders
+  document.getElementById('customAmount').placeholder = C.customPlaceholder || "";
   document.getElementById('firstName').placeholder = C.placeholderFirstName || "";
   document.getElementById('lastName').placeholder = C.placeholderLastName || "";
   document.getElementById('donorEmail').placeholder = C.placeholderEmail || "";
@@ -708,16 +535,55 @@ function applyContent(){
   document.getElementById('receiptLabel').textContent = C.receiptLabel || "";
   document.getElementById('updatesLabel').textContent = C.updatesLabel || "";
 
-  // Payment method text
-  document.getElementById('payCardTitle').textContent = (C.payMethods?.card?.title) || "Card";
-  document.getElementById('payCardDesc').textContent  = (C.payMethods?.card?.desc) || "";
-  document.getElementById('payCardPanelText').textContent = (C.payMethods?.card?.panelText) || "";
+  // Amount buttons
+  const grid = document.getElementById('amountGrid');
+  grid.innerHTML = "";
+  const amounts = C.amounts || [];
+  currentAmount = C.defaultAmount || (amounts[0] ? amounts[0][0] : 0);
+  amounts.forEach((row, idx) => {
+    const [amt, note] = row;
+    const btn = document.createElement('button');
+    btn.className = "amount-btn" + (amt === currentAmount ? " active" : "");
+    if(idx === amounts.length - 1) btn.style.gridColumn = "span 2";
+    btn.innerHTML = `${currencySymbol()}${Number(amt).toLocaleString()}<span class="impact-note">${note}</span>`;
+    btn.onclick = () => setAmount(amt, btn);
+    grid.appendChild(btn);
+  });
 
-  document.getElementById('payBankTitle').textContent = (C.payMethods?.bank?.title) || "Bank Transfer";
-  document.getElementById('payBankDesc').textContent  = (C.payMethods?.bank?.desc) || "";
-  document.getElementById('payBankPanelText').textContent = (C.payMethods?.bank?.panelText) || "";
+  // Causes
+  const cg = document.getElementById('causeGrid');
+  cg.innerHTML = "";
+  const causes = C.causes || {};
+  currentCause = C.defaultCause || Object.keys(causes)[0] || "general";
+  Object.entries(causes).forEach(([key, v]) => {
+    const card = document.createElement('div');
+    card.className = "cause-card" + (key === currentCause ? " active" : "");
+    card.dataset.cause = key;
+    card.onclick = () => setCause(key, card);
+    card.innerHTML = `<div class="cause-icon"><i class="fa-solid ${v.iconFA || 'fa-heart'}"></i></div><h4>${v.label}</h4><p>${v.desc}</p>`;
+    cg.appendChild(card);
+  });
 
-  // Bank details
+  // Payment methods
+  const pm = document.getElementById('payMethods');
+  pm.innerHTML = "";
+  const methodOrder = ["card","mobile","bank"];
+  methodOrder.forEach(k => {
+    const m = C.payMethods[k];
+    if(!m) return;
+    const div = document.createElement('div');
+    div.className = "pay-card" + (k === "card" ? " active" : "");
+    div.onclick = () => setPayMethod(k, div);
+    div.innerHTML = `<div class="pay-icon"><i class="fa-solid ${k==='card'?'fa-credit-card':k==='mobile'?'fa-mobile-screen-button':'fa-building-columns'}"></i></div>
+                     <h5>${m.title}</h5><p>${m.desc}</p>`;
+    pm.appendChild(div);
+  });
+
+  document.getElementById('panelTextCard').textContent = C.payMethods.card.panelText;
+  document.getElementById('panelTextMobile').textContent = C.payMethods.mobile.panelText;
+  document.getElementById('panelTextBank').textContent = C.payMethods.bank.panelText;
+
+  // Bank
   const B = C.bank || {};
   document.getElementById('bankName').textContent = B.bankName || "";
   document.getElementById('bankAccName').textContent = B.accountName || "";
@@ -725,14 +591,13 @@ function applyContent(){
   document.getElementById('bankSwift').textContent = B.swift || "";
   document.getElementById('bankRefNote').textContent = B.referenceNote || "";
 
-  // Summary labels
-  document.getElementById('summaryTitle').textContent = C.summaryTitle || "Your Gift Summary";
-  document.getElementById('summaryCauseLabel').textContent = C.summaryCauseLabel || "Designated Cause";
-  document.getElementById('summaryFreqLabel').textContent = C.summaryFreqLabel || "Frequency";
-  document.getElementById('impactLabel').textContent = C.impactLabel || "Your Impact";
-  document.getElementById('trustTitle').textContent = C.trustTitle || "";
+  // Summary + trust
+  document.getElementById('summaryTitle').textContent = C.summaryTitle;
+  document.getElementById('summaryCauseLabel').textContent = C.summaryCauseLabel;
+  document.getElementById('summaryFreqLabel').textContent = C.summaryFreqLabel;
+  document.getElementById('impactLabel').textContent = C.impactLabel;
+  document.getElementById('trustTitle').textContent = C.trustTitle;
 
-  // Trust badges
   const tb = document.getElementById('trustBadges');
   tb.innerHTML = "";
   (C.trustBadges || []).forEach(b => {
@@ -745,7 +610,6 @@ function applyContent(){
     tb.appendChild(row);
   });
 
-  // Submit area
   document.getElementById('submitIconLeft').className = `fa-solid ${C.submitButtonIconLeft || 'fa-heart'}`;
   document.getElementById('submitIconRight').className = `fa-solid ${C.submitButtonIconRight || 'fa-arrow-right'}`;
   document.getElementById('submitNote').textContent = C.submitNote || "";
@@ -753,14 +617,12 @@ function applyContent(){
   updateSummary();
 }
 
-// ── INTERACTIONS ──────────────────────────────────────────
 function setFreq(freq, btn){
   currentFreq = freq;
   document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   updateSummary();
 }
-
 function setAmount(val, btn){
   currentAmount = Number(val);
   document.getElementById('customAmount').value = '';
@@ -768,9 +630,7 @@ function setAmount(val, btn){
   btn.classList.add('active');
   updateSummary();
 }
-function clearAmountBtns(){
-  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
-}
+function clearAmountBtns(){ document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active')); }
 function setCustomAmount(val){
   if(!val || isNaN(val) || +val <= 0) return;
   currentAmount = Number(val);
@@ -790,7 +650,6 @@ function setPayMethod(method, card){
   document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('panel-'+method).classList.add('active');
 }
-
 function toggleCheck(id){
   const box = document.getElementById(id);
   box.classList.toggle('checked');
@@ -798,7 +657,6 @@ function toggleCheck(id){
     document.getElementById('dedicateName').style.display = box.classList.contains('checked') ? 'block' : 'none';
   }
 }
-
 function copyText(text, btn){
   navigator.clipboard.writeText(text).then(() => {
     const old = btn.innerHTML;
@@ -808,15 +666,13 @@ function copyText(text, btn){
   });
 }
 
-// ── SUMMARY UPDATE ────────────────────────────────────────
 function updateSummary(){
   const C = DONATE_CONTENT;
   const cause = C.causes[currentCause];
 
-  // amount
+  document.getElementById('sumCurrency').textContent = currencySymbol();
   document.getElementById('sumAmountNum').textContent = Number(currentAmount).toLocaleString();
 
-  // freq
   const isMonthly = currentFreq === 'monthly';
   document.getElementById('sumFreqLabel').textContent = isMonthly ? 'MONTHLY GIVING' : 'ONE-TIME GIFT';
   document.getElementById('sumFreqDesc').innerHTML = isMonthly
@@ -827,19 +683,15 @@ function updateSummary(){
     : `<strong>One-time gift</strong> — charged once`;
   document.getElementById('sumFreqIcon').className = isMonthly ? 'fa-solid fa-rotate' : 'fa-solid fa-hand-holding-heart';
 
-  // cause
   document.getElementById('sumCauseIcon').className = `fa-solid ${cause.iconFA || 'fa-heart'}`;
   document.getElementById('sumCauseName').innerHTML = `<strong>${cause.label}</strong> — ${cause.desc}`;
 
-  // submit label
   const suffix = isMonthly ? '/mo' : '';
   document.getElementById('submitLabel').textContent = `Complete Gift — ${currencySymbol()}${Number(currentAmount).toLocaleString()}${suffix}`;
 
-  // impact
   document.getElementById('impactText').innerHTML = getImpactHTML(Number(currentAmount), currentCause);
 }
 
-// ── STRIPE REDIRECT SUBMIT ───────────────────────────────
 function submitDonation(){
   const fn = document.getElementById('firstName').value.trim();
   const ln = document.getElementById('lastName').value.trim();
@@ -848,32 +700,29 @@ function submitDonation(){
   if(!fn){ alert('Please enter your first name.'); document.getElementById('firstName').focus(); return; }
   if(!email || !email.includes('@')){ alert('Please enter a valid email address.'); document.getElementById('donorEmail').focus(); return; }
 
-  const C = DONATE_CONTENT;
-
   // Bank: manual
   if(currentPayMethod === 'bank'){
     alert(
-      `Please complete your bank transfer.\n\nAmount: ${currencySymbol()}${Number(currentAmount).toLocaleString()}${currentFreq==='monthly'?' /month':''}\nCause: ${C.causes[currentCause].label}\nReference: ${fn} ${ln} - ${C.causes[currentCause].label}`
+      `Please complete your bank transfer.\n\nAmount: ${currencySymbol()}${Number(currentAmount).toLocaleString()}${currentFreq==='monthly'?' /month':''}\nCause: ${DONATE_CONTENT.causes[currentCause].label}\nReference: ${fn} ${ln} - ${DONATE_CONTENT.causes[currentCause].label}`
     );
     return;
   }
 
-  // Stripe hosted checkout (card)
-  const key = `card_${currentFreq === 'monthly' ? 'monthly' : 'once'}`;
-  const base = C.stripeLinks && C.stripeLinks[key];
+  const key = `${currentPayMethod}_${currentFreq === 'monthly' ? 'monthly' : 'once'}`;
+  const base = DONATE_CONTENT.payLinks && DONATE_CONTENT.payLinks[key];
 
-  if(!base || base.includes('PASTE_STRIPE_')){
-    alert('Stripe link not set. Paste your Stripe Payment Link in donate-content.js → DONATE_CONTENT.stripeLinks.');
+  if(!base || base.includes('PASTE_')){
+    alert('Payment link not set. Paste your hosted checkout link in donate-content.js → DONATE_CONTENT.payLinks.');
     return;
   }
 
-  // Pass extra info as query params (Stripe Payment Links may ignore these; harmless if ignored)
+  // Pass extra info as query params (provider may ignore; harmless)
   const params = new URLSearchParams({
     amount: String(Number(currentAmount)),
     currency: currencyCode(),
     freq: currentFreq,
     causeKey: currentCause,
-    cause: C.causes[currentCause].label,
+    cause: DONATE_CONTENT.causes[currentCause].label,
     name: `${fn} ${ln}`.trim(),
     email: email,
   });
@@ -881,7 +730,6 @@ function submitDonation(){
   window.location.href = base + (base.includes('?') ? '&' : '?') + params.toString();
 }
 
-// ── INIT ────────────────────────────────────────────────
 applyContent();
 </script>
 </body>
