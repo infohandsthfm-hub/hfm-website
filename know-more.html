@@ -137,7 +137,7 @@ footer{background:#07122B;padding:36px 0;margin-top:0;}
 <nav id="nav">
   <div class="container">
     <div class="nav-inner">
-      <a href="htfm.html" class="nav-logo" aria-label="HFM Home">
+      <a href="index.html" class="nav-logo" aria-label="HFM Home">
         <img src="logo.png" alt="HFM" class="logo-mark"/>
         <div class="logo-words"><span class="l1" id="navName">Hands to the Fatherless</span><span class="l2" id="navTagline">Ministries — HFM Uganda</span></div>
       </a>
@@ -713,6 +713,15 @@ window.addEventListener('scroll',()=>document.getElementById('nav').classList.to
   const tab = new URLSearchParams(window.location.search).get('tab');
   if(tab){const btn=document.querySelector(`.ptab[onclick*="${tab}"]`);if(btn)btn.click();}
 })();
+</script>
+  <script>
+  const HOME_PAGE = "index.html"; // change to "htfm.html" if that's your real home
+
+  // Fix any links like href="#about" to go to HOME_PAGE#about
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    const hash = a.getAttribute("href");
+    a.setAttribute("href", `${HOME_PAGE}${hash}`);
+  });
 </script>
 </body>
 </html>
