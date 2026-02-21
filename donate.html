@@ -757,7 +757,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 <!-- ═══════════════════ NAV ═══════════════════════════════ -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="htfm.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="logo.png" alt="HFM" class="logo-mark" id="navLogo"/>
       <div class="logo-words">
         <span class="l1" id="navName">Hands to the Fatherless Ministries</span>
@@ -1778,6 +1778,14 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })();
 </script>
+<script>
+  const HOME_PAGE = "index.html"; // change to "htfm.html" if that's your real home
 
+  // Fix any links like href="#about" to go to HOME_PAGE#about
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    const hash = a.getAttribute("href");
+    a.setAttribute("href", `${HOME_PAGE}${hash}`);
+  });
+</script>
 </body>
 </html>
