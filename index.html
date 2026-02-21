@@ -21,7 +21,7 @@
    Colors   → :root at top — change --red, --navy, etc.
    Fonts    → :root --f-display, --f-ui, --f-body
    Content  → Sections labeled with === SECTION NAME ===
-   Images   → Search "ADD_IMAGE" for every placeholder
+   Images   → Replace img-placeholder divs with <img src="your-photo.jpg"/>
    Social   → Search "SOCIAL_LINK" to add your URLs
    ───────────────────────────────────────────────────────────
 ============================================================= */
@@ -489,8 +489,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   position: absolute;
   inset: 0;
 }
-/* ADD_IMAGE: Replace background-image URL with your hero photo */
-.hero-bg-img {
+/*.hero-bg-img {
   position: absolute;
   inset: 0;
   /* 
@@ -693,8 +692,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   overflow: hidden;
   position: relative;
 }
-/* ADD_IMAGE: About section main image */
-.about-floater {
+/*.about-floater {
   position: absolute;
   bottom: -32px;
   right: -36px;
@@ -782,8 +780,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   border-radius: 8px;
   overflow: hidden;
 }
-/* ADD_IMAGE: Uganda section */
-.flag-bar {
+/*.flag-bar {
   height: 6px;
   background: linear-gradient(90deg, #000 33.33%, #FCDC04 33.33% 66.66%, #D90000 66.66%);
   border-radius: 0 0 4px 4px;
@@ -865,8 +862,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   overflow: hidden;
   position: relative;
 }
-/* ADD_IMAGE: Program card images */
-.prog-card-body { padding: 32px 28px 36px; background: var(--bg-surface); transition: background .4s; }
+/*.prog-card-body { padding: 32px 28px 36px; background: var(--bg-surface); transition: background .4s; }
 .prog-num {
   font-family: var(--f-display);
   font-size: 4rem;
@@ -952,8 +948,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   position: relative;
   overflow: hidden;
 }
-/* ADD_IMAGE: Donate section image */
-.donate-why-img-ph {
+/*.donate-why-img-ph {
   width: 100%;
   height: 100%;
   min-height: 500px;
@@ -1106,8 +1101,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
   position: relative;
   overflow: hidden;
 }
-/* ADD_IMAGE: Team member photos */
-.tm-img .img-placeholder { height: 100%; }
+/*.tm-img .img-placeholder { height: 100%; }
 .tm-hover {
   position: absolute;
   inset: 0;
@@ -1172,8 +1166,7 @@ nav.scrolled { box-shadow: var(--shadow-nav); }
 .g-item:nth-child(4) { grid-column: 1/5; grid-row: 3; }
 .g-item:nth-child(5) { grid-column: 5/9; grid-row: 3; }
 .g-item:nth-child(6) { grid-column: 9/13; grid-row: 3; }
-/* ADD_IMAGE: Gallery photos */
-.g-item .img-placeholder {
+/*.g-item .img-placeholder {
   width: 100%;
   height: 100%;
   min-height: 220px;
@@ -1716,6 +1709,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
         <li><a href="#uganda">Uganda</a></li>
         <li><a href="#programs">Programs</a></li>
         <li><a href="#team">Team</a></li>
+        <li><a href="#refugee">Refugees</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="know-more.html">Know More</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -1854,10 +1848,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
             ══════════════════════════════════════════
           -->
           <div class="img-placeholder" style="height:100%;min-height:560px;">
-            <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-            <div class="ph-label">Add Your About<br>Section Photo Here</div>
-            <div class="ph-tag">ADD_IMAGE → about-photo.jpg</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-image"></i></div>          </div>
         </div>
         <div class="about-floater">
           <div class="big">2018</div>
@@ -1941,10 +1932,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
         -->
         <div class="uganda-main-img">
           <div class="img-placeholder" style="height:100%;min-height:520px;">
-            <div class="ph-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-            <div class="ph-label">Add Your Uganda<br>Section Photo Here</div>
-            <div class="ph-tag">ADD_IMAGE → uganda-photo.jpg</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-map-location-dot"></i></div>          </div>
         </div>
         <div class="flag-bar"></div>
       </div>
@@ -1969,15 +1957,9 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       <!-- P1 -->
       <div class="prog-card">
         <div class="prog-card-img">
-          <!--
-            ADD_IMAGE: Education program photo
-            Replace with: <img src="program-education.jpg" style="width:100%;height:100%;object-fit:cover;"/>
-          -->
+          <!--          -->
           <div class="img-placeholder" style="height:100%;min-height:180px;">
-            <div class="ph-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-            <div class="ph-label">Education Program Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-graduation-cap"></i></div>          </div>
         </div>
         <div class="prog-num">01</div>
         <div class="prog-card-body">
@@ -1990,12 +1972,8 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       <!-- P2 -->
       <div class="prog-card">
         <div class="prog-card-img">
-          <!--ADD_IMAGE: Healthcare program photo-->
           <div class="img-placeholder" style="height:100%;min-height:180px;">
-            <div class="ph-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-            <div class="ph-label">Healthcare Program Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-heart-pulse"></i></div>          </div>
         </div>
         <div class="prog-num">02</div>
         <div class="prog-card-body">
@@ -2008,12 +1986,8 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       <!-- P3 -->
       <div class="prog-card">
         <div class="prog-card-img">
-          <!--ADD_IMAGE: Vocational program photo-->
           <div class="img-placeholder" style="height:100%;min-height:180px;">
-            <div class="ph-icon"><i class="fa-solid fa-briefcase"></i></div>
-            <div class="ph-label">Vocational Program Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-briefcase"></i></div>          </div>
         </div>
         <div class="prog-num">03</div>
         <div class="prog-card-body">
@@ -2026,12 +2000,8 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       <!-- P4 -->
       <div class="prog-card">
         <div class="prog-card-img">
-          <!--ADD_IMAGE: Business program photo-->
           <div class="img-placeholder" style="height:100%;min-height:180px;">
-            <div class="ph-icon"><i class="fa-solid fa-store"></i></div>
-            <div class="ph-label">Business Program Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-store"></i></div>          </div>
         </div>
         <div class="prog-num">04</div>
         <div class="prog-card-body">
@@ -2044,12 +2014,8 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       <!-- P5 -->
       <div class="prog-card">
         <div class="prog-card-img">
-          <!--ADD_IMAGE: Discipleship program photo-->
           <div class="img-placeholder" style="height:100%;min-height:180px;">
-            <div class="ph-icon"><i class="fa-solid fa-cross"></i></div>
-            <div class="ph-label">Discipleship Program Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-cross"></i></div>          </div>
         </div>
         <div class="prog-num">05</div>
         <div class="prog-card-body">
@@ -2062,12 +2028,8 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       <!-- P6 -->
       <div class="prog-card">
         <div class="prog-card-img">
-          <!--ADD_IMAGE: Family reintegration photo-->
           <div class="img-placeholder" style="height:100%;min-height:180px;">
-            <div class="ph-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>
-            <div class="ph-label">Family & Community Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div class="ph-icon"><i class="fa-solid fa-house-chimney-heart"></i></div>          </div>
         </div>
         <div class="prog-num">06</div>
         <div class="prog-card-body">
@@ -2108,17 +2070,34 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
           ══════════════════════════════════════════
         -->
         <div class="donate-why-img-ph">
-          <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px;">
-            <i class="fa-solid fa-image" style="font-size:2.5rem;color:rgba(255,255,255,.15)"></i>
-            <p style="font-family:var(--f-ui);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2)">Add Donate Section Photo</p>
-            <span style="font-family:var(--f-ui);font-size:.6rem;background:var(--red);color:#fff;padding:4px 12px;border-radius:2px;letter-spacing:.1em;text-transform:uppercase;">ADD_IMAGE → donate-photo.jpg</span>
-          </div>
+          
         </div>
         <div class="impact-pills">
           <div class="impact-pill"><span class="pill-icon"><i class="fa-solid fa-circle-check"></i></span> $30/month — sponsors a child's school term</div>
           <div class="impact-pill"><span class="pill-icon"><i class="fa-solid fa-circle-check"></i></span> $50 — funds one year of medical care</div>
           <div class="impact-pill"><span class="pill-icon"><i class="fa-solid fa-circle-check"></i></span> $200 — seeds a family business</div>
         </div>
+      </div>
+    </div>
+
+    <!-- CHOOSE A CHILD -->
+    <div class="reveal" style="margin:60px 0;background:linear-gradient(135deg,#07122B,#0a1628);border:1px solid rgba(217,30,54,.2);border-radius:20px;padding:48px 52px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:260px;">
+        <div style="font-family:var(--f-ui);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;"><span style="display:block;width:18px;height:2px;background:var(--red);"></span>Sponsor a Specific Child</div>
+        <h3 style="font-family:var(--f-display);font-size:2rem;font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.15;margin-bottom:14px;">Choose <em style="font-weight:300;color:rgba(255,255,255,.5);">who</em> you sponsor.</h3>
+        <p style="font-family:var(--f-body);font-size:1rem;color:rgba(255,255,255,.55);line-height:1.8;max-width:440px;">Meet the children in our care by name — read their stories, see their class, and choose one to support personally. Your sponsorship gives one child a direct, lasting future.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px;flex-shrink:0;">
+        <div style="display:flex;gap:-8px;margin-bottom:4px;">
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1a3a6b,#0D1E42);border:3px solid rgba(217,30,54,.4);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:1.1rem;font-weight:900;color:rgba(255,255,255,.3);">SK</div>
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#2a1a3b,#1a0D2e);border:3px solid rgba(217,30,54,.4);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:1.1rem;font-weight:900;color:rgba(255,255,255,.3);margin-left:-10px;">GN</div>
+          <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#1a3a2b,#0D1E14);border:3px solid rgba(217,30,54,.4);display:flex;align-items:center;justify-content:center;font-family:var(--f-display);font-size:1.1rem;font-weight:900;color:rgba(255,255,255,.3);margin-left:-10px;">DM</div>
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(217,30,54,.15);border:3px solid rgba(217,30,54,.4);display:flex;align-items:center;justify-content:center;font-family:var(--f-ui);font-size:.65rem;font-weight:700;color:var(--red);margin-left:-10px;">+17</div>
+        </div>
+        <a href="children.html" class="btn btn-red" style="display:inline-flex;align-items:center;gap:10px;padding:15px 28px;font-size:.78rem;">
+          <i class="fa-solid fa-heart fa-sm"></i> Meet the Children
+        </a>
+        <span style="font-family:var(--f-ui);font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.25);display:flex;align-items:center;gap:6px;"><i class="fa-solid fa-lock" style="font-size:.55rem;"></i> $30/month sponsors one child fully</span>
       </div>
     </div>
 
@@ -2156,7 +2135,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
           <h3>School Fees</h3>
           <p>Sponsor a child's education — from primary school through university. Education breaks the cycle.</p>
           <div class="amount-chips"><button>$30</button><button>$60</button><button>$100</button><button>$200</button></div>
-          <a href="donate.html?cause=education" class="btn btn-red"><i class="fa-solid fa-graduation-cap fa-sm"></i> Sponsor a Child</a>
+          <a href="children.html" class="btn btn-red"><i class="fa-solid fa-graduation-cap fa-sm"></i> Choose a Child</a>
         </div>
       </div>
 
@@ -2231,10 +2210,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
             ══════════════════════════════════════════
           -->
           <div class="img-placeholder" style="height:100%;min-height:340px;">
-            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">NJS</div>
-            <div class="ph-label">Joel Shalom Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">NJS</div>          </div>
           <div class="tm-hover">
             <div class="quals">
               <strong>Qualifications:</strong><br>
@@ -2260,10 +2236,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
             Replace with: <img src="kevin-photo.jpg" alt="Asiimwe Kevin".../>
           -->
           <div class="img-placeholder" style="height:100%;min-height:340px;">
-            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">AK</div>
-            <div class="ph-label">Asiimwe Kevin Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">AK</div>          </div>
           <div class="tm-hover">
             <div class="quals">
               <strong>Qualifications:</strong><br>
@@ -2289,10 +2262,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
             Replace with: <img src="jonathan-photo.jpg" alt="Atukorirebikuru Jonathan".../>
           -->
           <div class="img-placeholder" style="height:100%;min-height:340px;">
-            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">AJ</div>
-            <div class="ph-label">Jonathan Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">AJ</div>          </div>
           <div class="tm-hover">
             <div class="quals">
               <strong>Qualifications:</strong><br>
@@ -2316,10 +2286,7 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
             Replace with: <img src="gift-photo.jpg" alt="Nakato Gift Angel".../>
           -->
           <div class="img-placeholder" style="height:100%;min-height:340px;">
-            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">NGA</div>
-            <div class="ph-label">Gift Angel Photo</div>
-            <div class="ph-tag">ADD_IMAGE</div>
-          </div>
+            <div style="font-family:var(--f-display);font-size:3.5rem;font-weight:900;color:rgba(255,255,255,.2);position:relative;z-index:1;">NGA</div>          </div>
           <div class="tm-hover">
             <div class="quals">
               <strong>Qualifications:</strong><br>
@@ -2332,6 +2299,74 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
           <div class="tm-role">Director of Operations</div>
           <div class="tm-name">Nakato Gift Angel</div>
           <div class="tm-qual">MBChB — Bachelor of Medicine & Bachelor of Surgery</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:56px;">
+      <a href="team.html" class="btn btn-ghost" style="display:inline-flex;align-items:center;gap:10px;font-size:.8rem;">
+        Meet the Full Team <i class="fa-solid fa-arrow-right fa-sm"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════ REFUGEE RESPONSE ════════════════ -->
+<section id="refugee" style="background:var(--bg-deep);padding:120px 0;">
+  <div class="container">
+
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+      <div>
+        <div class="eyebrow" style="color:rgba(255,255,255,.45);">Emergency Response</div>
+        <h2 class="display" style="color:#fff;margin-top:20px;">Reaching those<br><em style="color:rgba(255,255,255,.55);">forced to flee.</em></h2>
+        <p style="color:rgba(255,255,255,.55);font-size:1.1rem;font-weight:300;line-height:1.9;margin-top:24px;">Uganda hosts over 1.6 million refugees — the largest refugee population in Africa. Many of these are children who have fled conflict, trauma, and loss. HFM extends its mission into refugee settlements to ensure no child is left behind simply because of where they were born.</p>
+        <p style="color:rgba(255,255,255,.55);font-size:1.1rem;font-weight:300;line-height:1.9;">We partner with local churches, community leaders, and international NGOs to deliver education, healthcare, trauma counselling, and spiritual support in settlement communities.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;">
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:20px;">
+            <div style="font-family:var(--f-display);font-size:2.2rem;font-weight:800;color:#fff;line-height:1;">1.6M+</div>
+            <div style="font-family:var(--f-ui);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;">Refugees in Uganda</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:20px;">
+            <div style="font-family:var(--f-display);font-size:2.2rem;font-weight:800;color:#fff;line-height:1;">52%</div>
+            <div style="font-family:var(--f-ui);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;">Are Children Under 18</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:20px;">
+            <div style="font-family:var(--f-display);font-size:2.2rem;font-weight:800;color:#fff;line-height:1;">South Sudan</div>
+            <div style="font-family:var(--f-ui);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;">Largest Origin Country</div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:20px;">
+            <div style="font-family:var(--f-display);font-size:2.2rem;font-weight:800;color:#fff;line-height:1;">Bidibidi</div>
+            <div style="font-family:var(--f-ui);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:6px;">Primary Settlement Reached</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="background:rgba(217,30,54,.06);border:1px solid rgba(217,30,54,.2);border-radius:16px;padding:32px;margin-bottom:20px;">
+          <div style="font-family:var(--f-ui);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:14px;">What We Do in Settlements</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.6);font-size:1rem;"><i class="fa-solid fa-check" style="color:var(--red);margin-top:4px;flex-shrink:0;"></i> Emergency education for out-of-school children</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.6);font-size:1rem;"><i class="fa-solid fa-check" style="color:var(--red);margin-top:4px;flex-shrink:0;"></i> Trauma counselling and psychosocial support</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.6);font-size:1rem;"><i class="fa-solid fa-check" style="color:var(--red);margin-top:4px;flex-shrink:0;"></i> Distribution of food, hygiene kits, and clothing</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.6);font-size:1rem;"><i class="fa-solid fa-check" style="color:var(--red);margin-top:4px;flex-shrink:0;"></i> Medical clinics and mother-child health support</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.6);font-size:1rem;"><i class="fa-solid fa-check" style="color:var(--red);margin-top:4px;flex-shrink:0;"></i> Children's Bible clubs and spiritual formation</li>
+            <li style="display:flex;align-items:flex-start;gap:12px;color:rgba(255,255,255,.6);font-size:1rem;"><i class="fa-solid fa-check" style="color:var(--red);margin-top:4px;flex-shrink:0;"></i> Vocational skills training for adolescents and youth</li>
+          </ul>
+        </div>
+        <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:24px 28px;">
+          <p style="font-style:italic;color:rgba(255,255,255,.5);margin:0;font-size:1rem;line-height:1.8;">"They came with nothing but the clothes on their backs and trauma in their eyes. What they needed most was someone to stay — and not leave."</p>
+          <p style="font-family:var(--f-ui);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin:12px 0 0;">— HFM Field Team, Bidibidi Settlement, West Nile Uganda</p>
+        </div>
+        <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="donate.html?cause=community" class="btn btn-red" style="flex:1;min-width:160px;justify-content:center;">
+            <i class="fa-solid fa-heart fa-sm"></i> Support Refugees
+          </a>
+          <a href="know-more.html" class="btn btn-ghost" style="flex:1;min-width:160px;justify-content:center;">
+            Learn More <i class="fa-solid fa-arrow-right fa-sm"></i>
+          </a>
         </div>
       </div>
 
@@ -2358,57 +2393,35 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
       -->
       <div class="g-item">
         <div class="img-placeholder" style="height:100%;min-height:460px;">
-          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-          <div class="ph-label">Gallery Photo 1<br>(Large Feature)</div>
-          <div class="ph-tag">ADD_IMAGE → gallery-1.jpg</div>
-        </div>
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>        </div>
         <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="g-item">
         <div class="img-placeholder" style="min-height:220px;height:100%;">
-          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-          <div class="ph-label">Gallery Photo 2</div>
-          <div class="ph-tag">ADD_IMAGE → gallery-2.jpg</div>
-        </div>
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>        </div>
         <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="g-item">
         <div class="img-placeholder" style="min-height:220px;height:100%;">
-          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-          <div class="ph-label">Gallery Photo 3</div>
-          <div class="ph-tag">ADD_IMAGE → gallery-3.jpg</div>
-        </div>
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>        </div>
         <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="g-item">
         <div class="img-placeholder" style="min-height:220px;">
-          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-          <div class="ph-label">Gallery Photo 4</div>
-          <div class="ph-tag">ADD_IMAGE → gallery-4.jpg</div>
-        </div>
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>        </div>
         <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="g-item">
         <div class="img-placeholder" style="min-height:220px;">
-          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-          <div class="ph-label">Gallery Photo 5</div>
-          <div class="ph-tag">ADD_IMAGE → gallery-5.jpg</div>
-        </div>
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>        </div>
         <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
       <div class="g-item">
         <div class="img-placeholder" style="min-height:220px;">
-          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>
-          <div class="ph-label">Gallery Photo 6</div>
-          <div class="ph-tag">ADD_IMAGE → gallery-6.jpg</div>
-        </div>
+          <div class="ph-icon"><i class="fa-solid fa-image"></i></div>        </div>
         <div class="g-overlay"><i class="fa-solid fa-expand"></i></div>
       </div>
     </div>
-
-    <p class="gallery-note">
-      To add your photos, find each <code>ADD_IMAGE</code> comment in the HTML and replace the placeholder div with an <code>&lt;img&gt;</code> tag pointing to your photo file. Save in the same folder as this HTML file.
-    </p>
   </div>
 </section>
 
@@ -2574,8 +2587,9 @@ nav, footer, .val-item, .d-card, .prog-card, .prog-card-body,
           <li><a href="#about">About HFM</a></li>
           <li><a href="#uganda">About Uganda</a></li>
           <li><a href="#programs">Programs</a></li>
-          <li><a href="#team">Our Team</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="#refugee">Refugees</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         </ul>
       </div>
 
