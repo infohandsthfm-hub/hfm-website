@@ -1,6 +1,6 @@
 /* ============================================================
-   HFM DONATE — CONTENT + CONFIG
-   Edit EVERYTHING here (text, amounts, causes, Stripe links).
+   HFM DONATE — CONTENT + CONFIG (UG + International)
+   Edit EVERYTHING here (text, amounts, causes, payment links).
    Save and reload donate.html.
    ============================================================ */
 
@@ -40,22 +40,25 @@ const DONATE_CONTENT = {
   freqMonthlyLabel: "Monthly",
   freqMonthlyBadge: "SAVE 10%",
 
-  // ── CURRENCY (display) ──────────────────────────────
-  currencySymbol: "$",
-  currencyCode: "USD",
+  // ── CURRENCY DISPLAY ────────────────────────────────
+  // Tip: If you want Uganda-first, use "UGX" + "UGX" symbol text.
+  // If you want international-first, keep USD. Your gateway can still accept cards globally.
+  currencySymbol: "UGX ",
+  currencyCode: "UGX",
 
   // ── AMOUNTS ─────────────────────────────────────────
+  // These are DISPLAY amounts. Make sure your payment links support these or accept custom amount.
   amounts: [
-    [10, "A meal a week"],
-    [25, "Books & supplies"],
-    [50, "Medical care"],
-    [100, "School term"],
-    [200, "Seeds business"],
-    [500, "Full sponsorship"],
-    [1000, "Transform a family"],
+    [20000, "Food support"],
+    [50000, "School supplies"],
+    [100000, "Medical support"],
+    [200000, "School term help"],
+    [500000, "Family support"],
+    [1000000, "Major impact"],
+    [2000000, "Transform a family"],
   ],
-  defaultAmount: 50,
-  customPlaceholder: "Enter custom amount",
+  defaultAmount: 100000,
+  customPlaceholder: "Enter custom amount (UGX)",
 
   // ── CAUSES ──────────────────────────────────────────
   causes: {
@@ -80,18 +83,24 @@ const DONATE_CONTENT = {
   updatesLabel: "Send me impact updates about the children my gift supports",
 
   // ── PAYMENT METHODS ─────────────────────────────────
+  // Flutterwave supports cards + mobile money for Uganda (MTN/Airtel) depending on configuration. :contentReference[oaicite:3]{index=3}
   payMethods: {
-    card: { title: "Card", desc: "Secure checkout", panelText: "You’ll be redirected to a secure Stripe checkout to complete your gift." },
+    card: { title: "Card", desc: "Visa/Mastercard", panelText: "You’ll be redirected to a secure checkout to complete your gift." },
+    mobile: { title: "Mobile Money", desc: "MTN/Airtel", panelText: "You’ll be redirected to a secure Mobile Money checkout (UGX)." },
     bank: { title: "Bank Transfer", desc: "Direct wire", panelText: "Use the details below to make a bank transfer. Reference your name + cause." },
   },
 
-  // ── STRIPE LINKS (PASTE YOUR LINKS HERE) ────────────
-  // Create 2 Stripe Payment Links:
-  //   1) One-time link
-  //   2) Monthly link (Subscription link)
-  stripeLinks: {
-    card_once: "PASTE_STRIPE_ONE_TIME_LINK_HERE",
-    card_monthly: "PASTE_STRIPE_MONTHLY_LINK_HERE",
+  // ── PAYMENT LINKS (PASTE YOUR HOSTED CHECKOUT LINKS HERE) ──
+  // Create hosted payment links in your provider dashboard (Flutterwave recommended for UG).
+  // You can use the SAME link for card+mobile if your checkout lets donor pick a method.
+  payLinks: {
+    // One-time
+    card_once:   "PASTE_CHECKOUT_LINK_FOR_ONE_TIME_CARD_HERE",
+    mobile_once: "PASTE_CHECKOUT_LINK_FOR_ONE_TIME_MOMO_HERE",
+
+    // Monthly (only if your provider supports recurring for your account)
+    card_monthly:   "PASTE_CHECKOUT_LINK_FOR_MONTHLY_CARD_HERE",
+    mobile_monthly: "PASTE_CHECKOUT_LINK_FOR_MONTHLY_MOMO_HERE",
   },
 
   // ── BANK DETAILS (optional fallback) ────────────────
@@ -107,73 +116,23 @@ const DONATE_CONTENT = {
   summaryTitle: "Your Gift Summary",
   summaryCauseLabel: "Designated Cause",
   summaryFreqLabel: "Frequency",
-  summaryGivingAsLabel: "Giving as",
   impactLabel: "Your Impact",
   trustTitle: "Why give with HFM",
   trustBadges: [
-    { icon: "fa-shield-halved", text: "<strong>Secure checkout</strong> — processed by Stripe" },
+    { icon: "fa-shield-halved", text: "<strong>Secure checkout</strong> — card & Mobile Money supported" },
     { icon: "fa-envelope", text: "<strong>Receipts</strong> — sent to your email when enabled" },
     { icon: "fa-lock", text: "<strong>Privacy</strong> — donor data is never sold" },
   ],
 
-  // ── IMPACT MESSAGES (used for summary “Your Impact”) ─
+  // ── IMPACT MESSAGES ─────────────────────────────────
   impactMap: {
-    10: {
-      general: "A <strong>$10 gift</strong> provides a nutritious meal a week for a child in need.",
-      education: "<strong>$10</strong> covers exercise books for a school term.",
-      health: "<strong>$10</strong> supports basic medications and vitamins.",
-      vocational: "<strong>$10</strong> contributes to training materials.",
-      business: "<strong>$10</strong> goes toward seed capital for a small trade.",
-      community: "<strong>$10</strong> supports clean water access for a family.",
-    },
-    25: {
-      general: "A <strong>$25 gift</strong> supports urgent needs across programs.",
-      education: "<strong>$25</strong> buys a school uniform for one child.",
-      health: "<strong>$25</strong> pays for a check-up and basic treatment.",
-      vocational: "<strong>$25</strong> funds a week of vocational training.",
-      business: "<strong>$25</strong> seeds a small household trade.",
-      community: "<strong>$25</strong> supports community food projects.",
-    },
-    50: {
-      general: "A <strong>$50 gift</strong> supports education, health and meals.",
-      education: "<strong>$50</strong> pays school fees for one term.",
-      health: "<strong>$50</strong> supports check-ups and medications for one child.",
-      vocational: "<strong>$50</strong> covers a month of training.",
-      business: "<strong>$50</strong> provides start-up supplies for a small business.",
-      community: "<strong>$50</strong> funds emergency food relief for a family.",
-    },
-    100: {
-      general: "A <strong>$100 gift</strong> gives a strong foundation of support.",
-      education: "<strong>$100</strong> supports a full school term (fees + materials).",
-      health: "<strong>$100</strong> supports basic family medical care.",
-      vocational: "<strong>$100</strong> covers two months of training.",
-      business: "<strong>$100</strong> seeds a viable small business.",
-      community: "<strong>$100</strong> supports household water/infrastructure needs.",
-    },
-    200: {
-      general: "A <strong>$200 gift</strong> is highly transformational.",
-      education: "<strong>$200</strong> supports education for a full year (core costs).",
-      health: "<strong>$200</strong> supports deeper family health needs.",
-      vocational: "<strong>$200</strong> funds a certification course.",
-      business: "<strong>$200</strong> seeds a business with sustainability chance.",
-      community: "<strong>$200</strong> supports a community upgrade.",
-    },
-    500: {
-      general: "A <strong>$500 gift</strong> supports a year of holistic care.",
-      education: "<strong>$500</strong> sponsors a child for a full academic year.",
-      health: "<strong>$500</strong> supports community health outreach.",
-      vocational: "<strong>$500</strong> equips a cohort with training/tools.",
-      business: "<strong>$500</strong> seeds a cooperative business.",
-      community: "<strong>$500</strong> supports water access for many households.",
-    },
-    1000: {
-      general: "A <strong>$1,000 gift</strong> transforms an entire family.",
-      education: "<strong>$1,000</strong> sponsors two children for a full year.",
-      health: "<strong>$1,000</strong> supports a medical outreach program.",
-      vocational: "<strong>$1,000</strong> equips a training workshop.",
-      business: "<strong>$1,000</strong> seeds a community cooperative.",
-      community: "<strong>$1,000</strong> supports major infrastructure.",
-    },
+    20000:  { general:"<strong>UGX 20,000</strong> helps provide meals or urgent supplies.", education:"<strong>UGX 20,000</strong> supports basic scholastic materials.", health:"<strong>UGX 20,000</strong> supports basic medications.", vocational:"<strong>UGX 20,000</strong> contributes to training materials.", business:"<strong>UGX 20,000</strong> supports seed capital for a small trade.", community:"<strong>UGX 20,000</strong> supports community relief." },
+    50000:  { general:"<strong>UGX 50,000</strong> supports the most urgent needs across programs.", education:"<strong>UGX 50,000</strong> supports books & supplies.", health:"<strong>UGX 50,000</strong> supports checkups and basic treatment.", vocational:"<strong>UGX 50,000</strong> supports skills training costs.", business:"<strong>UGX 50,000</strong> helps a family start a small trade.", community:"<strong>UGX 50,000</strong> supports food and essentials." },
+    100000: { general:"<strong>UGX 100,000</strong> supports education, health and meals.", education:"<strong>UGX 100,000</strong> supports a child’s school term needs.", health:"<strong>UGX 100,000</strong> supports medical care for a child.", vocational:"<strong>UGX 100,000</strong> supports training fees.", business:"<strong>UGX 100,000</strong> supports start-up supplies.", community:"<strong>UGX 100,000</strong> supports household relief." },
+    200000: { general:"<strong>UGX 200,000</strong> makes a major difference for a child.", education:"<strong>UGX 200,000</strong> supports fees + materials.", health:"<strong>UGX 200,000</strong> supports ongoing medical needs.", vocational:"<strong>UGX 200,000</strong> supports certification costs.", business:"<strong>UGX 200,000</strong> seeds a stronger family business.", community:"<strong>UGX 200,000</strong> supports community needs." },
+    500000: { general:"<strong>UGX 500,000</strong> is highly transformational.", education:"<strong>UGX 500,000</strong> supports deeper education sponsorship.", health:"<strong>UGX 500,000</strong> supports outreach and treatment.", vocational:"<strong>UGX 500,000</strong> supports tools & training.", business:"<strong>UGX 500,000</strong> supports a cooperative income plan.", community:"<strong>UGX 500,000</strong> supports infrastructure needs." },
+    1000000:{ general:"<strong>UGX 1,000,000</strong> supports holistic care.", education:"<strong>UGX 1,000,000</strong> supports sponsorship for multiple children.", health:"<strong>UGX 1,000,000</strong> supports community health outreach.", vocational:"<strong>UGX 1,000,000</strong> supports workshop + equipment.", business:"<strong>UGX 1,000,000</strong> supports a cooperative business.", community:"<strong>UGX 1,000,000</strong> supports major community projects." },
+    2000000:{ general:"<strong>UGX 2,000,000</strong> transforms a family’s future.", education:"<strong>UGX 2,000,000</strong> funds long-term education sponsorship.", health:"<strong>UGX 2,000,000</strong> supports full outreach programs.", vocational:"<strong>UGX 2,000,000</strong> supports full training + tools.", business:"<strong>UGX 2,000,000</strong> seeds sustainable income for multiple families.", community:"<strong>UGX 2,000,000</strong> supports major infrastructure." },
   },
 
   // ── SUBMIT AREA ─────────────────────────────────────
