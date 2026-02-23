@@ -14,7 +14,7 @@
    ============================================================ */
 
 const CHILDREN_CONTENT = {
-
+   
   // ── PAGE TEXT ──────────────────────────────────────────────
   page: {
     heroEyebrow:   "Choose Who You Sponsor",
@@ -74,6 +74,23 @@ const CHILDREN_CONTENT = {
     },
 
     {
+      active: true,
+      id: "grace-n",
+      photo: "",
+      name: "Grace Nakato",
+      age: 10,
+      class: "Primary 5 (Grade 5)",
+      category: "primary",
+      location: "Wakiso, Uganda",
+      tag: "Education",
+      tagColor: "education",
+      story: "Grace was abandoned by both parents as an infant and raised by a distant relative. She is a bright, curious girl who loves reading and helping younger children with their studies. Without sponsorship she will be forced to drop out at the end of this term.",
+      needs: ["School fees", "Books & stationery", "School uniform"],
+      monthlyAmount: 30,
+      favoriteSubject: "English & Reading",
+      dream: "Schoolteacher",
+    },
+     {
       active: true,
       id: "david-m",
       photo: "",
@@ -320,7 +337,7 @@ const CHILDREN_CONTENT = {
     },
 
     {
-      active: false,
+      active: true,
       id: "faith-n",
       photo: "",
       name: "Faith Namazzi",
