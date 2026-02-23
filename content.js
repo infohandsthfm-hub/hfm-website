@@ -47,7 +47,7 @@ const CONTENT = {
   /* ────────────────────────────────────────────────────────────
      TOP BAR (thin red strip at very top of page)
   ──────────────────────────────────────────────────────────── */
-  announcementText: "🙏 2025 Campaign — Help us reach 500 more children this year.",
+  announcementText: "🙏 2026 Campaign.",
   announcementCTA:  "Give Today →",
 
   /* ────────────────────────────────────────────────────────────
