@@ -23,7 +23,7 @@ const CONTENT = {
      Used in: nav, footer, page title, emails, meta tags
   ──────────────────────────────────────────────────────────── */
   orgName:        "Hands to the Fatherless Ministries",
-  orgShort:       "HFM",
+  orgShort:       "HTFM",
   orgTagline:     "Ministries — HFM Uganda",
   orgEmail:       "info.handsthfm@gmail.com",
   orgLocation:    "Kampala, Uganda",
@@ -47,7 +47,7 @@ const CONTENT = {
   /* ────────────────────────────────────────────────────────────
      TOP BAR (thin red strip at very top of page)
   ──────────────────────────────────────────────────────────── */
-  announcementText: "🙏 2026 Campaign.",
+  announcementText: "🙏 2026 Campaign - Help us Sponsor 200 school children and empower 50 needy Women.",
   announcementCTA:  "Give Today →",
 
   /* ────────────────────────────────────────────────────────────
@@ -56,8 +56,8 @@ const CONTENT = {
   heroTag:   "Faith — Community — Transformation",
   heroLine1: "Extending",
   heroLine2: "God's hand to",
-  heroLine3: "every fatherless child.",
-  heroBody:  "Hands to the Fatherless Ministries is a faith-based organisation in Uganda transforming the lives of orphaned and vulnerable children through education, healthcare, vocational training, and the enduring hope of the Gospel.",
+  heroLine3: "every hurting child and abandoned mothers.",
+  heroBody:  "Hands to the Fatherless Ministries is a faith-based organisation in Uganda transforming the lives of orphaned and vulnerable children through education and healthcare, abandoned and women in ultra poverty families through entrepreneurship and social economic empowerment, applying Biblical principles of stewardship and accountability.",
   heroCTA1:  "Give Today",
   heroCTA2:  "Our Story",
 
