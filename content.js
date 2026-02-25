@@ -24,13 +24,13 @@ const CONTENT = {
   ──────────────────────────────────────────────────────────── */
   orgName:        "Hands to the Fatherless Ministries",
   orgShort:       "HTFM",
-  orgTagline:     "Ministries — HFM Uganda",
+  orgTagline:     "Ministries — HTFM",
   orgEmail:       "info.handsthfm@gmail.com",
-  orgLocation:    "Kampala, Uganda",
-  orgFounded:     "2018",
+  orgLocation:    "Mbarara, Uganda",
+  orgFounded:     "2021",
   orgRegistered:  "Registered in Uganda",
-  pageTitle:      "Hands to the Fatherless Ministries | Uganda",
-  metaDesc:       "HFM — A faith-driven ministry transforming the lives of orphaned and vulnerable children across Uganda through education, healthcare, and community empowerment.",
+  pageTitle:      "Hands to the Fatherless Ministries | Uganda | South Sudan",
+  metaDesc:       "HFM — A faith-driven ministry transforming the lives of orphaned and vulnerable children and mothers across Uganda & South Sudan through education, healthcare, and community empowerment.",
 
   /* ────────────────────────────────────────────────────────────
      SOCIAL MEDIA LINKS
@@ -40,14 +40,14 @@ const CONTENT = {
   socialFacebook:   "#",   // → https://facebook.com/HFMUganda
   socialInstagram:  "#",   // → https://instagram.com/hfm_uganda
   socialX:          "#",   // → https://x.com/hfm_uganda
-  socialWhatsApp:   "#",   // → https://wa.me/256700000000  (include country code)
+  socialWhatsApp:   "+256704051587",   // → https://wa.me/256700000000  (include country code)
   socialYouTube:    "#",   // → https://youtube.com/@HFMUganda
   socialLinkedIn:   "#",   // → https://linkedin.com/company/hfm-uganda
 
   /* ────────────────────────────────────────────────────────────
      TOP BAR (thin red strip at very top of page)
   ──────────────────────────────────────────────────────────── */
-  announcementText: "🙏 2026 Campaign - Help us Sponsor 200 school children and empower 50 needy Women.",
+  announcementText: "🙏 2026 Campaign - Help us Sponsor 500 school children and empower 100 needy Women.",
   announcementCTA:  "Give Today →",
 
   /* ────────────────────────────────────────────────────────────
@@ -57,16 +57,16 @@ const CONTENT = {
   heroLine1: "Extending",
   heroLine2: "God's hand to",
   heroLine3: "every hurting child and abandoned mothers.",
-  heroBody:  "Hands to the Fatherless Ministries is a faith-based organisation in Uganda transforming the lives of orphaned and vulnerable children through education and healthcare, abandoned and women in ultra poverty families through entrepreneurship and social economic empowerment, applying Biblical principles of stewardship and accountability.",
+  heroBody:  "Hands to the Fatherless Ministries is a faith-based organisation transforming the lives of orphaned and vulnerable children through education and healthcare, refugees, and abandoned women in ultra poverty families through entrepreneurship and social economic empowerment, applying Biblical principles of stewardship and accountability.",
   heroCTA1:  "Give Today",
   heroCTA2:  "Our Story",
 
   /* ────────────────────────────────────────────────────────────
      HERO STATISTICS (the 4 numbers at the bottom of the hero)
   ──────────────────────────────────────────────────────────── */
-  stat1Number: "320+",   stat1Label: "Children Served",
-  stat2Number: "5+",     stat2Label: "Districts Reached",
-  stat3Number: "7",      stat3Label: "Years of Ministry",
+  stat1Number: "350+",   stat1Label: "Children Served",
+  stat2Number: "3",     stat2Label: "Missional Communities",
+  stat3Number: "5",      stat3Label: "Years of Ministry",
   stat4Number: "100%",   stat4Label: "Faith Driven",
 
   /* ────────────────────────────────────────────────────────────
@@ -74,8 +74,8 @@ const CONTENT = {
   ──────────────────────────────────────────────────────────── */
   aboutEyebrow:   "Who We Are",
   aboutTitle:     "A ministry born out of compassion.",
-  aboutP1: "Hands to the Fatherless Ministries (HFM) was founded on a conviction as old as Scripture itself: that to care for the orphan and the widow is not optional — it is the very heart of pure religion (James 1:27).",
-  aboutP2: "Operating across Uganda, we work in the most underserved communities — reaching children who have lost parents, who face extreme poverty, and who desperately need both practical support and the unconditional love of a God who sees them.",
+  aboutP1: "Hands to the Fatherless Ministries (HTFM) was founded on a conviction as old as Scripture itself: that to care for the orphan and the widow is not optional — it is the very heart of pure religion (James 1:27).",
+  aboutP2: "Operating across Uganda and South Sudan, we work in the most underserved communities of Bethel, Rwamanja Refugee settlement and Twic East Community; a wartone community in South Sudan — reaching children who have lost parents, who face extreme poverty, and who desperately need both practical support and the unconditional love of a God who sees them.",
   aboutP3: "We believe in holistic transformation: meeting physical needs while nurturing spiritual growth, academic excellence, and emotional wholeness. Every child we serve is known by name.",
   aboutCTA:       "Explore Our Programs",
   aboutYearLabel: "Year Founded",
